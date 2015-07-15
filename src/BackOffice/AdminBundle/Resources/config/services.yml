@@ -1,0 +1,9 @@
+parameters:
+#    admin.example.class: BackOffice\AdminBundle\Example
+
+services:
+  # [...] Vos autres services
+  redirect.after.login:
+    class: BackOffice\AdminBundle\Redirection\AfterLoginRedirection
+    arguments: [@router]
+ 

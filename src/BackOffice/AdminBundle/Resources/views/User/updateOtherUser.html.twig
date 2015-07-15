@@ -1,0 +1,58 @@
+{% extends "AdminBundle::layoutSUP.html.twig" %}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <form action="{{ path('admin_updateOtherUser',{'id':id}) }}" {{ form_enctype(form) }} method="POST" >
+
+                <table id="lol" >
+                    <tr>
+                        <td><label for="exampleInputEmail1">Nom de l'utilisateur      </label></td>
+                        <td>{{ form_widget(form.Username, {'attr': {'class': 'form-control'}}) }} </td>
+                        {{ form_errors(form.Username) }}
+                    </tr>
+
+                    <tr>
+                        <td><label for="exampleInputEmail1">Adresse e-mail </label></td> 
+
+                        <td>{{ form_widget(form.Email, {'attr': {'class': 'form-control'}}) }} </td>
+                        {{ form_errors(form.Email) }}
+                    </tr>
+
+                    <tr>
+                        <td><label for="exampleInputEmail1">Poste     </label></td>
+
+                        <td>{{ form_widget(form.Roles) }} </td>
+                        {{ form_errors(form.Roles) }}
+                    </tr>
+
+                    <tr>
+                        <td><label for="exampleInputEmail1">Etat  </label> </td>
+                        <td>{{ form_widget(form.Locked) }} </td>
+                        {{ form_errors(form.Locked) }}
+                    </tr>
+
+                    <tr>
+                        <td><label for="exampleInputEmail1">Date d'éxpiration </label></td>
+                        <td>{{ form_widget(form.ExpiresAt) }} </td>
+                        {{ form_errors(form.ExpiresAt) }}
+                    </tr>
+                    <tr>
+                         {{ form_rest(form) }}
+                     </tr>
+                </table>
+                <div>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-block btn-flat" value="Mettre à jour" />
+                </div>
+            </form>
+        </div><!-- ./col -->
+    </div>
+    <!-- Main row -->
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+{% endblock user_content %}

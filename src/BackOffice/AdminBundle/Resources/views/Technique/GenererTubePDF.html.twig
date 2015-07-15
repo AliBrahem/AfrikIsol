@@ -1,0 +1,76 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <header>
+            <aside style="width: 30%; position: relative; left: auto">
+                AfrikIsol <br>
+                Boulevard de l’environnement 7035 <br>
+                Menzel Abderrahmane - Bizerte <br>
+            </aside>
+        </header> <br>
+    <center>
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>DN inter</th>
+                    <th>DN ext</th>
+                    <th>Epaisseur</th>
+                    <th>DN ISOLE mm</th>
+                    <th>CIRC en mm</th>
+                    <th>RECOUV en mm</th>
+                    <th>Largeur de la Tôle en cm</th>
+                   
+                    <th>Dechet</th>
+                    <th>QTE Brute/ML</th>
+                    <th>temps de prefa en mn/Homme</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Modele in Modeles %}
+                    <tr>
+                        <td> {{Modele.diametreinter}} </td>
+                        <td> {{Modele.dnext}} </td>
+                        <td> {{Modele.epaisseur}} </td>
+                        <td> {{Modele.dnisole}} </td>
+                        <td> {{Modele.circ}} </td>
+                        <td> {{Modele.recouv}} </td>
+                        <td> {{Modele.largeurtole}} </td>
+                        
+                        <td> {{Modele.dechet}} </td>
+                        <td> {{Modele.qtebrute}} </td>
+                        <td> {{Modele.tempsprefa}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+    </center>
+        <footer style="position: absolute; bottom: 0;">
+            <br>
+            <br>
+            <div style="float: left; width: 700px">
+                <br>
+                AfrikIsol <br>
+                Boulevard de l’environnement 7035 <br>
+                Menzel Abderrahmane - Bizerte <br>
+               
+            </div>
+           
+            
+            <div style="float: right">
+                Contact <br>
+                Tel : +(216) 72 57 06 25 / +(216) 72 57 24 98<br>
+                Fax : +(216) 72 57 13 22<br>
+                E-mail : contact@afrikisol.com
+            </div>
+            
+                
+           
+            
+        </footer>
+    
+</body>
+</html>
+AFRIKISOL Industrie garantit les meilleures solutions aux problemes d'isolation technique 
+http://www.afrikisol-industrie.com/

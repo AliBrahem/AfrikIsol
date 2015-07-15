@@ -1,0 +1,18 @@
+{% extends "AdminBundle::layoutSUP.html.twig" %}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+        </div><!-- ./col -->
+
+        <!-- Main row -->
+        <div class="row">
+
+        </div><!-- /.row (main row) -->
+    {% endblock user_content %}

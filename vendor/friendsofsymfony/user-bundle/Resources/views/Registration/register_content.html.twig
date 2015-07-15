@@ -1,0 +1,71 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="row" align="center">
+    <br>
+   
+  <h1>   Création de compte </h1>
+  <br>
+   <br>
+ <div class="col-lg-3 col-xs-6" align="center">
+   
+     <form  enctype="multipart/form-data" accept-charset=" "action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+     <table id="lol" >
+                    <tr>
+                        <td><label for="exampleInputEmail1">Nom de l'utilisateur      </label></td>
+                        <td>{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }} </td>
+                        {{ form_errors(form.username) }}
+                    </tr>
+
+                    <tr>
+                        <td><label for="exampleInputEmail1">Adresse e-mail </label></td> 
+
+                        <td>{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }} </td>
+                        {{ form_errors(form.email) }}
+                    </tr>
+                    <tr>
+                         <td><label for="exampleInputEmail1">Mot de passe </td> </label> <td>{{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }} </td>
+                         {{ form_errors(form.plainPassword.first) }}
+                     </tr>
+                     <tr>
+                        <td><label for="exampleInputEmail1">Vérification</td> </label> <td>{{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }} </td>
+                         {{ form_errors(form.plainPassword.second) }}
+                     </tr>
+                  
+                     
+                    
+                    <tr>
+                        <td><label for="exampleInputEmail1">Poste     </label></td>
+                          
+                     <td>
+                        <select id="role" name='role' class="role">
+                            <option value="ROLE_TECHNIQUE">Service Technique</option>
+                            <option value="ROLE_COMMERCIAL">Service Commercial</option>
+                            <option value="ROLE_LOGISTIQUE">Service Logistique</option>
+                            <option value="ROLE_FINANCIER">Service Financier</option>
+                            <option value="" selected="selected"></option>
+                            
+                            </select>
+                        </td>
+                   
+                    </tr>
+                    <tr>
+                        <td><label for="exampleInputEmail1">Date d'éxpiration </label></td>
+                        <td>{{ form_widget(form.expiresAt) }} </td>
+                        {{ form_errors(form.expiresAt) }}
+                    </tr>
+                    
+                    <tr> 
+                        <td><label for="exampleInputEmail1">Image : </label></td><td><input type="file" name="photo" accept="image/x-png, image/gif, image/jpeg" required/></td> 
+                    </tr>
+                     <tr>
+                         {{ form_rest(form) }}
+                     </tr>
+     </table>
+                <div>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-block btn-flat" value="{{ 'registration.submit'|trans }}" />
+                </div>
+      
+</form>
+ </div>
+                </div>

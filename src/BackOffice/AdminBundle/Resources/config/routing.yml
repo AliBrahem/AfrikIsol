@@ -1,0 +1,36 @@
+admin_homepage:
+    pattern:  /indexSUPAD
+    defaults: { _controller: AdminBundle:User:index }
+admin_updateprofile:
+    pattern:  /updateProfile
+    defaults: { _controller: AdminBundle:User:update }   
+admin_updateOtherUser:
+    pattern:  /updOtherUser/{id}
+    defaults: { _controller: AdminBundle:User:updateOther }    
+admin_afficheprofile:
+    pattern:  /displayProfile
+    defaults: { _controller: AdminBundle:User:affiche }  
+admin_supprimeruser:
+    pattern:  /deleteUser/{id}
+    defaults: { _controller: AdminBundle:User:delete }    
+admin_listerUser:
+    pattern:  /listerUsers
+    defaults: { _controller: AdminBundle:User:lister }     
+tech_calculTole:
+    pattern:  /calculTole
+    defaults: { _controller: AdminBundle:Tech:calculTole }    
+tech_listerTUYAUTERIES:
+    pattern:  /listerTUY
+    defaults: { _controller: AdminBundle:Tech:listerTUY }
+tech_genererPDFTUYAUTERIES:
+    pattern:  /genererPDFTube
+    defaults: { _controller: AdminBundle:Tech:generatePdfTube }    
+tech_listerCOUDE:
+    pattern:  /listerCOUDE
+    defaults: { _controller: AdminBundle:Tech:listerCOUDE } 
+tech_listerREDUCTION:
+    pattern:  /listerRED
+    defaults: { _controller: AdminBundle:Tech:listerRED }  
+tech_index:
+    pattern:  /indexTech
+    defaults: { _controller: AdminBundle:Tech:index }    
