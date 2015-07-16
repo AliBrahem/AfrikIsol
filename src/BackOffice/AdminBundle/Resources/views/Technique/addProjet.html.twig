@@ -1,0 +1,16 @@
+{% extends "AdminBundle::layoutTech.html.twig" %}
+
+{% block user_content %}
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <form action="{{ path('tech_addProjet' ) }}" {{ form_enctype(form) }} method="POST">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" class="btn btn-primary btn-block btn-flat" value="Ajouter Projet" />
+    </div>
+    </form>
+        </div>    
+    </div>
+    
+    
+{% endblock user_content %}

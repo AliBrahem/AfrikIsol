@@ -1,6 +1,9 @@
 admin_homepage:
     pattern:  /indexSUPAD
     defaults: { _controller: AdminBundle:User:index }
+admin_graphe:
+    path:     /chartLine/{id}
+    defaults: { _controller: AdminBundle:User:chartLine }     
 admin_updateprofile:
     pattern:  /updateProfile
     defaults: { _controller: AdminBundle:User:update }   
@@ -22,6 +25,12 @@ tech_calculTole:
 tech_listerTUYAUTERIES:
     pattern:  /listerTUY
     defaults: { _controller: AdminBundle:Tech:listerTUY }
+tech_listProjet:
+    pattern:  /listProjet
+    defaults: { _controller: AdminBundle:Tech:listerProjet }    
+tech_addProjet:
+    pattern:  /addProjet
+    defaults: { _controller: AdminBundle:Tech:addProjet}    
 tech_genererPDFTUYAUTERIES:
     pattern:  /genererPDFTube
     defaults: { _controller: AdminBundle:Tech:generatePdfTube }    

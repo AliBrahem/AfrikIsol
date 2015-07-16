@@ -4,7 +4,9 @@ namespace BackOffice\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BackOffice\AdminBundle\Form\CoudeType;
+use BackOffice\AdminBundle\Form\ProjetType;
 use BackOffice\AdminBundle\Entity\Coude;
+use BackOffice\AdminBundle\Entity\Projet;
 use BackOffice\AdminBundle\Entity\Tuyauteries;
 use BackOffice\AdminBundle\Entity\Reduction;
 use Symfony\Component\HttpFoundation\Request;
@@ -194,7 +196,47 @@ class TechController extends Controller
         );
     }
     
+    public function addProjetAction()
+    {   
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+         $projet = new Projet();
+        $form = $this->container->get('form.factory')->create(new ProjetType(), $projet);
+
+        $Request = $this->getRequest();
+
+
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+
+            if ($form->isValid()) {
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $em->persist($projet);
+                $em->flush();
+                return $this->redirect($this->generateUrl("tech_listProjet"));
+            }
+        }
+         
+        return $this->render('AdminBundle:Technique:addProjet.html.twig' , array('img' => $images,'form' => $form->createView()));
+    }
     
-    
+    public function listerProjetAction()
+    {
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+        
+        return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'img' => $images));
+    }
 }
 

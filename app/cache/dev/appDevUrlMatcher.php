@@ -125,6 +125,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::indexAction',  '_route' => 'admin_homepage',);
         }
 
+        // admin_graphe
+        if (0 === strpos($pathinfo, '/chartLine') && preg_match('#^/chartLine/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_graphe')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::chartLineAction',));
+        }
+
         if (0 === strpos($pathinfo, '/upd')) {
             // admin_updateprofile
             if ($pathinfo === '/updateProfile') {
@@ -161,9 +166,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::calculToleAction',  '_route' => 'tech_calculTole',);
         }
 
-        // tech_listerTUYAUTERIES
-        if ($pathinfo === '/listerTUY') {
-            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerTUYAction',  '_route' => 'tech_listerTUYAUTERIES',);
+        if (0 === strpos($pathinfo, '/list')) {
+            // tech_listerTUYAUTERIES
+            if ($pathinfo === '/listerTUY') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerTUYAction',  '_route' => 'tech_listerTUYAUTERIES',);
+            }
+
+            // tech_listProjet
+            if ($pathinfo === '/listProjet') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerProjetAction',  '_route' => 'tech_listProjet',);
+            }
+
+        }
+
+        // tech_addProjet
+        if ($pathinfo === '/addProjet') {
+            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addProjetAction',  '_route' => 'tech_addProjet',);
         }
 
         // tech_genererPDFTUYAUTERIES

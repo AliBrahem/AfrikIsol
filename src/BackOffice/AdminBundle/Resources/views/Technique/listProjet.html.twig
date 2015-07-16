@@ -1,0 +1,46 @@
+{% extends "AdminBundle::layoutTech.html.twig" %}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nature Projet</th>
+                    <th>Lieu</th>
+                    <th>Client</th>
+                    <th>Personne à contacter</th>
+                    <th>Durée des travaux préfa</th>
+                    <th>Durée des travaux monta</th>
+                    <th>Date de préfa</th>
+                    <th>Date de monta</th>
+                    <th>Charges</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix total</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for Modele in Modeles %}
+                    <tr>
+                        <td> {{Modele.nature}} </td>
+                        <td> {{Modele.lieu}} </td>
+                        <td> {{Modele.idClient}} </td>
+                        <td> {{Modele.contact}} </td>
+                        <td> {{Modele.nbJourPrefa}} </td>
+                        <td> {{Modele.nbJourMonta}} </td>
+                        <td> {{Modele.datePrefa|date('d/m/Y', false) }} </td>
+                        <td> {{Modele.dateMonta|date('d/m/Y', false) }} </td>
+                        <td> {{Modele.charges}} </td>
+                        <td> {{Modele.prixUnitaire}} </td>
+                        <td> {{Modele.prixTotal}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

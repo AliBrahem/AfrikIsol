@@ -13,7 +13,7 @@ use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-
+use Ob\HighchartsBundle\Highcharts\Highchart;
 
 class UserController extends Controller
 {
@@ -196,5 +196,48 @@ class UserController extends Controller
         
         return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users,'img' => $images));
     }
+     public function chartLineAction($id){
+        // Chart
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+   
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+      
+        $dureeTrav = array(
+            array(
+                 "name" => "Travaux estimées", 
+                 "data" => array(683, 756, 543, 1208, 617, 990, 1001)
+            ),
+                        array(
+                 "name" => "Travaux réalisées", 
+                 "data" => array(467, 321, 56, 698, 134, 344, 452)
+            ),
+            
+        );
+
+        $dates = array(
+            "21/06", "22/06", "23/06", "24/06", "25/06", "26/06", "27/06"
+        );
+
+        $ob = new Highchart();
+        // ID de l'élement de DOM que vous utilisez comme conteneur
+        $ob->chart->renderTo('linechart');  
+        $ob->title->text('Estimation des durées de travaux du projet  '.$modele->getId());
+        
+        $ob->yAxis->title(array('text' => "Quantitatif du projet"));
+      
+        $ob->xAxis->title(array('text'  => "Date du jours"));
+        $ob->xAxis->categories($dates);
+
+        $ob->series($dureeTrav);
+
+        return $this->render('AdminBundle:User:LineChart.html.twig', array(
+        'chart' => $ob
+        ));
+        }
     
 }
