@@ -35,7 +35,7 @@ class ProjetType extends AbstractType
             ->add('quantiteEPI')
             ->add('contact')
             ->add('etat')
-            ->add('dateMiseDispo')
+            ->add('dateMiseDispo','date')
             ->add('prixUnitaire')
             ->add('prixTotal')
             ->add('charges')

@@ -17,96 +17,68 @@ class __TwigTemplate_0bbee6283e7b58ea37c712a37fa9976a3ce8ed6e14481678e558ae8129f
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\" />
-    </head>
-    <body>
-        <div>
-            ";
-        // line 8
-        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 9
-            echo "                ";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
-            echo " |
-                <a href=\"";
-            // line 10
-            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
-            echo "\">
-                    ";
-            // line 11
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
-            echo "
-                </a>
-            ";
-        } else {
-            // line 14
-            echo "                <a href=\"";
-            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
-            echo "</a>
-            ";
-        }
-        // line 16
-        echo "        </div>
+        echo "<html>
+  <head>
+    <meta charset=\"UTF-8\">
+    <title>AfrikIsol | Login</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.4 -->
+    <link href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+    <!-- Font Awesome Icons -->
+    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <!-- Theme style -->
+    <link href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/AdminLTE.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+    <!-- iCheck -->
+    <link href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/iCheck/square/blue.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
 
-        ";
+  </head>
+  <body class=\"login-page\">
+       ";
         // line 18
-        if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 19
-            echo "            ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
-            foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 20
-                echo "                ";
-                $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($context["messages"]);
-                foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 21
-                    echo "                    <div class=\"flash-";
-                    echo twig_escape_filter($this->env, $context["type"], "html", null, true);
-                    echo "\">
-                        ";
-                    // line 22
-                    echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-                    echo "
-                    </div>
-                ";
-                }
-                $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-                $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 25
-                echo "            ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
-            echo "        ";
-        }
-        // line 27
         echo "
-        <div>
             ";
-        // line 29
-        $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 31
+        // line 19
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 20
+            echo "               
+     
+
+
+        
+             ";
+        } else {
+            // line 26
+            echo "              
+            ";
+            // line 27
+            $this->displayBlock('fos_user_content', $context, $blocks);
+            // line 32
+            echo "            ";
+        }
+        // line 33
         echo "        </div>
     </body>
 </html>
 ";
     }
 
-    // line 29
+    // line 27
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 30
-        echo "            ";
+        // line 28
+        echo "                
+                
+                
+            ";
     }
 
     public function getTemplateName()
@@ -121,6 +93,6 @@ class __TwigTemplate_0bbee6283e7b58ea37c712a37fa9976a3ce8ed6e14481678e558ae8129f
 
     public function getDebugInfo()
     {
-        return array (  109 => 30,  106 => 29,  99 => 31,  97 => 29,  93 => 27,  90 => 26,  84 => 25,  75 => 22,  70 => 21,  65 => 20,  60 => 19,  58 => 18,  54 => 16,  46 => 14,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  78 => 28,  75 => 27,  68 => 33,  65 => 32,  63 => 27,  60 => 26,  52 => 20,  50 => 19,  47 => 18,  40 => 13,  35 => 11,  28 => 7,  20 => 1,);
     }
 }

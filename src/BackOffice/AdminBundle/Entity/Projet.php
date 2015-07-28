@@ -374,7 +374,7 @@ class Projet {
         $this->etat = $etat;
     }
 
-    function setDateMiseDispo(\DateTime $dateMiseDispo) {
+    function setDateMiseDispo(\DateTime $dateMiseDispo ) {
         $this->dateMiseDispo = $dateMiseDispo;
     }
 

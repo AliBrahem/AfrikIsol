@@ -3,7 +3,10 @@ admin_homepage:
     defaults: { _controller: AdminBundle:User:index }
 admin_graphe:
     path:     /chartLine/{id}
-    defaults: { _controller: AdminBundle:User:chartLine }     
+    defaults: { _controller: AdminBundle:User:chartLine }   
+admin_graphePlan:
+    path:     /chartPlan/{id}
+    defaults: { _controller: AdminBundle:User:planification }    
 admin_updateprofile:
     pattern:  /updateProfile
     defaults: { _controller: AdminBundle:User:update }   
