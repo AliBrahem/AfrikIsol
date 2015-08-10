@@ -125,17 +125,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::indexAction',  '_route' => 'admin_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/chart')) {
-            // admin_graphe
-            if (0 === strpos($pathinfo, '/chartLine') && preg_match('#^/chartLine/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_graphe')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::chartLineAction',));
-            }
+        // admin_graphe
+        if (0 === strpos($pathinfo, '/chartLine') && preg_match('#^/chartLine/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_graphe')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::chartLineAction',));
+        }
 
-            // admin_graphePlan
-            if (0 === strpos($pathinfo, '/chartPlan') && preg_match('#^/chartPlan/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_graphePlan')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\UserController::planificationAction',));
-            }
-
+        // tech_findTUY
+        if (0 === strpos($pathinfo, '/findTUY') && preg_match('#^/findTUY/(?P<epaisseur>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_findTUY')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::findTUYAction',));
         }
 
         if (0 === strpos($pathinfo, '/upd')) {
@@ -187,9 +184,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // tech_addProjet
-        if ($pathinfo === '/addProjet') {
-            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addProjetAction',  '_route' => 'tech_addProjet',);
+        if (0 === strpos($pathinfo, '/add')) {
+            // tech_addProjet
+            if ($pathinfo === '/addProjet') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addProjetAction',  '_route' => 'tech_addProjet',);
+            }
+
+            // tech_addClient
+            if ($pathinfo === '/addClient') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addClientAction',  '_route' => 'tech_addClient',);
+            }
+
+        }
+
+        // tech_listClient
+        if ($pathinfo === '/listClient') {
+            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerClientAction',  '_route' => 'tech_listClient',);
+        }
+
+        // tech_addPlan
+        if (0 === strpos($pathinfo, '/addPlan') && preg_match('#^/addPlan/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addPlan')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addPlanAction',));
         }
 
         // tech_genererPDFTUYAUTERIES

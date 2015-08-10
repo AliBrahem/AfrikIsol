@@ -29,7 +29,11 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
     {
         // line 3
         echo "    <div class=\"box-body\">
-        <table id=\"example2\" class=\"table table-bordered table-hover\">
+        <div class=\"box-header\">
+                  <h3 class=\"box-title\">Liste des TUYAUTERIES</h3>
+                </div><!-- /.box-header -->
+                <div class=\"box-body\">
+                  <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                 <tr>
                     <th>Login</th>
@@ -44,27 +48,27 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
             </thead>
             <tbody>
                 ";
-        // line 18
+        // line 22
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["users"]) ? $context["users"] : $this->getContext($context, "users")));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 19
+            // line 23
             echo "                    <tr>
                         <td>";
-            // line 20
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()));
             echo "</td>
                         <td>";
-            // line 21
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "email", array()));
             echo "</td>
                         <td>
                             ";
-            // line 23
+            // line 27
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["user"], "roles", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 24
+                // line 28
                 echo "                            ";
                 echo twig_escape_filter($this->env, $context["role"], "html", null, true);
                 echo ",
@@ -73,34 +77,34 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
+            // line 30
             echo "                        </td>
                         <td>";
-            // line 27
+            // line 31
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["user"], "lastLogin", array()), "d/m/Y, H:i:s", false), "html", null, true);
             echo "</td>
                         ";
-            // line 28
+            // line 32
             if (($this->getAttribute($context["user"], "locked", array()) == 0)) {
-                // line 29
+                // line 33
                 echo "                            
                         <td>Activé </td>
                         ";
             } else {
-                // line 32
+                // line 36
                 echo "                           <td>Désactivé </td> 
                         ";
             }
-            // line 34
+            // line 38
             echo "                        <td>";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["user"], "expiresAt", array()), "d/m/Y, H:i:s", false), "html", null, true);
             echo "</td>
                         <td><a href=\"";
-            // line 35
+            // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_updateOtherUser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "\"> Modifier </a></td>
                         <td><a href=\"";
-            // line 36
+            // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_supprimeruser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "\"> Suprimer </a></td>
                     </tr>
@@ -109,7 +113,7 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 43
         echo "            </tbody>
             <tfoot>
                 <tr>
@@ -124,6 +128,8 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
                 </tr>
             </tfoot>
         </table>
+                </div>
+    </div>
     </div><!-- /.box-body -->
 
 ";
@@ -141,6 +147,6 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
 
     public function getDebugInfo()
     {
-        return array (  113 => 39,  104 => 36,  100 => 35,  95 => 34,  91 => 32,  86 => 29,  84 => 28,  80 => 27,  77 => 26,  68 => 24,  64 => 23,  59 => 21,  55 => 20,  52 => 19,  48 => 18,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  117 => 43,  108 => 40,  104 => 39,  99 => 38,  95 => 36,  90 => 33,  88 => 32,  84 => 31,  81 => 30,  72 => 28,  68 => 27,  63 => 25,  59 => 24,  56 => 23,  52 => 22,  31 => 3,  28 => 2,  11 => 1,);
     }
 }

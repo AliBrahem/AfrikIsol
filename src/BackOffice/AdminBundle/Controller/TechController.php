@@ -5,8 +5,12 @@ namespace BackOffice\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BackOffice\AdminBundle\Form\CoudeType;
 use BackOffice\AdminBundle\Form\ProjetType;
+use BackOffice\AdminBundle\Form\ClientType;
+use BackOffice\AdminBundle\Form\PlanificationType;
 use BackOffice\AdminBundle\Entity\Coude;
 use BackOffice\AdminBundle\Entity\Projet;
+use BackOffice\AdminBundle\Entity\Client;
+use BackOffice\AdminBundle\Entity\Planification;
 use BackOffice\AdminBundle\Entity\Tuyauteries;
 use BackOffice\AdminBundle\Entity\Reduction;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +18,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class TechController extends Controller
 {
@@ -27,7 +31,7 @@ class TechController extends Controller
             
          $images = base64_encode(stream_get_contents($m->getImage()));
         
-        return $this->render('AdminBundle:Default:index.html.twig' , array('img' => $images));
+        return $this->render('AdminBundle:Technique:GenererTubePDF.html.twig' , array('img' => $images));
     }
     public function listerTUYAction()
     {
@@ -97,8 +101,8 @@ class TechController extends Controller
                 $qtebrute       =   $Request->get('qtebrute');
                 $tempsprefa     =   $Request->get('tempsprefa');
                 $tempsmonta     =   $Request->get('tempsmonta');
-                $prixunitairetole    =   $Request->get('prixUnitaireTole');
-                $prixunitaireisolant =   $Request->get('prixUnitaireIsolant');
+                $prixUnitaireTole    =   $Request->get('prixUnitaireTole');
+                $prixUnitaireIsolant =   $Request->get('prixUnitaireIsolant');
                 $prix           =   $Request->get('prix');
                 
                 if($tole == "TUYAUTERIES")
@@ -116,9 +120,9 @@ class TechController extends Controller
                         $modele->setQtebrute($qtebrute);
                         $modele->setTempsprefa($tempsprefa);
                         $modele->setTempsMonta($tempsmonta);
-                        $modele->setPrixUnitaireTole($prixUnitaireTole);
-                        $modele->setPrixUnitaireIsolant($prixUnitaireIsolant);
-                        $modele->setPrix($prix);
+                        $modele->setPrixUnitaireTole(0);
+                        $modele->setPrixUnitaireIsolant(0);
+                        $modele->setPrix(0);
                         $em = $this->container->get('doctrine')->getEntityManager();
                         $em->persist($modele);
                         $em->flush();
@@ -235,8 +239,97 @@ class TechController extends Controller
          $images = base64_encode(stream_get_contents($m->getImage()));
         $em = $this->container->get('doctrine')->getEntityManager();
         $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
-        
-        return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'img' => $images));
+        $plan = $em->getRepository('AdminBundle:Planification')->findAll();
+        return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'img' => $images,'plan' => $plan));
     }
+    
+    public function addClientAction()
+    {   
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+         $client = new Client();
+        $form = $this->container->get('form.factory')->create(new ClientType(), $client);
+
+        $Request = $this->getRequest();
+
+
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+
+            if ($form->isValid()) {
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $em->persist($client);
+                $em->flush();
+                return $this->redirect($this->generateUrl("tech_listClient"));
+            }
+        }
+         
+        return $this->render('AdminBundle:Technique:addClient.html.twig' , array('img' => $images,'form' => $form->createView()));
+    }
+    
+    public function listerClientAction()
+    {
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Client')->findAll();
+        
+        return $this->render('AdminBundle:Technique:listClient.html.twig', array('Modeles' => $modeles ,'img' => $images));
+    }
+    
+    public function addPlanAction($id)
+    {   
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+         $plan = new Planification();
+        $form = $this->container->get('form.factory')->create(new PlanificationType(), $plan);
+
+        $Request = $this->getRequest();
+
+
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+
+            if ($form->isValid()) {
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $plan->setIdprojet($id);
+                $em->persist($plan);
+                $em->flush();
+                return $this->redirect($this->generateUrl("admin_graphe",array('id'=>$id)));
+            }
+        }
+         
+        return $this->render('AdminBundle:Technique:addPlan.html.twig' , array('img' => $images,'form' => $form->createView()));
+    }
+    
+    public function findTUYAction($epaisseur){
+        // Chart
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+   
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Tuyauteries')->findBy(array("epaisseur"=>$epaisseur));
+        $response = new JsonResponse();
+        
+        return $response->setData(array('tuy'=>$modele[2]->getDiametreinter()));
+        //echo ''.$modele->getPreavis();
+     }
 }
 

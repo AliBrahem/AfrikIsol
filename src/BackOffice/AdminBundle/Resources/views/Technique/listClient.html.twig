@@ -1,0 +1,46 @@
+{% extends "AdminBundle::layoutTech.html.twig" %}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="box-header">
+                  <h3 class="box-title">Liste des Clients</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Société </th>
+                    <th>Secteur d'activité </th>
+                    <th>Téléphone </th>
+                    <th>Numéro télécopie</th>
+                    <th>Responsable à contacter</th>
+                    <th>Numéro du responsabl</th>
+                    <th>Crédit disponible</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for Modele in Modeles %}
+                    <tr>
+                        <td> {{Modele.societe}} </td>
+                        <td> {{Modele.secteurActivite}} </td>
+                        <td> {{Modele.telephone}} </td>
+                        <td> {{Modele.telecopie}} </td>
+                        <td> {{Modele.titreContact}} </td>
+                        <td> {{Modele.contact}} </td>
+                        <td> {{Modele.credit}} </td>
+                     
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+                </div>
+    </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

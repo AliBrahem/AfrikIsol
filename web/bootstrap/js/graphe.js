@@ -82,7 +82,7 @@ $(function () {
         });
     }(Highcharts));
     
-    $.ajax({
+    /*$.ajax({
          type:'get',
          url:"http://localhost/AfriqueIsol/web/app_dev.php/chartPlan/"+ $(this).val(),
          beforeSend:function (){
@@ -92,7 +92,7 @@ $(function () {
            $(".plan").val(data.plan);
            console.log("plan ok !")
          }
-        });
+        });*/
     
     // THE CHART
     $('#container').highcharts({

@@ -64,4 +64,71 @@ class Client {
      * @ORM\Column(name="CreditDisponible", type="float", nullable=false)
      */
     private $credit;
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getSociete() {
+        return $this->societe;
+    }
+
+    function getSecteurActivite() {
+        return $this->secteurActivite;
+    }
+
+    function getTelephone() {
+        return $this->telephone;
+    }
+
+    function getTelecopie() {
+        return $this->telecopie;
+    }
+
+    function getTitreContact() {
+        return $this->titreContact;
+    }
+
+    function getContact() {
+        return $this->contact;
+    }
+
+    function getCredit() {
+        return $this->credit;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setSociete($societe) {
+        $this->societe = $societe;
+    }
+
+    function setSecteurActivite($secteurActivite) {
+        $this->secteurActivite = $secteurActivite;
+    }
+
+    function setTelephone($telephone) {
+        $this->telephone = $telephone;
+    }
+
+    function setTelecopie($telecopie) {
+        $this->telecopie = $telecopie;
+    }
+
+    function setTitreContact($titreContact) {
+        $this->titreContact = $titreContact;
+    }
+
+    function setContact($contact) {
+        $this->contact = $contact;
+    }
+
+    function setCredit($credit) {
+        $this->credit = $credit;
+    }
+
+
+    
 }

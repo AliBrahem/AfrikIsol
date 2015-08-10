@@ -1,7 +1,11 @@
 {% extends "AdminBundle::layoutSUP.html.twig" %}
 {% block user_content %}
     <div class="box-body">
-        <table id="example2" class="table table-bordered table-hover">
+        <div class="box-header">
+                  <h3 class="box-title">Liste des Utilisateurs</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Login</th>
@@ -50,6 +54,8 @@
                 </tr>
             </tfoot>
         </table>
+                </div>
+    </div>
     </div><!-- /.box-body -->
 
 {% endblock user_content %}

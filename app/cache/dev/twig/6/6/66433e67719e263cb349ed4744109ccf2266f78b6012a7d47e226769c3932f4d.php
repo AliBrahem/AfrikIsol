@@ -37,43 +37,61 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
         // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/AdminLTE.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
+       <!-- DATA TABLES -->
+    <link href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/dataTables.bootstrap.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- AdminLTE Skins. Choose a skin from the css/skins 
              folder instead of downloading all of them to reduce the load. -->
         <link href=\"";
-        // line 17
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/skins/_all-skins.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- iCheck -->
         <link href=\"";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/iCheck/flat/blue.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- Morris chart -->
         <link href=\"";
-        // line 21
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/morris/morris.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- jvectormap -->
         <link href=\"";
-        // line 23
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- Date Picker -->
         <link href=\"";
-        // line 25
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datepicker/datepicker3.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- Daterange picker -->
         <link href=\"";
-        // line 27
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/daterangepicker/daterangepicker-bs3.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- bootstrap wysihtml5 - text editor -->
         <link href=\"";
-        // line 29
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
          <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js\" type=\"text/javascript\"></script>
+          <script type=\"text/javascript\">
+      \$(function () {
+        \$(\"#example1\").dataTable();
+        \$('#example2').dataTable({
+          \"bPaginate\": true,
+          \"bLengthChange\": false,
+          \"bFilter\": false,
+          \"bSort\": true,
+          \"bInfo\": true,
+          \"bAutoWidth\": false
+        });
+      });
+    </script>
 
     </head>
     <body class=\"skin-blue sidebar-mini\">
@@ -99,11 +117,11 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                         <ul class=\"nav navbar-nav\">
                             <li class=\"dropdown user user-menu\">
                                 <a href=\"";
-        // line 55
+        // line 70
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\" class=\"dropdown-toggle\" >
                                     <img src=\"data:image/png;base64,";
-        // line 56
+        // line 71
         echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\" />
                                     <span class=\"hidden-xs\">Déconnexion</span>
@@ -127,14 +145,14 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                     <div class=\"user-panel\">
                         <div class=\"pull-left image\">
                             <img src=\"data:image/png;base64,";
-        // line 77
+        // line 92
         echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\" />                                  
                       
                         </div>
                         <div class=\"pull-left info\">
                             <p>";
-        // line 81
+        // line 96
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
         echo " </p>
                             <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
@@ -160,16 +178,16 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                             <ul class=\"treeview-menu\">
                                 <li class=\"active\">
                                     <a href=\"";
-        // line 104
+        // line 119
         echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
         echo "\"><i class=\"fa fa-user-secret\"></i> Mon compte<i class=\"fa fa-angle-left pull-right\"></i></a>
                                     <ul class=\"treeview-menu\">
                                         <li><a href=\"";
-        // line 106
+        // line 121
         echo $this->env->getExtension('routing')->getPath("admin_updateprofile");
         echo "\"><i class=\"fa fa-wrench\"></i> Modifier infos</a></li>
                                         <li><a href=\"";
-        // line 107
+        // line 122
         echo $this->env->getExtension('routing')->getPath("fos_user_change_password");
         echo "\"><i class=\"fa fa-lock\"></i> Changer mot de passe</a></li>
                                     </ul>
@@ -178,11 +196,11 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                                     <a href=\"index2.html\"><i class=\"fa fa-users\"></i> Tous les utilisateurs<i class=\"fa fa-angle-left pull-right\"></i></a>
                                     <ul class=\"treeview-menu\">
                                         <li><a href=\"";
-        // line 113
+        // line 128
         echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
         echo "\"><i class=\"fa fa-user-plus\"></i> Créer</a></li>
                                         <li><a href=\"";
-        // line 114
+        // line 129
         echo $this->env->getExtension('routing')->getPath("admin_listerUser");
         echo "\"><i class=\"fa fa-list-alt\"></i> Lister</a></li>
                                     </ul>
@@ -216,31 +234,31 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                     <br>
                     <br>
                     ";
-        // line 145
-        $this->displayBlock('user_content', $context, $blocks);
         // line 160
+        $this->displayBlock('user_content', $context, $blocks);
+        // line 175
         echo "                         
                          <br>
                          <br>
                          ";
-        // line 163
+        // line 178
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 164
+            // line 179
             echo "            ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 165
+                // line 180
                 echo "                ";
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 166
+                    // line 181
                     echo "                    <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                         <h3> ";
-                    // line 167
+                    // line 182
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo " </h3>
                     </div>
@@ -249,16 +267,16 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 170
+                // line 185
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 171
+            // line 186
             echo "        ";
         }
-        // line 172
+        // line 187
         echo "                </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
             <footer class=\"main-footer\">
@@ -275,7 +293,7 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
 
         <!-- jQuery 2.1.4 -->
         <script src=\"";
-        // line 187
+        // line 202
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jQuery/jQuery-2.1.4.min.js"), "html", null, true);
         echo "\"></script>
         <!-- jQuery UI 1.11.2 -->
@@ -286,107 +304,94 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
         </script>
         <!-- Bootstrap 3.3.2 JS -->
         <script src=\"";
-        // line 195
+        // line 210
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>    
         <!-- Morris.js charts -->
         <script src=\"http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js\"></script>
         <script src=\"";
-        // line 198
+        // line 213
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/morris/morris.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Sparkline -->
         <script src=\"";
-        // line 200
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jvectormap -->
         <script src=\"";
-        // line 202
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 203
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jQuery Knob Chart -->
         <script src=\"";
-        // line 205
+        // line 220
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/knob/jquery.knob.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- daterangepicker -->
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 208
+        // line 223
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- datepicker -->
         <script src=\"";
-        // line 210
+        // line 225
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datepicker/bootstrap-datepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src=\"";
-        // line 212
+        // line 227
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Slimscroll -->
         <script src=\"";
-        // line 214
+        // line 229
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- FastClick -->
         <script src=\"";
-        // line 216
+        // line 231
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
         <!-- AdminLTE App -->
         <script src=\"";
-        // line 218
+        // line 233
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>    
 
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src=\"";
-        // line 221
+        // line 236
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/pages/dashboard.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>   
         <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 223
+        // line 238
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/jquery.dataTables.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 224
+        // line 239
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/dataTables.bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
-        <script type=\"text/javascript\">
-      \$(function () {
-        \$(\"#example1\").dataTable();
-        \$('#example2').dataTable({
-          \"bPaginate\": true,
-          \"bLengthChange\": false,
-          \"bFilter\": false,
-          \"bSort\": true,
-          \"bInfo\": true,
-          \"bAutoWidth\": false
-        });
-      });
-    </script>
-
+       
         <!-- AdminLTE for demo purposes -->
         <script src=\"";
-        // line 240
+        // line 242
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/demo.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     </body>
 </html>";
     }
 
-    // line 145
+    // line 160
     public function block_user_content($context, array $blocks = array())
     {
-        // line 146
+        // line 161
         echo "           
                     <!-- Small boxes (Stat box) -->
                     <div class=\"row\">
@@ -415,6 +420,6 @@ class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c39
 
     public function getDebugInfo()
     {
-        return array (  390 => 146,  387 => 145,  380 => 240,  361 => 224,  357 => 223,  352 => 221,  346 => 218,  341 => 216,  336 => 214,  331 => 212,  326 => 210,  321 => 208,  315 => 205,  310 => 203,  306 => 202,  301 => 200,  296 => 198,  290 => 195,  279 => 187,  262 => 172,  259 => 171,  253 => 170,  244 => 167,  239 => 166,  234 => 165,  229 => 164,  227 => 163,  222 => 160,  220 => 145,  186 => 114,  182 => 113,  173 => 107,  169 => 106,  164 => 104,  138 => 81,  131 => 77,  107 => 56,  103 => 55,  74 => 29,  69 => 27,  64 => 25,  59 => 23,  54 => 21,  49 => 19,  44 => 17,  38 => 14,  29 => 8,  20 => 1,);
+        return array (  395 => 161,  392 => 160,  385 => 242,  379 => 239,  375 => 238,  370 => 236,  364 => 233,  359 => 231,  354 => 229,  349 => 227,  344 => 225,  339 => 223,  333 => 220,  328 => 218,  324 => 217,  319 => 215,  314 => 213,  308 => 210,  297 => 202,  280 => 187,  277 => 186,  271 => 185,  262 => 182,  257 => 181,  252 => 180,  247 => 179,  245 => 178,  240 => 175,  238 => 160,  204 => 129,  200 => 128,  191 => 122,  187 => 121,  182 => 119,  156 => 96,  149 => 92,  125 => 71,  121 => 70,  79 => 31,  74 => 29,  69 => 27,  64 => 25,  59 => 23,  54 => 21,  49 => 19,  43 => 16,  38 => 14,  29 => 8,  20 => 1,);
     }
 }

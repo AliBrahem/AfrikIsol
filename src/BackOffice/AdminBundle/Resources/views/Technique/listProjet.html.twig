@@ -3,9 +3,13 @@
 
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        <table id="example2" class="table table-bordered table-hover">
+       <div class="box-header">
+                  <h3 class="box-title">Liste des Projets</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
             <thead>
-                <tr>
+               <tr>
                     <th>Nature Projet</th>
                     <th>Lieu</th>
                     <th>Client</th>
@@ -17,11 +21,14 @@
                     <th>Charges</th>
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
+                    <th>Planification</th>
                     
                 </tr>
             </thead>
             <tbody>
-                {% for Modele in Modeles %}
+                 {% for Modele in Modeles %}
+                     {% for Plan in plan if Modele.id == Plan.idprojet %}
+                     
                     <tr>
                         <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
@@ -34,10 +41,37 @@
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
+                      
+                             <td><a href="{{path("admin_graphe",{'id':Modele.id})}}"> Afficher </a></td>
                     </tr>
-                {% endfor %}
+                     
+                               {% endfor %}
+                 {% endfor %} 
+                              {% for Modele in Modeles %}
+                     {% for Plan in plan if Modele.id != Plan.idprojet %}
+                       
+                        <tr>
+                            <td> {{Modele.nature}} </td>
+                        <td> {{Modele.lieu}} </td>
+                        <td> {{Modele.idClient}} </td>
+                        <td> {{Modele.contact}} </td>
+                        <td> {{Modele.nbJourPrefa}} </td>
+                        <td> {{Modele.nbJourMonta}} </td>
+                        <td> {{Modele.datePrefa|date('d/m/Y', false) }} </td>
+                        <td> {{Modele.dateMonta|date('d/m/Y', false) }} </td>
+                        <td> {{Modele.charges}} </td>
+                        <td> {{Modele.prixUnitaire}} </td>
+                        <td> {{Modele.prixTotal}} </td>
+                            <td><a href="{{path("tech_addPlan",{'id':Modele.id})}}"> Créer </a></td>
+                      
+                    </tr>
+                  
+                               {% endfor %}
+                 {% endfor %}
             </tbody>            
         </table>
+                </div>
+    </div>
     </div>
     <div class="row">
 

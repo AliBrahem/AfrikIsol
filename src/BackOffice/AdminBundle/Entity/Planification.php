@@ -108,6 +108,13 @@ class Planification {
      */
     protected $finDemobilisation;
     
+     /**
+     * @var date
+     *
+     * @ORM\Column(name="dateFin", type="date", nullable=true)
+     */
+    private $dateFin;
+    
     
     function getId() {
         return $this->id;
@@ -177,7 +184,7 @@ class Planification {
         $this->preavis = $preavis;
     }
 
-    function setAvisKickoff(date $avisKickoff) {
+    function setAvisKickoff(\DateTime $avisKickoff) {
         $this->avisKickoff = $avisKickoff;
     }
 
@@ -219,6 +226,14 @@ class Planification {
 
     function setFinDemobilisation($finDemobilisation) {
         $this->finDemobilisation = $finDemobilisation;
+    }
+
+    function getDateFin() {
+        return $this->dateFin;
+    }
+
+    function setDateFin(\DateTime $dateFin) {
+        $this->dateFin = $dateFin;
     }
 
 

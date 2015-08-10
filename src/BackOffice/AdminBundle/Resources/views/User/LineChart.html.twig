@@ -77,6 +77,7 @@ $(function () {
                     each(series.x2Data || [], function (val) {
                         if (val > dataMax) {
                             dataMax = val;
+                           
                         }
                     });
                 });
@@ -87,7 +88,56 @@ $(function () {
         });
     }(Highcharts));
     
-
+    var d = new Date('{{plan.avisKickoff|date("Y-m-d")}}');
+    
+    var preavis =  {{plan.preavis}};
+    var datePreavis = new Date(d);
+    datePreavis.setDate(d.getDate()+preavis);
+    
+    var retraitTole = {{plan.retraitTole}};
+    var dateRetraitTole = new Date(d);
+    dateRetraitTole.setDate(d.getDate()+retraitTole);
+    
+    var retraitPlan = {{plan.retraitPlan}};
+    var dateRetraitPlan = new Date(d);
+    dateRetraitPlan.setDate(d.getDate()+retraitPlan);
+    
+    var debutInst = {{plan.debutInstallation}};
+    var dateDebutInst = new Date(d);
+    dateDebutInst.setDate(d.getDate()+debutInst);
+    
+    var debutPrefa = {{plan.debutPrefa}};
+    var dateDebutPrefa = new Date(d);
+    dateDebutPrefa.setDate(d.getDate()+debutPrefa);
+    
+    var debutMonta = {{plan.debutMonta}};
+    var dateDebutMonta = new Date(d);
+    dateDebutMonta.setDate(d.getDate()+debutMonta);
+    
+    var livraison = {{plan.livraisonCommandePrefa}};
+    var dateLivraison = new Date(d);
+    dateLivraison.setDate(d.getDate()+livraison);
+    
+    var debut1 = {{plan.debutMontagePremierGroupe}};
+    var dateDebut1 = new Date(d);
+    dateDebut1.setDate(d.getDate()+debut1);
+    
+    var debut2 = {{plan.debutMontageDeuxiemeGroupe}};
+    var dateDebut2 = new Date(d);
+    dateDebut2.setDate(d.getDate()+debut2);
+    console.log("debut2 : "+dateDebut2);
+    
+    var debutDem = {{plan.debutDemobilisation}};
+    var dateDebutDem = new Date(d);
+    dateDebutDem.setDate(d.getDate()+debutDem);
+    console.log("demo : "+dateDebutDem);
+    
+    var finDem = {{plan.finDemobilisation}};
+    var dateFinDem = new Date(d);
+    dateFinDem.setDate(d.getDate()+finDem);
+    console.log("fin : "+dateFinDem);
+    
+    var dateFin = new Date('{{plan.dateFin|date("Y-m-d")}}');
     // THE CHART
     $('#container').highcharts({
         chart: {
@@ -95,16 +145,29 @@ $(function () {
             
         },
         title: {
-            text: 'K-Echéancier'
+            text: 'Planning des travaux pour le projet'
         },
         xAxis: {
             type: 'datetime',
+            
+            dateTimeLabelFormats: { // don't display the dummy year
+                month: '%e. %b',
+                year: '%Y'
+            }
         },
         yAxis: {
             title: '',
-            categories: ['Préavis d attribution', 'Kick Off meeting', 'Retrait Tole'],
+            categories: ['Préavis d attribution', 'Kick Off meeting', 'Retrait Tole pour préfa', 'Retrait du plan des priorités', "Début d'installation sur site", 'Début de préfabrication à Bizerte', 'Début montage', 'Première livraison de préfabrication', 'Début montage avec les premières équipes', 'Début montage avec les secondes équipes', 'Début de démobilisation', 'Fin de démobilisation'],
             min: 0,
-            max: 2
+            max: 11,
+            minPadding: 0.2,
+                     
+            
+            
+        },
+         tooltip: {
+            headerFormat: '<b>{series.name}</b><br>',
+            pointFormat: '{point.x:%e. %b  %Y}'
         },
         plotOptions: {
             series: {
@@ -113,27 +176,65 @@ $(function () {
         },
           
         series: [{
-            name: 'Project 1',
+            name: 'Planning ',
             // pointPadding: 0,
             // groupPadding: 0,
              // borderRadius: 5,
              pointWidth: 20,
+             
             data: [{
-                x: Date.UTC( {{plan.avisKickoff|date("Y") }},{{plan.avisKickoff|date("m") }}-1,{{plan.avisKickoff|date("d") }} ),
-                x2: Date.UTC(2014, 10, 2),
+                    
+                x: datePreavis,
+                x2: d,
                 y: 0
             }, {
-                x: Date.UTC(2014, 11, 2),
-                x2: Date.UTC(2014, 11, 5),
+                x: d,
+                x2: dateRetraitTole,
+                y: 1
+            }, {
+                x: dateRetraitTole,
+                x2: dateRetraitPlan,
                 y: 2
             }, {
-                x: Date.UTC(2014, 11, 15),
-                x2: Date.UTC(2014, 11, 20),
-                y: 1
+                x: dateRetraitPlan,
+                x2: dateDebutInst,
+                y: 3
+            }, {
+                x: dateDebutInst,
+                x2: dateDebutPrefa,
+                y: 4
+            }, {
+                x: dateDebutPrefa,
+                x2: dateDebutMonta,
+                y: 5
+            }, {
+                x: dateDebutMonta,
+                x2: dateLivraison,
+                y: 6
+            }, {
+                x: dateLivraison,
+                x2: dateDebut1,
+                y: 7
+            }, {
+                x: dateDebut1,
+                x2: dateDebut2,
+                y: 8
+            }, {
+                x: dateDebut2,
+                x2: dateDebutDem,
+                y: 9
+            }, {
+                x: dateDebutDem,
+                x2: dateFinDem,
+                y: 10
+            }, {
+                x: dateFinDem,
+                x2: Date.UTC( "{{plan.dateFin|date("Y")}}", "{{plan.dateFin|date("m")}}", "{{plan.dateFin|date("d")}}") ,
+                y: 11
             }]
         }]
 
     });
 });
 </script>
-<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id="container" style="min-width: 700px; height: 700px; margin: 0 auto"></div>

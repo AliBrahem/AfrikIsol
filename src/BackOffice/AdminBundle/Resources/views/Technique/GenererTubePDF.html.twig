@@ -1,76 +1,98 @@
+<!doctype html>
 <html>
-    <head>
-        
-    </head>
-    <body>
-        <header>
-            <aside style="width: 30%; position: relative; left: auto">
-                AfrikIsol <br>
-                Boulevard de l’environnement 7035 <br>
-                Menzel Abderrahmane - Bizerte <br>
-            </aside>
-        </header> <br>
-    <center>
-        <table id="example2" class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>DN inter</th>
-                    <th>DN ext</th>
-                    <th>Epaisseur</th>
-                    <th>DN ISOLE mm</th>
-                    <th>CIRC en mm</th>
-                    <th>RECOUV en mm</th>
-                    <th>Largeur de la Tôle en cm</th>
-                   
-                    <th>Dechet</th>
-                    <th>QTE Brute/ML</th>
-                    <th>temps de prefa en mn/Homme</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for Modele in Modeles %}
-                    <tr>
-                        <td> {{Modele.diametreinter}} </td>
-                        <td> {{Modele.dnext}} </td>
-                        <td> {{Modele.epaisseur}} </td>
-                        <td> {{Modele.dnisole}} </td>
-                        <td> {{Modele.circ}} </td>
-                        <td> {{Modele.recouv}} </td>
-                        <td> {{Modele.largeurtole}} </td>
+	<head>
+		<meta charset="utf-8">
+		<title>Devis</title>
+		<link rel="stylesheet" href="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/css/styleDevis.css')}}">
+		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
+		<script src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/js/scriptDevis.js')}}"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Devis</h1>
+			<address contenteditable>
+				<p>AfrikIsol</p>
+				<p>Boulevard de l’environnement 7035</p>
+				<p>Menzel Abderrahmane - Bizerte</p>
+                                <p>Tel : +(216) 72 57 06 25 / +(216) 72 57 24 98</p>
+                                <p>Fax : +(216) 72 57 13 22</p>
+                                <p>E-mail : contact@afrikisol.com</p>
+			</address>
+			<span><img alt="" src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/css/logo.png')}}"><input type="file" accept="image/*">
+                        </span>
                         
-                        <td> {{Modele.dechet}} </td>
-                        <td> {{Modele.qtebrute}} </td>
-                        <td> {{Modele.tempsprefa}} </td>
-                    </tr>
-                {% endfor %}
-            </tbody>            
-        </table>
-    </center>
-        <footer style="position: absolute; bottom: 0;">
+		</header>
+		<article>
+			<h1>Recipient</h1>
+			<address contenteditable>
+				<p>Some Company<br>c/o Some Guy</p>
+			</address>
+			<table class="meta">
+				<tr>
+					<th><span contenteditable>Note Réf #</span></th>
+					<td><span contenteditable>101138</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Date</span></th>
+					<td><span contenteditable>January 1, 2015</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Solde dû</span></th>
+					<td><span id="prefix" contenteditable>TND </span><span>600.00</span></td>
+				</tr>
+			</table>
+			<table class="inventory">
+				<thead>
+					<tr>
+						<th><span contenteditable>Item</span></th>
+						<th><span contenteditable>Designation</span></th>
+						<th><span contenteditable>PU en TND</span></th>
+                                              
+						<th><span contenteditable>Quantié</span></th>
+						<th><span contenteditable>PT en TND</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
+						<td><span contenteditable>Experience Review</span></td>
+						<td><span data-prefix>TND </span><span contenteditable>150.00</span></td>
+						<td><span contenteditable>4</span></td>
+						<td><span data-prefix>TND </span><span>600.00</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<a class="add">+</a>
+			<table class="balance">
+				<tr>
+					<th><span contenteditable>Total</span></th>
+					<td><span data-prefix>TND </span><span>600.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Remise</span></th>
+					<td><span data-prefix>TND </span><span contenteditable>0.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Solde dû</span></th>
+					<td><span data-prefix>TND </span><span>600.00</span></td>
+				</tr>
+			</table>
+                        
+		</article>
             <br>
             <br>
-            <div style="float: left; width: 700px">
-                <br>
-                AfrikIsol <br>
-                Boulevard de l’environnement 7035 <br>
-                Menzel Abderrahmane - Bizerte <br>
-               
-            </div>
-           
-            
-            <div style="float: right">
-                Contact <br>
-                Tel : +(216) 72 57 06 25 / +(216) 72 57 24 98<br>
-                Fax : +(216) 72 57 13 22<br>
-                E-mail : contact@afrikisol.com
-            </div>
-            
-                
-           
-            
-        </footer>
-    
-</body>
+            <br>
+            <br>
+		<aside>
+                    <div class="row no-print">
+            <div class="col-xs-12">
+              <a href="javascript:window.print()" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+            </div></div>
+                    
+			<h1><span contenteditable>Notes</span></h1>
+			<div contenteditable>
+				<p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+			</div>
+		</aside>
+	</body>
 </html>
-AFRIKISOL Industrie garantit les meilleures solutions aux problemes d'isolation technique 
-http://www.afrikisol-industrie.com/

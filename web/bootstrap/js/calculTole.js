@@ -18,7 +18,7 @@ $("document").ready(function() {
         var prixutole = document.getElementById("prixUnitaireTole");
         var prixuisolant = document.getElementById("prixUnitaireIsolant");
         var prix = document.getElementById("prix");
-        
+       
         if(document.getElementById("tole").value=="TUYAUTERIES")
         {
   
@@ -53,7 +53,7 @@ $("document").ready(function() {
                 monta.value = 108;
                 prefamonta.value = parseFloat(prefa.value)+parseFloat(monta.value);
             }
-            if(diamex >= 864 && diamex <= 1016)
+            if(diamex >= 864 && diamex <= 1116)
             {
                 prefa.value = 54;
                 monta.value = 180;
@@ -164,7 +164,7 @@ $("document").ready(function() {
                 monta.value = 72;
                 prefamonta.value = parseFloat(prefa.value)+parseFloat(monta.value);
             }
-            if(diamex >= 864 && diamex <= 1016)
+            if(diamex >= 864 && diamex <= 1116)
             {
                 prefa.value = 180;
                 monta.value = 120;
@@ -278,7 +278,7 @@ $("document").ready(function() {
                 monta.value = 108;
                 prefamonta.value = parseFloat(prefa.value)+parseFloat(monta.value);
             }
-            if(diamex >= 864 && diamex <= 1016)
+            if(diamex >= 864 && diamex <= 1116)
             {
                 prefa.value = 54;
                 monta.value = 180;
@@ -586,5 +586,17 @@ $("document").ready(function() {
         
     });
 
+     $(".find").change(function ()
+     {
+         $.ajax({
+             type:'get',
+             url: 'http://localhost/AfriqueIsol/web/app_dev.php/findTUY/' + $(this).val(),
+             success : function(data)
+             {
+                 $("#Modeles").html(data);
+             }
+             
+         });
+     });   
 
     });
