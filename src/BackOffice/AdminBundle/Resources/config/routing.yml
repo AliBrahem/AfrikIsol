@@ -3,7 +3,13 @@ admin_homepage:
     defaults: { _controller: AdminBundle:User:index }
 admin_graphe:
     path:     /chartLine/{id}
-    defaults: { _controller: AdminBundle:User:chartLine }   
+    defaults: { _controller: AdminBundle:User:chartLine } 
+admin_gantt:
+    path:     /chartGantt/{id}
+    defaults: { _controller: AdminBundle:User:chartGantt }    
+admin_grapheSuivie:
+    path:     /suivieChart/{id}
+    defaults: { _controller: AdminBundle:User:suivieChart }     
 tech_findTUY:
     path:     /findTUY/{epaisseur}
     defaults: { _controller: AdminBundle:Tech:findTUY }    
@@ -40,9 +46,12 @@ tech_addClient:
 tech_listClient:
     pattern:  /listClient
     defaults: { _controller: AdminBundle:Tech:listerClient } 
+tech_addAvancement:
+    pattern:  /addAvancement/{id}
+    defaults: { _controller: AdminBundle:Tech:addAvancement}    
 tech_addPlan:
-    pattern:  /addPlan/{id}
-    defaults: { _controller: AdminBundle:Tech:addPlan}    
+    pattern:  /addGantt/{id}
+    defaults: { _controller: AdminBundle:Tech:addGantt}    
 tech_genererPDFTUYAUTERIES:
     pattern:  /genererPDFTube
     defaults: { _controller: AdminBundle:Tech:generatePdfTube }    

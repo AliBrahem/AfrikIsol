@@ -27,8 +27,8 @@
             </thead>
             <tbody>
                  {% for Modele in Modeles %}
-                     {% for Plan in plan if Modele.id == Plan.idprojet %}
-                     
+               
+                    {% if Modele.id == plan[loop.index0].idprojet %}
                     <tr>
                         <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
@@ -41,15 +41,10 @@
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
-                      
+                  
                              <td><a href="{{path("admin_graphe",{'id':Modele.id})}}"> Afficher </a></td>
-                    </tr>
-                     
-                               {% endfor %}
-                 {% endfor %} 
-                              {% for Modele in Modeles %}
-                     {% for Plan in plan if Modele.id != Plan.idprojet %}
-                       
+                               </tr>
+                        {% else %}
                         <tr>
                             <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
@@ -63,10 +58,9 @@
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
                             <td><a href="{{path("tech_addPlan",{'id':Modele.id})}}"> Créer </a></td>
-                      
+                        
                     </tr>
-                  
-                               {% endfor %}
+                {% endif%}
                  {% endfor %}
             </tbody>            
         </table>

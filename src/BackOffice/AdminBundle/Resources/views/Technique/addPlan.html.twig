@@ -3,67 +3,158 @@
 {% block user_content %}
     <div class="row">
         <div class="col-lg-3 col-xs-6">
-        <form action="" {{ form_enctype(form) }} method="POST">
+        <form action="{{ path('tech_addPlan',{'id':id}) }}"  method="POST">
              <h1> Planification </h1>
              <br>
             <table id="example2" class="table table-bordered table-hover">
-                <tr>
+                
+                    <tr>
                   
-                    <td>  <label for="exampleInputEmail1">Préavis d'attribution </label>  </td>
-                    <td>{{ form_widget(form.preavis) }}</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for="exampleInputEmail1">Avis d'attribution KICK OFF meeting </label>  </td>
-                    <td>{{ form_widget(form.avisKickoff) }}</td>
+                    <td>  <label for="exampleInputEmail1">Item 1 </label>  </td>
+                    <td><textarea name="titem1"></textarea></td>
+                    
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for="exampleInputEmail1">Retrait de la tôle pour la préfabrication </label>  </td>
-                    <td>{{ form_widget(form.retraitTole) }}</td>
-                    </tr>
-                    <tr>
-                   <td>  <label for="exampleInputEmail1">Retrait du plan des priorités </label>  </td>
-                    <td>{{ form_widget(form.retraitPlan) }}</td>
+                    <td>  <label for="exampleInputEmail1">Date Début 1 </label>  </td>
+                    <td><input type="date" name="dated1"></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for="exampleInputEmail1">Début d'installation sur site </label>  </td>
-                    <td>{{ form_widget(form.debutInstallation) }}</td>
+                     <td>  <label for="exampleInputEmail1">Date Fin 1 </label>  </td>
+                    <td><input type="date" name="datef1"></td>
+                    
                     </tr>
                     <tr>
-                    <td>  <label for="exampleInputEmail1">Début de préfabrication à Bizerte </label>  </td>
-                    <td>{{ form_widget(form.debutPrefa) }}</td>
+                        <td>  <label for="exampleInputEmail1">Item 2 </label>  </td>
+                    <td><textarea name="titem2"></textarea></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for="exampleInputEmail1">Début montage </label>  </td>
-                    <td>{{ form_widget(form.debutMonta) }}</td>
+                    <td>  <label for="exampleInputEmail1">Date Début 2 </label>  </td>
+                    <td><input type="date" name="dated2"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 2</label>  </td>
+                    <td><input type="date" name="datef2"></td>
+                    
+                  
                     </tr>
                     <tr>
-                    <td>  <label for="exampleInputEmail1">Livraison de première commande de préfabrication </label>  </td>
-                    <td>{{ form_widget(form.livraisonCommandePrefa) }}</td>
+                         <td>  <label for="exampleInputEmail1">Item 3 </label>  </td>
+                    <td><textarea name="titem3"></textarea></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for="exampleInputEmail1">Début montage avec les premières équipes </label>  </td>
-                    <td>{{ form_widget(form.debutMontagePremierGroupe) }}</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for="exampleInputEmail1">Début montage avec les deuxièmes équipes </label>  </td>
-                    <td>{{ form_widget(form.debutMontageDeuxiemeGroupe) }}</td>
+                    <td>  <label for="exampleInputEmail1">Date Début 3 </label>  </td>
+                    <td><input type="date" name="dated3"></td>
+                    
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for="exampleInputEmail1">Début de démobilisation </label>  </td>
-                    <td>{{ form_widget(form.debutDemobilisation) }}</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for="exampleInputEmail1">Fin de démobilisation </label>  </td>
-                    <td>{{ form_widget(form.finDemobilisation) }}</td>
-                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
-                    
-                    <td>  <label for="exampleInputEmail1">Fin du projet </label>  </td>
-                    <td>{{ form_widget(form.dateFin) }}</td>
-                    </tr>
+                    <td>  <label for="exampleInputEmail1">Date Fin 3</label>  </td>
+                    <td><input type="date" name="datef3"></td>
+                     </tr>
                     
                 <tr>
-                         {{ form_rest(form) }}
+                   <td>  <label for="exampleInputEmail1">Item 4 </label>  </td>
+                    <td><textarea name="titem4"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 4 </label>  </td>
+                    <td><input type="date" name="dated4"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 4</label>  </td>
+                    <td><input type="date" name="datef4"></td>     
                 </tr>
+                <tr>
+                        <td>  <label for="exampleInputEmail1">Item 5 </label>  </td>
+                    <td><textarea name="titem5"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 5 </label>  </td>
+                    <td><input type="date" name="dated5"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 5</label>  </td>
+                    <td><input type="date" name="datef5"></td>
+                 
+                    </tr>
+                <tr>
+                        <td>  <label for="exampleInputEmail1">Item 6 </label>  </td>
+                    <td><textarea name="titem6"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 6 </label>  </td>
+                    <td><input type="date" name="dated6"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 6 </label>  </td>
+                    <td><input type="date" name="datef6"></td>
+                    </tr>
+                
+                    <tr>
+                        <td>  <label for="exampleInputEmail1">Item 7 </label>  </td>
+                    <td><textarea name="titem7"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 7 </label>  </td>
+                    <td><input type="date" name="dated7"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 7</label>  </td>
+                    <td><input type="date" name="datef7"></td>
+
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for="exampleInputEmail1">Item 8 </label>  </td>
+                    <td><textarea name="titem8"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 8 </label>  </td>
+                    <td><input type="date" name="dated8"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 8</label>  </td>
+                    <td><input type="date" name="datef8"></td>
+                    
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for="exampleInputEmail1">Item 9 </label>  </td>
+                    <td><textarea name="titem9"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 9 </label>  </td>
+                    <td><input type="date" name="dated9"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 9 </label>  </td>
+                    <td><input type="date" name="datef9"></td>
+                    
+                  
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for="exampleInputEmail1">Item 10 </label>  </td>
+                    <td><textarea name="titem10"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Début 10 </label>  </td>
+                    <td><input type="date" name="dated10"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Date Fin 10 </label>  </td>
+                    <td><input type="date" name="datef10"></td>
+                    
+                  
+                    </tr>
+                    
             </table>
     <div>
         <input type="submit" class="btn btn-primary btn-block btn-flat" value="Ajouter Planification" />

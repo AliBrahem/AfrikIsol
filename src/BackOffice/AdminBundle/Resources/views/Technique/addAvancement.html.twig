@@ -1,0 +1,58 @@
+{% extends "AdminBundle::layoutTech.html.twig" %}
+
+{% block user_content %}
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <form action="" {{ form_enctype(form) }} method="POST">
+             <h1> Planification </h1>
+             <br>
+            <table id="example2" class="table table-bordered table-hover">
+                <tr>
+                  
+                    <td>  <label for="exampleInputEmail1">Date </label>  </td>
+                    <td>{{ form_widget(form.date) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Charge de préfabrication par Heures </label>  </td>
+                    <td>{{ form_widget(form.chargePrefaHr) }}</td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Charge de préfabrication par Hommes </label>  </td>
+                    <td>{{ form_widget(form.chargePrefaHommes) }}</td>
+                    </tr>
+                    <tr>
+                   <td>  <label for="exampleInputEmail1">Charge prévisionnelle de montage par Heures </label>  </td>
+                    <td>{{ form_widget(form.chargePrevMontaHr) }}</td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Charge prévisionnelle de montage par Hommes </label>  </td>
+                    <td>{{ form_widget(form.chargePrevMontaHommes) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Charge de montage réelle en Heures </label>  </td>
+                    <td>{{ form_widget(form.chargeReelleMontaHr) }}</td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Charge réelle d'hommes pour le montage </label>  </td>
+                    <td>{{ form_widget(form.chargeReelleMontaHomme) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Isolant </label>  </td>
+                    <td>{{ form_widget(form.isolant) }}</td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for="exampleInputEmail1">Quantité </label>  </td>
+                    <td>{{ form_widget(form.quantite) }}</td>
+                    </tr>
+                    
+                <tr>
+                         {{ form_rest(form) }}
+                </tr>
+            </table>
+    <div>
+        <input type="submit" class="btn btn-primary btn-block btn-flat" value="Ajouter Planification" />
+    </div>
+    </form>
+        </div>    
+    </div>
+{% endblock user_content %}

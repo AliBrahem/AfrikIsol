@@ -58,158 +58,148 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
         // line 29
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
             // line 30
-            echo "                     ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")));
-            foreach ($context['_seq'] as $context["_key"] => $context["Plan"]) {
-                if (($this->getAttribute($context["Modele"], "id", array()) == $this->getAttribute($context["Plan"], "idprojet", array()))) {
-                    // line 31
-                    echo "                     
-                    <tr>
+            echo "               
+                    ";
+            // line 31
+            if (($this->getAttribute($context["Modele"], "id", array()) == $this->getAttribute($this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), $this->getAttribute($context["loop"], "index0", array()), array(), "array"), "idprojet", array()))) {
+                // line 32
+                echo "                    <tr>
                         <td> ";
-                    // line 33
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
-                    echo " </td>
+                // line 33
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 34
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
-                    echo " </td>
+                // line 34
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 35
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "idClient", array()), "html", null, true);
-                    echo " </td>
+                // line 35
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "idClient", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 36
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
-                    echo " </td>
+                // line 36
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 37
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourPrefa", array()), "html", null, true);
-                    echo " </td>
+                // line 37
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourPrefa", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 38
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourMonta", array()), "html", null, true);
-                    echo " </td>
+                // line 38
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourMonta", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 39
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "datePrefa", array()), "d/m/Y", false), "html", null, true);
-                    echo " </td>
+                // line 39
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "datePrefa", array()), "d/m/Y", false), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 40
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "dateMonta", array()), "d/m/Y", false), "html", null, true);
-                    echo " </td>
+                // line 40
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "dateMonta", array()), "d/m/Y", false), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 41
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "charges", array()), "html", null, true);
-                    echo " </td>
+                // line 41
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "charges", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 42
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixUnitaire", array()), "html", null, true);
-                    echo " </td>
+                // line 42
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixUnitaire", array()), "html", null, true);
+                echo " </td>
                         <td> ";
-                    // line 43
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
-                    echo " </td>
-                      
-                             <td><a href=\"";
-                    // line 45
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_graphe", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
-                    echo "\"> Afficher </a></td>
-                    </tr>
-                     
-                               ";
-                }
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Plan'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 49
-            echo "                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        echo " 
-                              ";
-        // line 50
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
-        foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 51
-            echo "                     ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")));
-            foreach ($context['_seq'] as $context["_key"] => $context["Plan"]) {
-                if (($this->getAttribute($context["Modele"], "id", array()) != $this->getAttribute($context["Plan"], "idprojet", array()))) {
-                    // line 52
-                    echo "                       
-                        <tr>
-                            <td> ";
-                    // line 54
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 55
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 56
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "idClient", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 57
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 58
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourPrefa", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 59
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourMonta", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 60
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "datePrefa", array()), "d/m/Y", false), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 61
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "dateMonta", array()), "d/m/Y", false), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 62
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "charges", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 63
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixUnitaire", array()), "html", null, true);
-                    echo " </td>
-                        <td> ";
-                    // line 64
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
-                    echo " </td>
-                            <td><a href=\"";
-                    // line 65
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_addPlan", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
-                    echo "\"> Créer </a></td>
-                      
-                    </tr>
+                // line 43
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
+                echo " </td>
                   
-                               ";
-                }
+                             <td><a href=\"";
+                // line 45
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_graphe", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+                echo "\"> Afficher </a></td>
+                               </tr>
+                        ";
+            } else {
+                // line 48
+                echo "                        <tr>
+                            <td> ";
+                // line 49
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 50
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 51
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "idClient", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 52
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 53
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourPrefa", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 54
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nbJourMonta", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 55
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "datePrefa", array()), "d/m/Y", false), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 56
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "dateMonta", array()), "d/m/Y", false), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 57
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "charges", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 58
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixUnitaire", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 59
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
+                echo " </td>
+                            <td><a href=\"";
+                // line 60
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_addPlan", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+                echo "\"> Créer </a></td>
+                        
+                    </tr>
+                ";
             }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Plan'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 70
+            // line 64
             echo "                 ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 65
         echo "            </tbody>            
         </table>
                 </div>
@@ -234,6 +224,6 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
 
     public function getDebugInfo()
     {
-        return array (  213 => 71,  207 => 70,  195 => 65,  191 => 64,  187 => 63,  183 => 62,  179 => 61,  175 => 60,  171 => 59,  167 => 58,  163 => 57,  159 => 56,  155 => 55,  151 => 54,  147 => 52,  141 => 51,  137 => 50,  129 => 49,  118 => 45,  113 => 43,  109 => 42,  105 => 41,  101 => 40,  97 => 39,  93 => 38,  89 => 37,  85 => 36,  81 => 35,  77 => 34,  73 => 33,  69 => 31,  63 => 30,  59 => 29,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  203 => 65,  189 => 64,  182 => 60,  178 => 59,  174 => 58,  170 => 57,  166 => 56,  162 => 55,  158 => 54,  154 => 53,  150 => 52,  146 => 51,  142 => 50,  138 => 49,  135 => 48,  129 => 45,  124 => 43,  120 => 42,  116 => 41,  112 => 40,  108 => 39,  104 => 38,  100 => 37,  96 => 36,  92 => 35,  88 => 34,  84 => 33,  81 => 32,  79 => 31,  76 => 30,  59 => 29,  31 => 3,  28 => 2,  11 => 1,);
     }
 }

@@ -30,112 +30,161 @@ class __TwigTemplate_3f827c695380bb0f19ad8f18b0605c348ad33c6200ec66b3e71ae88237f
         // line 4
         echo "    <div class=\"row\">
         <div class=\"col-lg-3 col-xs-6\">
-        <form action=\"\" ";
+        <form action=\"";
         // line 6
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-        echo " method=\"POST\">
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_addPlan", array("id" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))), "html", null, true);
+        echo "\"  method=\"POST\">
              <h1> Planification </h1>
              <br>
             <table id=\"example2\" class=\"table table-bordered table-hover\">
-                <tr>
+                
+                    <tr>
                   
-                    <td>  <label for=\"exampleInputEmail1\">Préavis d'attribution </label>  </td>
-                    <td>";
-        // line 13
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "preavis", array()), 'widget');
-        echo "</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Avis d'attribution KICK OFF meeting </label>  </td>
-                    <td>";
-        // line 17
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "avisKickoff", array()), 'widget');
-        echo "</td>
+                    <td>  <label for=\"exampleInputEmail1\">Item 1 </label>  </td>
+                    <td><textarea name=\"titem1\"></textarea></td>
+                    
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for=\"exampleInputEmail1\">Retrait de la tôle pour la préfabrication </label>  </td>
-                    <td>";
-        // line 21
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "retraitTole", array()), 'widget');
-        echo "</td>
-                    </tr>
-                    <tr>
-                   <td>  <label for=\"exampleInputEmail1\">Retrait du plan des priorités </label>  </td>
-                    <td>";
-        // line 25
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "retraitPlan", array()), 'widget');
-        echo "</td>
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 1 </label>  </td>
+                    <td><input type=\"date\" name=\"dated1\"></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for=\"exampleInputEmail1\">Début d'installation sur site </label>  </td>
-                    <td>";
-        // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutInstallation", array()), 'widget');
-        echo "</td>
+                     <td>  <label for=\"exampleInputEmail1\">Date Fin 1 </label>  </td>
+                    <td><input type=\"date\" name=\"datef1\"></td>
+                    
                     </tr>
                     <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Début de préfabrication à Bizerte </label>  </td>
-                    <td>";
-        // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutPrefa", array()), 'widget');
-        echo "</td>
+                        <td>  <label for=\"exampleInputEmail1\">Item 2 </label>  </td>
+                    <td><textarea name=\"titem2\"></textarea></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for=\"exampleInputEmail1\">Début montage </label>  </td>
-                    <td>";
-        // line 37
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutMonta", array()), 'widget');
-        echo "</td>
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 2 </label>  </td>
+                    <td><input type=\"date\" name=\"dated2\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 2</label>  </td>
+                    <td><input type=\"date\" name=\"datef2\"></td>
+                    
+                  
                     </tr>
                     <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Livraison de première commande de préfabrication </label>  </td>
-                    <td>";
-        // line 41
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "livraisonCommandePrefa", array()), 'widget');
-        echo "</td>
+                         <td>  <label for=\"exampleInputEmail1\">Item 3 </label>  </td>
+                    <td><textarea name=\"titem3\"></textarea></td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for=\"exampleInputEmail1\">Début montage avec les premières équipes </label>  </td>
-                    <td>";
-        // line 45
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutMontagePremierGroupe", array()), 'widget');
-        echo "</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Début montage avec les deuxièmes équipes </label>  </td>
-                    <td>";
-        // line 49
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutMontageDeuxiemeGroupe", array()), 'widget');
-        echo "</td>
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 3 </label>  </td>
+                    <td><input type=\"date\" name=\"dated3\"></td>
+                    
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
-                    <td>  <label for=\"exampleInputEmail1\">Début de démobilisation </label>  </td>
-                    <td>";
-        // line 53
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "debutDemobilisation", array()), 'widget');
-        echo "</td>
-                    </tr>
-                    <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Fin de démobilisation </label>  </td>
-                    <td>";
-        // line 57
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "finDemobilisation", array()), 'widget');
-        echo "</td>
-                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
-                    
-                    <td>  <label for=\"exampleInputEmail1\">Fin du projet </label>  </td>
-                    <td>";
-        // line 61
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateFin", array()), 'widget');
-        echo "</td>
-                    </tr>
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 3</label>  </td>
+                    <td><input type=\"date\" name=\"datef3\"></td>
+                     </tr>
                     
                 <tr>
-                         ";
-        // line 65
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
-        echo "
+                   <td>  <label for=\"exampleInputEmail1\">Item 4 </label>  </td>
+                    <td><textarea name=\"titem4\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 4 </label>  </td>
+                    <td><input type=\"date\" name=\"dated4\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 4</label>  </td>
+                    <td><input type=\"date\" name=\"datef4\"></td>     
                 </tr>
+                <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 5 </label>  </td>
+                    <td><textarea name=\"titem5\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 5 </label>  </td>
+                    <td><input type=\"date\" name=\"dated5\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 5</label>  </td>
+                    <td><input type=\"date\" name=\"datef5\"></td>
+                 
+                    </tr>
+                <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 6 </label>  </td>
+                    <td><textarea name=\"titem6\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 6 </label>  </td>
+                    <td><input type=\"date\" name=\"dated6\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 6 </label>  </td>
+                    <td><input type=\"date\" name=\"datef6\"></td>
+                    </tr>
+                
+                    <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 7 </label>  </td>
+                    <td><textarea name=\"titem7\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 7 </label>  </td>
+                    <td><input type=\"date\" name=\"dated7\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 7</label>  </td>
+                    <td><input type=\"date\" name=\"datef7\"></td>
+
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 8 </label>  </td>
+                    <td><textarea name=\"titem8\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 8 </label>  </td>
+                    <td><input type=\"date\" name=\"dated8\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 8</label>  </td>
+                    <td><input type=\"date\" name=\"datef8\"></td>
+                    
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 9 </label>  </td>
+                    <td><textarea name=\"titem9\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 9 </label>  </td>
+                    <td><input type=\"date\" name=\"dated9\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 9 </label>  </td>
+                    <td><input type=\"date\" name=\"datef9\"></td>
+                    
+                  
+                    </tr>
+                    
+                    <tr>
+                        <td>  <label for=\"exampleInputEmail1\">Item 10 </label>  </td>
+                    <td><textarea name=\"titem10\"></textarea></td>
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Début 10 </label>  </td>
+                    <td><input type=\"date\" name=\"dated10\"></td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    
+                    <td>  <label for=\"exampleInputEmail1\">Date Fin 10 </label>  </td>
+                    <td><input type=\"date\" name=\"datef10\"></td>
+                    
+                  
+                    </tr>
+                    
             </table>
     <div>
         <input type=\"submit\" class=\"btn btn-primary btn-block btn-flat\" value=\"Ajouter Planification\" />
@@ -160,6 +209,6 @@ class __TwigTemplate_3f827c695380bb0f19ad8f18b0605c348ad33c6200ec66b3e71ae88237f
 
     public function getDebugInfo()
     {
-        return array (  136 => 65,  129 => 61,  122 => 57,  115 => 53,  108 => 49,  101 => 45,  94 => 41,  87 => 37,  80 => 33,  73 => 29,  66 => 25,  59 => 21,  52 => 17,  45 => 13,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

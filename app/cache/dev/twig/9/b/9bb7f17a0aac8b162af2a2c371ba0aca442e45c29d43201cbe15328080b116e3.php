@@ -33,7 +33,7 @@ class __TwigTemplate_9bb7f17a0aac8b162af2a2c371ba0aca442e45c29d43201cbe15328080b
 \t</head>
 \t<body>
 \t\t<header>
-\t\t\t<h1>Invoice</h1>
+\t\t\t<h1>Devis</h1>
 \t\t\t<address contenteditable>
 \t\t\t\t<p>AfrikIsol</p>
 \t\t\t\t<p>Boulevard de l’environnement 7035</p>

@@ -209,11 +209,42 @@ class UserController extends Controller
          $images = base64_encode(stream_get_contents($m->getImage()));
         $em = $this->container->get('doctrine')->getEntityManager();
         $modele = $em->getRepository('AdminBundle:Projet')->find($id);
-        $plan = $em->getRepository('AdminBundle:Planification')->findOneBy(array('idprojet' => $id));
+        $plan = $em->getRepository('AdminBundle:Avancement')->findOneBy(array('idprojet' => $id));
         
         return $this->render('AdminBundle:User:LineChart.html.twig', array(
         'plan'=>$plan,'img'=>$images
         ));
+        }
+        
+         public function chartGanttAction($id){
+        // Chart
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+   
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+        $plan = $em->getRepository('AdminBundle:Gantt')->findBy(array('idprojet' => $id));
+     
+        return $this->render('AdminBundle:User:gantt.html.twig', array(
+        'plan'=>$plan,'img'=>$images
+        ));
+        }
+        
+        public function suivieChartAction(){
+        // Chart
+        $series = array(
+        array("name" => "Suivie du projet", "data" => array(1,2,3,4,5,6,8))
+        );
+        $ob = new Highchart();
+        $ob->chart->renderTo('linechart'); // #id du div où afficher le graphe
+        $ob->title->text('Avancement du projet');
+        $ob->xAxis->title(array('text' => "Semaines"));
+        $ob->yAxis->title(array('text' => "Quantité"));
+        $ob->series($series);
+        return $this->render('AdminBundle:User:suivieChart.html.twig');
         }
     
 }
