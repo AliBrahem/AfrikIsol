@@ -180,19 +180,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // tech_calculTole
-        if ($pathinfo === '/calculTole') {
-            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::calculToleAction',  '_route' => 'tech_calculTole',);
+        if (0 === strpos($pathinfo, '/calculTole') && preg_match('#^/calculTole/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_calculTole')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::calculToleAction',));
         }
 
         if (0 === strpos($pathinfo, '/list')) {
-            // tech_listerTUYAUTERIES
-            if ($pathinfo === '/listerTUY') {
-                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerTUYAction',  '_route' => 'tech_listerTUYAUTERIES',);
+            // tech_listerTole
+            if (0 === strpos($pathinfo, '/listerTole') && preg_match('#^/listerTole/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_listerTole')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerToleAction',));
             }
 
             // tech_listProjet
             if ($pathinfo === '/listProjet') {
                 return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerProjetAction',  '_route' => 'tech_listProjet',);
+            }
+
+            // tech_listAvancement
+            if ($pathinfo === '/listAvancement') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerAvancementAction',  '_route' => 'tech_listAvancement',);
+            }
+
+            // tech_listPlan
+            if ($pathinfo === '/listPlan') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerPlanAction',  '_route' => 'tech_listPlan',);
             }
 
         }
@@ -210,9 +220,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // tech_listClient
-        if ($pathinfo === '/listClient') {
-            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerClientAction',  '_route' => 'tech_listClient',);
+        if (0 === strpos($pathinfo, '/list')) {
+            // tech_listClient
+            if ($pathinfo === '/listClient') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerClientAction',  '_route' => 'tech_listClient',);
+            }
+
+            // tech_listTole
+            if ($pathinfo === '/listTole') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listToleAction',  '_route' => 'tech_listTole',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/add')) {
@@ -226,6 +244,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addPlan')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addGanttAction',));
             }
 
+            // tech_addPlanification
+            if (0 === strpos($pathinfo, '/addPlanification') && preg_match('#^/addPlanification/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addPlanification')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addPlanAction',));
+            }
+
+            // tech_addMAD
+            if (0 === strpos($pathinfo, '/addMAD') && preg_match('#^/addMAD/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addMAD')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addMADAction',));
+            }
+
         }
 
         // tech_genererPDFTUYAUTERIES
@@ -233,60 +261,83 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::generatePdfTubeAction',  '_route' => 'tech_genererPDFTUYAUTERIES',);
         }
 
-        if (0 === strpos($pathinfo, '/lister')) {
-            // tech_listerCOUDE
-            if ($pathinfo === '/listerCOUDE') {
-                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerCOUDEAction',  '_route' => 'tech_listerCOUDE',);
-            }
-
-            // tech_listerREDUCTION
-            if ($pathinfo === '/listerRED') {
-                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerREDAction',  '_route' => 'tech_listerREDUCTION',);
-            }
-
-        }
-
         // tech_index
         if ($pathinfo === '/indexTech') {
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::indexAction',  '_route' => 'tech_index',);
         }
 
-        if (0 === strpos($pathinfo, '/log')) {
-            if (0 === strpos($pathinfo, '/login')) {
-                // fos_user_security_login
-                if ($pathinfo === '/login') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_security_login;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
-                }
-                not_fos_user_security_login:
-
-                // fos_user_security_check
-                if ($pathinfo === '/login_check') {
-                    if ($this->context->getMethod() != 'POST') {
-                        $allow[] = 'POST';
-                        goto not_fos_user_security_check;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
-                }
-                not_fos_user_security_check:
-
+        if (0 === strpos($pathinfo, '/upd')) {
+            // tech_updTUY
+            if (0 === strpos($pathinfo, '/updTUY') && preg_match('#^/updTUY/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updTUY')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateTUYAction',));
             }
 
-            // fos_user_security_logout
-            if ($pathinfo === '/logout') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_security_logout;
+            // tech_updCoude
+            if (0 === strpos($pathinfo, '/updCoude') && preg_match('#^/updCoude/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updCoude')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateCoudeAction',));
+            }
+
+            // tech_updReduction
+            if (0 === strpos($pathinfo, '/updRed') && preg_match('#^/updRed/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updReduction')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateRedAction',));
+            }
+
+        }
+
+        // log_index
+        if ($pathinfo === '/indexLog') {
+            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\LogController::indexAction',  '_route' => 'log_index',);
+        }
+
+        // log_addStock
+        if ($pathinfo === '/addStock') {
+            return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\LogController::addStockAction',  '_route' => 'log_addStock',);
+        }
+
+        if (0 === strpos($pathinfo, '/l')) {
+            // log_listStock
+            if ($pathinfo === '/listStock') {
+                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\LogController::listStockAction',  '_route' => 'log_listStock',);
+            }
+
+            if (0 === strpos($pathinfo, '/log')) {
+                if (0 === strpos($pathinfo, '/login')) {
+                    // fos_user_security_login
+                    if ($pathinfo === '/login') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                            goto not_fos_user_security_login;
+                        }
+
+                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
+                    }
+                    not_fos_user_security_login:
+
+                    // fos_user_security_check
+                    if ($pathinfo === '/login_check') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_fos_user_security_check;
+                        }
+
+                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
+                    }
+                    not_fos_user_security_check:
+
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+                // fos_user_security_logout
+                if ($pathinfo === '/logout') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fos_user_security_logout;
+                    }
+
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+                }
+                not_fos_user_security_logout:
+
             }
-            not_fos_user_security_logout:
 
         }
 

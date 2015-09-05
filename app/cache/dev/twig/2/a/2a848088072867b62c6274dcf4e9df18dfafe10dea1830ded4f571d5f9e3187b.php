@@ -7,8 +7,6 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:calculTole.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,25 +14,26 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:calculTole.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 3
+        // line 5
         echo "
     <!-- Small boxes (Stat box) -->
     <div align=\"center\" >
         <div class=\"col-lg-3 col-xs-6\" align=\"center\">
             <form action=\"";
-        // line 7
-        echo $this->env->getExtension('routing')->getPath("tech_calculTole");
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_calculTole", array("id" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))), "html", null, true);
         echo "\"  method=\"POST\" >
                 <h1> Calcul de tôle </h1>
             <table id=\"example2\" class=\"table table-bordered table-hover\">
@@ -130,6 +129,7 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
                             <option value=\"80\">80</option>
                             <option value=\"90\">90</option>
                             <option value=\"100\">100</option>
+                            <option value=\"120\">120</option>
                          </select> 
                  </td>
                 </tr>
@@ -195,6 +195,16 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
                 </tr>
                 <tr>
                     
+                    <td>    Prix main d'oeuvre </td>
+                    <td>  <input type=\"number\" step=\"any\" name=\"prixMO\" id=\"prixMO\"/> </td>
+                </tr>
+                 <tr>
+                    
+                    <td>    Quantité </td>
+                    <td>  <input type=\"number\" step=\"any\" name=\"quantite\" id=\"quantite\"/> </td>
+                </tr>
+                <tr>
+                    
                     <td>    Prix total </td>
                     <td>  <input type=\"number\" step=\"any\" name=\"prix\" id=\"prix\"/> </td>
                 </tr>
@@ -228,6 +238,6 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
 
     public function getDebugInfo()
     {
-        return array (  37 => 7,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  36 => 9,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

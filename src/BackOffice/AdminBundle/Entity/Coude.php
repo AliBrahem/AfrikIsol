@@ -20,7 +20,13 @@ class Coude
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     */
+    protected $idprojet;
     /**
      * @var integer
      *
@@ -97,7 +103,56 @@ class Coude
      * @ORM\Column(name="tempsPrefa", type="integer", nullable=false)
      */
     private $tempsprefa;
-
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tempsMonta", type="float", nullable=false)
+     */
+    private $tempsMonta;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixUnitaireTole", type="float", nullable=false)
+     */
+    private $prixUnitaireTole;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixUnitaireIsolant", type="float", nullable=false)
+     */
+    private $prixUnitaireIsolant;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="PrixMainO", type="float", nullable=false)
+     */
+    private $prixMO;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Prix", type="float", nullable=false)
+     */
+    private $prix;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Quantite", type="float", nullable=false)
+     */
+    private $quantite;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Accessoires", type="float", nullable=true)
+     */
+    private $accessoires;
+    
     function getId() {
         return $this->id;
     }
@@ -192,6 +247,70 @@ class Coude
 
     function setTempsprefa($tempsprefa) {
         $this->tempsprefa = $tempsprefa;
+    }
+
+    function getQuantite() {
+        return $this->quantite;
+    }
+
+    function setQuantite($quantite) {
+        $this->quantite = $quantite;
+    }
+
+    function getPrixUnitaireTole() {
+        return $this->prixUnitaireTole;
+    }
+
+    function getPrixUnitaireIsolant() {
+        return $this->prixUnitaireIsolant;
+    }
+
+    function getPrixMO() {
+        return $this->prixMO;
+    }
+
+    function getPrix() {
+        return $this->prix;
+    }
+
+    function setPrixUnitaireTole($prixUnitaireTole) {
+        $this->prixUnitaireTole = $prixUnitaireTole;
+    }
+
+    function setPrixUnitaireIsolant($prixUnitaireIsolant) {
+        $this->prixUnitaireIsolant = $prixUnitaireIsolant;
+    }
+
+    function setPrixMO($prixMO) {
+        $this->prixMO = $prixMO;
+    }
+
+    function setPrix($prix) {
+        $this->prix = $prix;
+    }
+
+    function getIdprojet() {
+        return $this->idprojet;
+    }
+
+    function setIdprojet($idprojet) {
+        $this->idprojet = $idprojet;
+    }
+
+    function getAccessoires() {
+        return $this->accessoires;
+    }
+
+    function setAccessoires($accessoires) {
+        $this->accessoires = $accessoires;
+    }
+
+    function getTempsMonta() {
+        return $this->tempsMonta;
+    }
+
+    function setTempsMonta($tempsMonta) {
+        $this->tempsMonta = $tempsMonta;
     }
 
 

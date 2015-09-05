@@ -7,8 +7,6 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:addProjet.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,22 +14,23 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:addProjet.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "    <div class=\"row\">
         <div class=\"col-lg-3 col-xs-6\">
         <form action=\"";
-        // line 6
+        // line 7
         echo $this->env->getExtension('routing')->getPath("tech_addProjet");
         echo "\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
@@ -42,174 +41,174 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nature projet </label>  </td>
                     <td>";
-        // line 12
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nature", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Besoin en matériels roulant </label>  </td>
                     <td>";
-        // line 16
+        // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "besoinMaterielRoulant", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Lieu </label>  </td>
                     <td> ";
-        // line 20
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "lieu", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Besoin en matière première </label>  </td>
                     <td>";
-        // line 24
+        // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "besoinMatierePremiere", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Client </label>  </td>
                     <td> ";
-        // line 28
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idClient", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     <td>  <label for=\"exampleInputEmail1\">Date de mise à disposition </label>  </td>
                     <td>";
-        // line 31
+        // line 32
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateMiseDispo", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Besoin en échaffaudage </label>  </td>
                     <td> ";
-        // line 35
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "besoinEchaffaudage", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Coût équipement Indiv </label>  </td>
                     <td>";
-        // line 39
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "coutEPI", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Besoin en hébérgement </label>  </td>
                     <td> ";
-        // line 43
+        // line 44
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "besoinHebergement", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Quantité d'équipement Indiv </label>  </td>
                     <td>";
-        // line 47
+        // line 48
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "quantiteEPI", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nombre de besoins en hébérgement </label>  </td>
                     <td> ";
-        // line 51
+        // line 52
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbBesoinHebergement", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Contact </label>  </td>
                     <td>";
-        // line 55
+        // line 56
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contact", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nombre de jours de préfabrication </label>  </td>
                     <td> ";
-        // line 59
+        // line 60
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbJourPrefa", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Etat du projet </label>  </td>
                     <td>";
-        // line 63
+        // line 64
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nombre de jours de montage</label>  </td>
                     <td> ";
-        // line 67
+        // line 68
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbJourMonta", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Prix unitaire </label>  </td>
                     <td>";
-        // line 71
+        // line 72
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prixUnitaire", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Date de préfabrication </label>  </td>
                     <td> ";
-        // line 75
+        // line 76
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePrefa", array()), 'widget');
         echo " </td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Prix Total </label>  </td>
                     <td>";
-        // line 79
+        // line 80
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prixTotal", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Date de montage </label>  </td>
                     <td>";
-        // line 83
+        // line 84
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateMonta", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Charges </label>  </td>
                     <td>";
-        // line 87
+        // line 88
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "charges", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nombre de personnes pour préfabrication </label>  </td>
                     <td>";
-        // line 91
+        // line 92
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbPersPrefa", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Marge bénéficiaire </label>  </td>
                     <td>";
-        // line 95
+        // line 96
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "margebenef", array()), 'widget');
         echo "</td>
                 </tr>
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Nombre de personnes pour montage </label>  </td>
                     <td>";
-        // line 99
+        // line 100
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbPersMonta", array()), 'widget');
         echo "</td>
                     <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
                     
                     <td>  <label for=\"exampleInputEmail1\">Remise </label>  </td>
                     <td>";
-        // line 103
+        // line 104
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Remise", array()), 'widget');
         echo "</td>
                 </tr>
                 
                 <tr>
                          ";
-        // line 107
+        // line 108
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
                 </tr>
@@ -237,6 +236,6 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
 
     public function getDebugInfo()
     {
-        return array (  213 => 107,  206 => 103,  199 => 99,  192 => 95,  185 => 91,  178 => 87,  171 => 83,  164 => 79,  157 => 75,  150 => 71,  143 => 67,  136 => 63,  129 => 59,  122 => 55,  115 => 51,  108 => 47,  101 => 43,  94 => 39,  87 => 35,  80 => 31,  74 => 28,  67 => 24,  60 => 20,  53 => 16,  46 => 12,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  212 => 108,  205 => 104,  198 => 100,  191 => 96,  184 => 92,  177 => 88,  170 => 84,  163 => 80,  156 => 76,  149 => 72,  142 => 68,  135 => 64,  128 => 60,  121 => 56,  114 => 52,  107 => 48,  100 => 44,  93 => 40,  86 => 36,  79 => 32,  73 => 29,  66 => 25,  59 => 21,  52 => 17,  45 => 13,  34 => 7,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

@@ -105,97 +105,102 @@ type=\"text/javascript\"></script>
             }                
         });
     }(Highcharts));
-    
-    var d = new Date('";
-        // line 91
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "avisKickoff", array()), "Y-m-d"), "html", null, true);
-        echo "');
+";
+        // line 90
+        if ((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan"))) {
+            // line 91
+            echo "    var d = new Date('";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "avisKickoff", array()), "Y-m-d"), "html", null, true);
+            echo "');
     
     var preavis =  ";
-        // line 93
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "preavis", array()), "html", null, true);
-        echo ";
+            // line 93
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "preavis", array()), "html", null, true);
+            echo ";
     var datePreavis = new Date(d);
     datePreavis.setDate(d.getDate()+preavis);
     
     var retraitTole = ";
-        // line 97
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "retraitTole", array()), "html", null, true);
-        echo ";
+            // line 97
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "retraitTole", array()), "html", null, true);
+            echo ";
     var dateRetraitTole = new Date(d);
     dateRetraitTole.setDate(d.getDate()+retraitTole);
     
     var retraitPlan = ";
-        // line 101
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "retraitPlan", array()), "html", null, true);
-        echo ";
+            // line 101
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "retraitPlan", array()), "html", null, true);
+            echo ";
     var dateRetraitPlan = new Date(d);
     dateRetraitPlan.setDate(d.getDate()+retraitPlan);
     
     var debutInst = ";
-        // line 105
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutInstallation", array()), "html", null, true);
-        echo ";
+            // line 105
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutInstallation", array()), "html", null, true);
+            echo ";
     var dateDebutInst = new Date(d);
     dateDebutInst.setDate(d.getDate()+debutInst);
     
     var debutPrefa = ";
-        // line 109
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutPrefa", array()), "html", null, true);
-        echo ";
+            // line 109
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutPrefa", array()), "html", null, true);
+            echo ";
     var dateDebutPrefa = new Date(d);
     dateDebutPrefa.setDate(d.getDate()+debutPrefa);
     
     var debutMonta = ";
-        // line 113
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMonta", array()), "html", null, true);
-        echo ";
+            // line 113
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMonta", array()), "html", null, true);
+            echo ";
     var dateDebutMonta = new Date(d);
     dateDebutMonta.setDate(d.getDate()+debutMonta);
     
     var livraison = ";
-        // line 117
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "livraisonCommandePrefa", array()), "html", null, true);
-        echo ";
+            // line 117
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "livraisonCommandePrefa", array()), "html", null, true);
+            echo ";
     var dateLivraison = new Date(d);
     dateLivraison.setDate(d.getDate()+livraison);
     
     var debut1 = ";
-        // line 121
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMontagePremierGroupe", array()), "html", null, true);
-        echo ";
+            // line 121
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMontagePremierGroupe", array()), "html", null, true);
+            echo ";
     var dateDebut1 = new Date(d);
     dateDebut1.setDate(d.getDate()+debut1);
     
     var debut2 = ";
-        // line 125
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMontageDeuxiemeGroupe", array()), "html", null, true);
-        echo ";
+            // line 125
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutMontageDeuxiemeGroupe", array()), "html", null, true);
+            echo ";
     var dateDebut2 = new Date(d);
     dateDebut2.setDate(d.getDate()+debut2);
     console.log(\"debut2 : \"+dateDebut2);
     
     var debutDem = ";
-        // line 130
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutDemobilisation", array()), "html", null, true);
-        echo ";
+            // line 130
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "debutDemobilisation", array()), "html", null, true);
+            echo ";
     var dateDebutDem = new Date(d);
     dateDebutDem.setDate(d.getDate()+debutDem);
     console.log(\"demo : \"+dateDebutDem);
     
     var finDem = ";
-        // line 135
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "finDemobilisation", array()), "html", null, true);
-        echo ";
+            // line 135
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "finDemobilisation", array()), "html", null, true);
+            echo ";
     var dateFinDem = new Date(d);
     dateFinDem.setDate(d.getDate()+finDem);
     console.log(\"fin : \"+dateFinDem);
     
     var dateFin = new Date('";
-        // line 140
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "Y-m-d"), "html", null, true);
-        echo "');
-    // THE CHART
+            // line 140
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "Y-m-d"), "html", null, true);
+            echo "');
+";
+        }
+        // line 142
+        echo "    // THE CHART
     \$('#container').highcharts({
         chart: {
             type: 'xrange'
@@ -286,14 +291,18 @@ type=\"text/javascript\"></script>
                 y: 10
             }, {
                 x: dateFinDem,
-                x2: Date.UTC( \"";
-        // line 232
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "Y"), "html", null, true);
-        echo "\", \"";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "m"), "html", null, true);
-        echo "\", \"";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "d"), "html", null, true);
-        echo "\") ,
+                x2:";
+        // line 233
+        if ((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan"))) {
+            echo " Date.UTC( \"";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "Y"), "html", null, true);
+            echo "\", \"";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "m"), "html", null, true);
+            echo "\", \"";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")), "dateFin", array()), "d"), "html", null, true);
+            echo "\")";
+        }
+        echo " ,
                 y: 11
             }]
         }]
@@ -317,6 +326,6 @@ type=\"text/javascript\"></script>
 
     public function getDebugInfo()
     {
-        return array (  291 => 232,  196 => 140,  188 => 135,  180 => 130,  172 => 125,  165 => 121,  158 => 117,  151 => 113,  144 => 109,  137 => 105,  130 => 101,  123 => 97,  116 => 93,  111 => 91,  19 => 1,);
+        return array (  296 => 233,  203 => 142,  198 => 140,  190 => 135,  182 => 130,  174 => 125,  167 => 121,  160 => 117,  153 => 113,  146 => 109,  139 => 105,  132 => 101,  125 => 97,  118 => 93,  112 => 91,  110 => 90,  19 => 1,);
     }
 }

@@ -20,7 +20,14 @@ class Tuyauteries
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     */
+    protected $idprojet;
+    
     /**
      * @var integer
      *
@@ -126,6 +133,19 @@ class Tuyauteries
      */
     private $prix;
     
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="PrixMainO", type="float", nullable=false)
+     */
+    private $prixMO;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Accessoires", type="float", nullable=true)
+     */
+    private $accessoires;
     
     function getId() {
         return $this->id;
@@ -256,6 +276,30 @@ class Tuyauteries
     }
 
 
+    function getIdprojet() {
+        return $this->idprojet;
+    }
+
+    function setIdprojet($idprojet) {
+        $this->idprojet = $idprojet;
+    }
+
+    
+    function getPrixMO() {
+        return $this->prixMO;
+    }
+
+    function setPrixMO($prixMO) {
+        $this->prixMO = $prixMO;
+    }
+
+    function getAccessoires() {
+        return $this->accessoires;
+    }
+
+    function setAccessoires($accessoires) {
+        $this->accessoires = $accessoires;
+    }
 
 
 }

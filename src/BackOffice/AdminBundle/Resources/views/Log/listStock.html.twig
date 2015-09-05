@@ -1,0 +1,54 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutLog.html.twig"%}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+       <div class="box-header">
+                  <h3 class="box-title">Liste de Stock </h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+               <tr>
+                    <th>Date</th>
+                    <th>Nature MVT </th>
+                    <th>Désignation </th>
+                    
+                    <th>Unité </th>
+                    <th>Nombre </th>
+                    <th>Quantité disponible</th>
+                    <th>Quantité demandée</th>
+                    <th>Quantité Stock</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                 {% for Modele in Modeles %}
+               
+                  
+                    <tr>
+                        <td> {{Modele.date|date(' d/m/Y', false) }} </td>
+                        <td> {{Modele.nature}} </td>
+                        <td> {{Modele.designation}} </td>
+                     
+                        <td> {{Modele.unite}} </td>
+                        <td> {{Modele.nombre}} </td>
+                        <td> {{Modele.qtedispo}} </td>
+                        <td> {{Modele.qtedemande}} </td>
+                        <td> {{Modele.qteStock}} </td>
+                        
+                    </tr>
+                       
+                 {% endfor %}
+            </tbody>            
+        </table>
+                </div>
+    </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

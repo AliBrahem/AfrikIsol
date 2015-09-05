@@ -7,8 +7,6 @@ class __TwigTemplate_8dd2bf3248c0f0ae72dbc32e0680eb8814f29248b8331fdd1b206201823
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:addClient.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,22 +14,23 @@ class __TwigTemplate_8dd2bf3248c0f0ae72dbc32e0680eb8814f29248b8331fdd1b206201823
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:addClient.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "    <div class=\"row\">
         <div class=\"col-lg-3 col-xs-6\">
         <form action=\"";
-        // line 6
+        // line 7
         echo $this->env->getExtension('routing')->getPath("tech_addClient");
         echo "\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
@@ -42,55 +41,55 @@ class __TwigTemplate_8dd2bf3248c0f0ae72dbc32e0680eb8814f29248b8331fdd1b206201823
                 <tr>
                     <td>  <label for=\"exampleInputEmail1\">Société </label>  </td>
                     <td>";
-        // line 12
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "societe", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Secteur d'activité </label>  </td>
                     <td>";
-        // line 16
+        // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "secteurActivite", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Téléphone </label>  </td>
                     <td>";
-        // line 20
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "telephone", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Numéro télécopie </label>  </td>
                     <td>";
-        // line 24
+        // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "telecopie", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Responsable à contacter </label>  </td>
                     <td>";
-        // line 28
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titreContact", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Numéro du responsable </label>  </td>
                     <td>";
-        // line 32
+        // line 33
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contact", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Crédit disponible </label>  </td>
                     <td>";
-        // line 36
+        // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "credit", array()), 'widget');
         echo "</td>
                     </tr>
                 <tr>
                          ";
-        // line 39
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
                 </tr>
@@ -118,6 +117,6 @@ class __TwigTemplate_8dd2bf3248c0f0ae72dbc32e0680eb8814f29248b8331fdd1b206201823
 
     public function getDebugInfo()
     {
-        return array (  94 => 39,  88 => 36,  81 => 32,  74 => 28,  67 => 24,  60 => 20,  53 => 16,  46 => 12,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  93 => 40,  87 => 37,  80 => 33,  73 => 29,  66 => 25,  59 => 21,  52 => 17,  45 => 13,  34 => 7,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

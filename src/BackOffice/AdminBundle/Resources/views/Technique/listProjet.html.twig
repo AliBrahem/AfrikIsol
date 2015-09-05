@@ -1,4 +1,6 @@
-{% extends "AdminBundle::layoutTech.html.twig" %}
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
 {% block user_content %}
 
     <!-- Small boxes (Stat box) -->
@@ -13,54 +15,36 @@
                     <th>Nature Projet</th>
                     <th>Lieu</th>
                     <th>Client</th>
-                    <th>Personne à contacter</th>
-                    <th>Durée des travaux préfa</th>
-                    <th>Durée des travaux monta</th>
-                    <th>Date de préfa</th>
-                    <th>Date de monta</th>
+                    
                     <th>Charges</th>
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
                     <th>Planification</th>
-                    
+                    <th>Avancement</th>
+                    <th>Ajouter Tôle</th>
+                    <th>Lister Tôle</th>
                 </tr>
             </thead>
             <tbody>
                  {% for Modele in Modeles %}
                
-                    {% if Modele.id == plan[loop.index0].idprojet %}
+                  
                     <tr>
                         <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
                         <td> {{Modele.idClient}} </td>
-                        <td> {{Modele.contact}} </td>
-                        <td> {{Modele.nbJourPrefa}} </td>
-                        <td> {{Modele.nbJourMonta}} </td>
-                        <td> {{Modele.datePrefa|date('d/m/Y', false) }} </td>
-                        <td> {{Modele.dateMonta|date('d/m/Y', false) }} </td>
+                     
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
                   
-                             <td><a href="{{path("admin_graphe",{'id':Modele.id})}}"> Afficher </a></td>
-                               </tr>
-                        {% else %}
-                        <tr>
-                            <td> {{Modele.nature}} </td>
-                        <td> {{Modele.lieu}} </td>
-                        <td> {{Modele.idClient}} </td>
-                        <td> {{Modele.contact}} </td>
-                        <td> {{Modele.nbJourPrefa}} </td>
-                        <td> {{Modele.nbJourMonta}} </td>
-                        <td> {{Modele.datePrefa|date('d/m/Y', false) }} </td>
-                        <td> {{Modele.dateMonta|date('d/m/Y', false) }} </td>
-                        <td> {{Modele.charges}} </td>
-                        <td> {{Modele.prixUnitaire}} </td>
-                        <td> {{Modele.prixTotal}} </td>
-                            <td><a href="{{path("tech_addPlan",{'id':Modele.id})}}"> Créer </a></td>
+                        <td><a href="{{path("admin_gantt",{'id':Modele.id})}}"> Afficher </a></td>
+                        <td><a href="{{path("admin_grapheSuivie",{'id':Modele.id})}}"> Afficher </a></td>
+                        <td><a href="{{path("tech_calculTole",{'id':Modele.id})}}"> Ajouter Tôle </a></td>
+                         <td><a href="{{path("tech_listerTole",{'id':Modele.id})}}"> Lister Tôle </a></td>
                         
-                    </tr>
-                {% endif%}
+                               </tr>
+                       
                  {% endfor %}
             </tbody>            
         </table>

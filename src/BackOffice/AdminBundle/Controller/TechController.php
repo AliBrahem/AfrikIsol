@@ -7,6 +7,10 @@ use BackOffice\AdminBundle\Form\CoudeType;
 use BackOffice\AdminBundle\Form\ProjetType;
 use BackOffice\AdminBundle\Form\GanttType;
 use BackOffice\AdminBundle\Form\AvancementType;
+use BackOffice\AdminBundle\Entity\Planification;
+use BackOffice\AdminBundle\Entity\MAD;
+use BackOffice\AdminBundle\Form\PlanificationType;
+use BackOffice\AdminBundle\Form\MADType;
 use BackOffice\AdminBundle\Form\ClientType;
 use BackOffice\AdminBundle\Entity\Coude;
 use BackOffice\AdminBundle\Entity\Projet;
@@ -33,9 +37,9 @@ class TechController extends Controller
             
          $images = base64_encode(stream_get_contents($m->getImage()));
         
-        return $this->render('AdminBundle:Technique:GenererTubePDF.html.twig' , array('img' => $images));
+        return $this->render('AdminBundle:Technique:indexTech.html.twig' , array('img' => $images));
     }
-    public function listerTUYAction()
+    public function listerToleaction($id)
     {
         $usr= $this->get('security.context')->getToken()->getUser();
             $m=array();
@@ -44,38 +48,16 @@ class TechController extends Controller
             
          $images = base64_encode(stream_get_contents($m->getImage()));
         $em = $this->container->get('doctrine')->getEntityManager();
-        $modeles = $em->getRepository('AdminBundle:Tuyauteries')->findAll();
+        $tuyauteries = $em->getRepository('AdminBundle:Tuyauteries')->findBy(array("idprojet"=>$id));
+        $coudes = $em->getRepository('AdminBundle:Coude')->findBy(array("idprojet"=>$id));
+        $reductions = $em->getRepository('AdminBundle:Reduction')->findBy(array("idprojet"=>$id));
         
-        return $this->render('AdminBundle:Technique:listerTUY.html.twig', array('Modeles' => $modeles ,'img' => $images));
-    }
-    public function listerCOUDEAction()
-    {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        $em = $this->container->get('doctrine')->getEntityManager();
-        $modeles = $em->getRepository('AdminBundle:Coude')->findAll();
-        
-        return $this->render('AdminBundle:Technique:listerCOUDE.html.twig', array('Modeles' => $modeles ,'img' => $images));
-    }
-    public function listerREDAction()
-    {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        $em = $this->container->get('doctrine')->getEntityManager();
-        $modeles = $em->getRepository('AdminBundle:Reduction')->findAll();
-        
-        return $this->render('AdminBundle:Technique:listerRED.html.twig', array('Modeles' => $modeles ,'img' => $images));
+        return $this->render('AdminBundle:Technique:listerTole.html.twig', array('TUY' => $tuyauteries ,'Coudes' => $coudes,'Reductions' => $reductions,'img' => $images));
     }
     
-    public function calculToleAction()
+   
+    
+    public function calculToleAction($id)
     {
         $usr= $this->get('security.context')->getToken()->getUser();
             $m=array();
@@ -105,6 +87,7 @@ class TechController extends Controller
                 $tempsmonta     =   $Request->get('tempsmonta');
                 $prixUnitaireTole    =   $Request->get('prixUnitaireTole');
                 $prixUnitaireIsolant =   $Request->get('prixUnitaireIsolant');
+                $quantite           =   $Request->get('quantite');
                 $prix           =   $Request->get('prix');
                 
                 if($tole == "TUYAUTERIES")
@@ -124,11 +107,14 @@ class TechController extends Controller
                         $modele->setTempsMonta($tempsmonta);
                         $modele->setPrixUnitaireTole(0);
                         $modele->setPrixUnitaireIsolant(0);
+                        $modele->setPrixMO(0);
+                        $modele->setQuantite($quantite);
                         $modele->setPrix(0);
+                        $modele->setIdprojet($id);
                         $em = $this->container->get('doctrine')->getEntityManager();
                         $em->persist($modele);
                         $em->flush();
-                        return $this->redirect($this->generateUrl("tech_listerTUYAUTERIES"));
+                        return $this->redirect($this->generateUrl("tech_listerTole", array('id' => $id)));
                 }        
                 if($tole == "COUDE")
                 {        
@@ -144,10 +130,17 @@ class TechController extends Controller
                         $modele->setDechet($dechet);
                         $modele->setQtebrute($qtebrute);
                         $modele->setTempsprefa($tempsprefa);
+                        $modele->setTempsMonta($tempsmonta);
+                        $modele->setPrixUnitaireTole(0);
+                        $modele->setPrixUnitaireIsolant(0);
+                        $modele->setPrix(0);
+                        $modele->setPrixMO(0);
+                        $modele->setQuantite($quantite);
+                        $modele->setIdprojet($id);
                         $em = $this->container->get('doctrine')->getEntityManager();
                         $em->persist($modele);
                         $em->flush();
-                        return $this->redirect($this->generateUrl("tech_listerCOUDE"));
+                        return $this->redirect($this->generateUrl("tech_listerTole", array('id' => $id)));
                 }
                 if($tole == "REDUCTION")
                 {        
@@ -163,17 +156,25 @@ class TechController extends Controller
                         $modele->setDechet($dechet);
                         $modele->setQtebrute($qtebrute);
                         $modele->setTempsprefa($tempsprefa);
+                        $modele->setTempsMonta($tempsmonta);
+                        $modele->setPrixUnitaireTole(0);
+                        $modele->setPrixUnitaireIsolant(0);
+                        $modele->setPrix(0);
+                        $modele->setPrixMO(0);
+                        $modele->setQuantite($quantite);
+                        $modele->setIdprojet($id);
                         $em = $this->container->get('doctrine')->getEntityManager();
                         $em->persist($modele);
                         $em->flush();
-                        return $this->redirect($this->generateUrl("tech_listerREDUCTION"));
+                        
+                        return $this->redirect($this->generateUrl("tech_listerTole", array('id' =>$id)));
                 }
                 //return $this->redirect($this->generateUrl("tech_listerTUYAUTERIES"));
             
         }
 
 
-        return $this->render('AdminBundle:Technique:calculTole.html.twig' , array('img' => $images)
+        return $this->render('AdminBundle:Technique:calculTole.html.twig' , array('img' => $images,'id'=>$id)
               //  , array('form' => $form->createView())
                 );
         
@@ -244,6 +245,35 @@ class TechController extends Controller
         $plan = $em->getRepository('AdminBundle:Gantt')->findAll();
         return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'img' => $images,'plan' => $plan));
     }
+    
+    public function listerAvancementAction()
+    {
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        //$modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+        $query = $em->createQuery("SELECT e FROM AdminBundle:Projet e where e.id IN (Select i.idprojet From AdminBundle:Avancement i )");
+        $modeles = $query->getResult();
+             return $this->render('AdminBundle:Technique:listAvancement.html.twig', array('Modeles' => $modeles ,'img' => $images));
+    }
+    
+    public function listToleAction()
+    {
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+        return $this->render('AdminBundle:Technique:listTole.html.twig', array('Modeles' => $modeles ,'img' => $images));
+    }
+    
     
     public function addClientAction()
     {   
@@ -452,6 +482,66 @@ class TechController extends Controller
         return $this->render('AdminBundle:Technique:addAvancement.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
     }
     
+    public function addPlanAction($id)
+    {   
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+         $plan = new Planification();
+        $form = $this->container->get('form.factory')->create(new PlanificationType(), $plan);
+
+        $Request = $this->getRequest();
+
+
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+
+            if ($form->isValid()) {
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $plan->setIdprojet($id);
+                $em->persist($plan);
+                $em->flush();
+                return $this->redirect($this->generateUrl("admin_grapheSuivie",array('id'=>$id)));
+            }
+        }
+         
+        return $this->render('AdminBundle:Technique:addPlanification.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
+    }
+    
+    public function addMADAction($id)
+    {   
+        $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+            
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+         $mad = new MAD();
+        $form = $this->container->get('form.factory')->create(new MADType(), $mad);
+
+        $Request = $this->getRequest();
+
+
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+
+            if ($form->isValid()) {
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $mad->setIdprojet($id);
+                $em->persist($mad);
+                $em->flush();
+                return $this->redirect($this->generateUrl("admin_grapheSuivie",array('id'=>$id)));
+            }
+        }
+         
+        return $this->render('AdminBundle:Technique:addMAD.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
+    }
+    
     public function findTUYAction($epaisseur){
         // Chart
          $usr= $this->get('security.context')->getToken()->getUser();
@@ -467,5 +557,147 @@ class TechController extends Controller
         return $response->setData(array('tuy'=>$modele[2]->getDiametreinter()));
         //echo ''.$modele->getPreavis();
      }
+     
+     public function updateTUYAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+        $entity = $em->getRepository('AdminBundle:Tuyauteries')->find($id);
+        
+        
+        
+        $form = $this->createFormBuilder($entity)
+                 ->add('diametreinter')
+            ->add('dnext')
+            ->add('epaisseur')
+            ->add('dnisole')
+            ->add('circ')
+            ->add('recouv')
+            ->add('largeurtole')
+            ->add('quantite')
+            ->add('dechet')
+            ->add('qtebrute')
+            ->add('tempsprefa')
+            ->add('tempsMonta')
+            ->add('prixUnitaireTole')
+            ->add('prixUnitaireIsolant')
+            ->add('prix')
+            ->getForm();
+        $form->setData($entity);
+        $request = $this->getRequest();
+        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
+        if ($form->handleRequest($request)->isValid()) {
+            $objToPersist = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($objToPersist);
+            $em->flush();
+       
+        return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
+   
+        }
+      
+        
+         return $this->render('AdminBundle:Technique:updTUY.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
+       
+    }
+    
+    public function updateCoudeAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+        $entity = $em->getRepository('AdminBundle:Coude')->find($id);
+        
+        
+        
+        $form = $this->createFormBuilder($entity)
+                 ->add('diametreinter')
+            ->add('dnext')
+            ->add('epaisseur')
+            ->add('dnisole')
+            ->add('circ')
+            ->add('recouv')
+            ->add('largeurtole')
+            ->add('quantite')
+            ->add('dechet')
+            ->add('qtebrute')
+            ->add('tempsprefa')
+            ->add('tempsMonta')
+            ->add('prixUnitaireTole')
+            ->add('prixUnitaireIsolant')
+            ->add('prix')
+            ->getForm();
+        $form->setData($entity);
+        $request = $this->getRequest();
+        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
+        if ($form->handleRequest($request)->isValid()) {
+            $objToPersist = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($objToPersist);
+            $em->flush();
+          return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
+   
+        }
+      
+        
+         return $this->render('AdminBundle:Technique:updCoude.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
+       
+    }
+    
+    public function updateRedAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        
+        $entity = $em->getRepository('AdminBundle:Reduction')->find($id);
+        
+        
+        
+        $form = $this->createFormBuilder($entity)
+                 ->add('diametreinter')
+            ->add('dnext')
+            ->add('epaisseur')
+            ->add('dnisole')
+            ->add('circ')
+            ->add('recouv')
+            ->add('largeurtole')
+            ->add('quantite')
+            ->add('dechet')
+            ->add('qtebrute')
+            ->add('tempsprefa')
+            ->add('tempsMonta')
+            ->add('prixUnitaireTole')
+            ->add('prixUnitaireIsolant')
+            ->add('prix')
+            ->getForm();
+        $form->setData($entity);
+        $request = $this->getRequest();
+        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
+        if ($form->handleRequest($request)->isValid()) {
+            $objToPersist = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($objToPersist);
+            $em->flush();
+            return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
+   
+        }
+      
+        
+         return $this->render('AdminBundle:Technique:updRed.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
+       
+    }
 }
 

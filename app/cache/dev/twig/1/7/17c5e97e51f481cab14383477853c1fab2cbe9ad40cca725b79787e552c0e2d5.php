@@ -38,7 +38,7 @@ class __TwigTemplate_17c5e97e51f481cab14383477853c1fab2cbe9ad40cca725b79787e552c
         // line 9
         echo "<div class=\"login-box\">
       <div class=\"login-logo\">
-        <a href=\"../../index2.html\"><b>Afrique</b>Isol</a>
+        <a href=\"../../index2.html\"><b>Afrik</b>Isol</a>
       </div><!-- /.login-logo -->
       <div class=\"login-box-body\">
         <p class=\"login-box-msg\">Connectez-vous</p>

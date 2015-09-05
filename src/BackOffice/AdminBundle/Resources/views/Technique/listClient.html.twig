@@ -1,4 +1,6 @@
-{% extends "AdminBundle::layoutTech.html.twig" %}
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
 {% block user_content %}
 
     <!-- Small boxes (Stat box) -->

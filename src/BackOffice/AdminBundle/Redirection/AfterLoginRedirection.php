@@ -38,15 +38,15 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
         }, $roles);
         // S'il s'agit d'un admin ou d'un super admin on le redirige vers le backoffice
         if (in_array('ROLE_TECHNIQUE', $rolesTab, true) )
-            $redirection = new RedirectResponse($this->router->generate('technique_index'));
+            $redirection = new RedirectResponse($this->router->generate('tech_index'));
         // sinon, s'il s'agit d'un commercial on le redirige vers le CRM
         elseif (in_array('ROLE_COMMERCIAL', $rolesTab, true))
-            $redirection = new RedirectResponse($this->router->generate('evento_afficherparticipant'));
+            $redirection = new RedirectResponse($this->router->generate('tech_index'));
         // sinon il s'agit d'un membre
         elseif (in_array('ROLE_LOGISTIQUE', $rolesTab, true))
-            $redirection = new RedirectResponse($this->router->generate('evento_listPrestEv'));
+            $redirection = new RedirectResponse($this->router->generate('log_index'));
         elseif (in_array('ROLE_FINANCIER', $rolesTab, true))
-            $redirection = new RedirectResponse($this->router->generate('evento_listPrestEv'));
+            $redirection = new RedirectResponse($this->router->generate('tech_index'));
         else
             $redirection = new RedirectResponse($this->router->generate('admin_homepage'));
  

@@ -1,0 +1,100 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Liste des Tôles</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>DN intér</th>
+                    <th>DN ext</th>
+                    <th>Epaisseur</th>
+                    <th>DN ISOLE mm</th>
+                    <th>CIRC en mm</th>
+                    <th>RECOUV en mm</th>
+                    <th>Largeur de la Tôle en cm</th>
+                    <th>QTE Net en ML</th>
+                    <th>Déchet</th>
+                    <th>QTE Brute/ML</th>
+                    <th>temps de préfa en mn/Homme</th>
+                    <th>Type de Tôle </th>
+                    <th>Modifier Tôle </th>
+                </tr>
+            </thead>
+            <tbody>
+                {%if TUY %}
+                {% for Tuyauterie in TUY %}
+                    <tr>
+                        <td> {{Tuyauterie.diametreinter}} </td>
+                        <td> {{Tuyauterie.dnext}} </td>
+                        <td> {{Tuyauterie.epaisseur}} </td>
+                        <td> {{Tuyauterie.dnisole}} </td>
+                        <td> {{Tuyauterie.circ}} </td>
+                        <td> {{Tuyauterie.recouv}} </td>
+                        <td> {{Tuyauterie.largeurtole}} </td>
+                        <td> {{Tuyauterie.quantite}} </td>
+                        <td> {{Tuyauterie.dechet}} </td>
+                        <td> {{Tuyauterie.qtebrute}} </td>
+                        <td> {{Tuyauterie.tempsprefa}} </td>
+                        <td> Tuyauteries </td>
+                        <td><a href="{{path("tech_updTUY",{'id':Tuyauterie.id})}}"> Modifier Tuyauterie </a></td>
+                        
+                    </tr>
+                {% endfor %}
+                {% endif %}
+                {%if Coudes %}
+                {% for Coude in Coudes %}
+                    <tr>
+                        <td> {{Coude.diametreinter}} </td>
+                        <td> {{Coude.dnext}} </td>
+                        <td> {{Coude.epaisseur}} </td>
+                        <td> {{Coude.dnisole}} </td>
+                        <td> {{Coude.circ}} </td>
+                        <td> {{Coude.recouv}} </td>
+                        <td> {{Coude.largeurtole}} </td>
+                        <td> {{Coude.quantite}} </td>
+                        <td> {{Coude.dechet}} </td>
+                        <td> {{Coude.qtebrute}} </td>
+                        <td> {{Coude.tempsprefa}} </td>
+                        <td> Coude </td>
+                        <td><a href="{{path("tech_updCoude",{'id':Coude.id})}}"> Modifier Coude </a></td>
+                    </tr>
+                {% endfor %}
+                {% endif %}
+                 {%if Reductions %}
+                {% for Red in Reductions %}
+                    <tr>
+                        <td> {{Red.diametreinter}} </td>
+                        <td> {{Red.dnext}} </td>
+                        <td> {{Red.epaisseur}} </td>
+                        <td> {{Red.dnisole}} </td>
+                        <td> {{Red.circ}} </td>
+                        <td> {{Red.recouv}} </td>
+                        <td> {{Red.largeurtole}} </td>
+                        <td> {{Red.quantite}} </td>
+                        <td> {{Red.dechet}} </td>
+                        <td> {{Red.qtebrute}} </td>
+                        <td> {{Red.tempsprefa}} </td>
+                        <td> Reduction </td>
+                        <td><a href="{{path("tech_updReduction",{'id':Red.id})}}"> Modifier Reduction </a></td>
+              
+                    </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>            
+        </table>
+            </div><!-- /.box-body -->
+              </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

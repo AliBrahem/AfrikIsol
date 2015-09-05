@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Projet {
-    
+  //prix Main d'oeuvre + Accessoires + Tôle ( prix U + quantité )  
   
     /**
      * @var integer
@@ -41,6 +41,13 @@ class Projet {
      * @ORM\Column(name="idClient", type="integer", nullable=true)
      */
     private $idClient;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Quantite", type="float", nullable=true)
+     */
+    private $quantite;
     
     /**
      * @var float
@@ -388,6 +395,14 @@ class Projet {
 
     function setCharges($charges) {
         $this->charges = $charges;
+    }
+
+    function getQuantite() {
+        return $this->quantite;
+    }
+
+    function setQuantite($quantite) {
+        $this->quantite = $quantite;
     }
 
 

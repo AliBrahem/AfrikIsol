@@ -15,7 +15,7 @@ class AvancementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idprojet')
+         
             ->add('date','date')
             ->add('chargePrefaHr')
             ->add('chargePrefaHommes')

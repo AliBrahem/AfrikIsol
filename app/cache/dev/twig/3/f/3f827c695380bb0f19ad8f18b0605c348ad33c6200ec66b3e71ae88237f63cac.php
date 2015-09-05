@@ -7,8 +7,6 @@ class __TwigTemplate_3f827c695380bb0f19ad8f18b0605c348ad33c6200ec66b3e71ae88237f
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:addPlan.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,22 +14,23 @@ class __TwigTemplate_3f827c695380bb0f19ad8f18b0605c348ad33c6200ec66b3e71ae88237f
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:addPlan.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "    <div class=\"row\">
         <div class=\"col-lg-3 col-xs-6\">
         <form action=\"";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_addPlan", array("id" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))), "html", null, true);
         echo "\"  method=\"POST\">
              <h1> Planification </h1>
@@ -209,6 +208,6 @@ class __TwigTemplate_3f827c695380bb0f19ad8f18b0605c348ad33c6200ec66b3e71ae88237f
 
     public function getDebugInfo()
     {
-        return array (  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  34 => 7,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

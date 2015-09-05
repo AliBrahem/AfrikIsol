@@ -30,7 +30,7 @@ class __TwigTemplate_3eba78099956e28cebc8afa955ab0f041f19daf1b71a1a90b32306056d4
         // line 3
         echo "    <div class=\"box-body\">
         <div class=\"box-header\">
-                  <h3 class=\"box-title\">Liste des TUYAUTERIES</h3>
+                  <h3 class=\"box-title\">Liste des Utilisateurs</h3>
                 </div><!-- /.box-header -->
                 <div class=\"box-body\">
                   <table id=\"example1\" class=\"table table-bordered table-striped\">

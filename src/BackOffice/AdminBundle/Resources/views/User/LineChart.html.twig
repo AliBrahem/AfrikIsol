@@ -87,7 +87,7 @@ $(function () {
             }                
         });
     }(Highcharts));
-    
+{%if plan %}
     var d = new Date('{{plan.avisKickoff|date("Y-m-d")}}');
     
     var preavis =  {{plan.preavis}};
@@ -138,6 +138,7 @@ $(function () {
     console.log("fin : "+dateFinDem);
     
     var dateFin = new Date('{{plan.dateFin|date("Y-m-d")}}');
+{% endif %}
     // THE CHART
     $('#container').highcharts({
         chart: {
@@ -229,7 +230,7 @@ $(function () {
                 y: 10
             }, {
                 x: dateFinDem,
-                x2: Date.UTC( "{{plan.dateFin|date("Y")}}", "{{plan.dateFin|date("m")}}", "{{plan.dateFin|date("d")}}") ,
+                x2:{%if plan %} Date.UTC( "{{plan.dateFin|date("Y")}}", "{{plan.dateFin|date("m")}}", "{{plan.dateFin|date("d")}}"){% endif %} ,
                 y: 11
             }]
         }]

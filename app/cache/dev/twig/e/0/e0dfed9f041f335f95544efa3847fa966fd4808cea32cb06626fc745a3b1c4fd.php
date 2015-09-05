@@ -7,8 +7,6 @@ class __TwigTemplate_e0dfed9f041f335f95544efa3847fa966fd4808cea32cb06626fc745a3b
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:listerTUY.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,18 +14,19 @@ class __TwigTemplate_e0dfed9f041f335f95544efa3847fa966fd4808cea32cb06626fc745a3b
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:listerTUY.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 3
+        // line 5
         echo "
     <!-- Small boxes (Stat box) -->
     <div class=\"row\">
@@ -70,54 +69,54 @@ class __TwigTemplate_e0dfed9f041f335f95544efa3847fa966fd4808cea32cb06626fc745a3b
             </thead>
             <tbody>
                 ";
-        // line 44
+        // line 46
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 45
+            // line 47
             echo "                    <tr>
                         <td> ";
-            // line 46
+            // line 48
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "diametreinter", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 47
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "dnext", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 48
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "epaisseur", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 49
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "dnisole", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 50
+            // line 52
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "circ", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 51
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "recouv", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 52
+            // line 54
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "largeurtole", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 53
+            // line 55
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "quantite", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 54
+            // line 56
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "dechet", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 55
+            // line 57
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "qtebrute", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 56
+            // line 58
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "tempsprefa", array()), "html", null, true);
             echo " </td>
                     </tr>
@@ -126,7 +125,7 @@ class __TwigTemplate_e0dfed9f041f335f95544efa3847fa966fd4808cea32cb06626fc745a3b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 61
         echo "            </tbody>            
         </table>
             </div><!-- /.box-body -->
@@ -151,6 +150,6 @@ class __TwigTemplate_e0dfed9f041f335f95544efa3847fa966fd4808cea32cb06626fc745a3b
 
     public function getDebugInfo()
     {
-        return array (  130 => 59,  121 => 56,  117 => 55,  113 => 54,  109 => 53,  105 => 52,  101 => 51,  97 => 50,  93 => 49,  89 => 48,  85 => 47,  81 => 46,  78 => 45,  74 => 44,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  129 => 61,  120 => 58,  116 => 57,  112 => 56,  108 => 55,  104 => 54,  100 => 53,  96 => 52,  92 => 51,  88 => 50,  84 => 49,  80 => 48,  77 => 47,  73 => 46,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

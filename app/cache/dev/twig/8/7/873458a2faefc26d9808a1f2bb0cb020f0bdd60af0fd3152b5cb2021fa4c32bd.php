@@ -7,8 +7,6 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("AdminBundle::layoutTech.html.twig", "AdminBundle:Technique:listClient.html.twig", 1);
         $this->blocks = array(
             'user_content' => array($this, 'block_user_content'),
         );
@@ -16,22 +14,27 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
 
     protected function doGetParent(array $context)
     {
-        return "AdminBundle::layoutTech.html.twig";
+        // line 3
+        return $this->loadTemplate((($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) ? ("AdminBundle::layoutSUP.html.twig") : ("AdminBundle::layoutTech.html.twig")), "AdminBundle:Technique:listClient.html.twig", 3);
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 4
     public function block_user_content($context, array $blocks = array())
     {
-        // line 3
+        // line 5
         echo "
     <!-- Small boxes (Stat box) -->
     <div class=\"row\">
-        <table id=\"example2\" class=\"table table-bordered table-hover\">
+        <div class=\"box-header\">
+                  <h3 class=\"box-title\">Liste des Clients</h3>
+                </div><!-- /.box-header -->
+                <div class=\"box-body\">
+                  <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                 <tr>
                     <th>Société </th>
@@ -47,38 +50,38 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
             </thead>
             <tbody>
                 ";
-        // line 21
+        // line 27
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 22
+            // line 28
             echo "                    <tr>
                         <td> ";
-            // line 23
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "societe", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 24
+            // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "secteurActivite", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 25
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "telephone", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 26
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "telecopie", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 27
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "titreContact", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 28
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 29
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "credit", array()), "html", null, true);
             echo " </td>
                      
@@ -88,9 +91,11 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 39
         echo "            </tbody>            
         </table>
+                </div>
+    </div>
     </div>
     <div class=\"row\">
 
@@ -111,6 +116,6 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
 
     public function getDebugInfo()
     {
-        return array (  92 => 33,  82 => 29,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  58 => 23,  55 => 22,  51 => 21,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  95 => 39,  85 => 35,  81 => 34,  77 => 33,  73 => 32,  69 => 31,  65 => 30,  61 => 29,  58 => 28,  54 => 27,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

@@ -1,0 +1,32 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
+{% block user_content %}
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <form action="" {{ form_enctype(form) }} method="POST">
+             <h1> Planification de projet </h1>
+             <br>
+            <table id="example2" class="table table-bordered table-hover">
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Date </label>  </td>
+                    <td>{{ form_widget(form.date) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Quantité </label>  </td>
+                    <td>{{ form_widget(form.quantite) }}</td>
+                    </tr>
+                   
+                <tr>
+                         {{ form_rest(form) }}
+                </tr>
+            </table>
+    <div>
+        <input type="submit" class="btn btn-primary btn-block btn-flat" value="Ajouter Planification" />
+    </div>
+    </form>
+        </div>    
+    </div>
+    
+    
+{% endblock user_content %}

@@ -124,20 +124,21 @@
                         <li class="header">Menu de navigation</li>
                         <li class="active treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>Gestion des Tôles</span> <i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa fa-slideshare"></i> <span>Gestion des Clients</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active">
-                                    <a href="{{path('tech_calculTole',{'id':0})}}"><i class="fa fa-calculator"></i> Calculer tôle</a>
+                                    <a href="{{path('tech_addClient')}}"><i class="fa fa-plus"></i> Ajouter Client</a>
                                   
                                 </li>
                                 <li>
-                                    <a href="{{path('tech_listerTUYAUTERIES')}}"><i class="fa fa-list"></i> Lister tôles</a>
+                                    <a href="{{path('tech_listClient')}}"><i class="fa fa-th-list"></i> Lister Clients</a>
                                    
                                 </li>
+                               
                             </ul>
                         </li>
-                         <li class="active treeview">
+                        <li class="active treeview">
                             <a href="#">
                                 <i class="fa fa-clipboard"></i> <span>Gestion des Projets</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -155,20 +156,41 @@
                         </li>
                         <li class="active treeview">
                             <a href="#">
-                                <i class="fa fa-slideshare"></i> <span>Gestion des Clients</span> <i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa fa-edit"></i> <span>Gestion des Tôles</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active">
-                                    <a href="{{path('tech_addClient')}}"><i class="fa fa-plus"></i> Ajouter Client</a>
-                                  
-                                </li>
+                                
                                 <li>
-                                    <a href="{{path('tech_listClient')}}"><i class="fa fa-th-list"></i> Lister Clients</a>
+                                    <a href="{{path('tech_listTole')}}"><i class="fa fa-list"></i> Ajouter/Lister tôles</a>
                                    
                                 </li>
-                               
                             </ul>
                         </li>
+                        <li class="active treeview">
+                            <a href="#">
+                                <i class="fa fa-bar-chart"></i> <span>Gestion de Planification</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                                <li>
+                                    <a href="{{path('tech_listAvancement')}}"><i class="fa fa-list"></i> Ajouter/Lister Avancement</a>
+                                   
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active treeview">
+                            <a href="#">
+                                <i class="fa fa-area-chart"></i> <span>Gestion d'Avancement</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                                <li>
+                                    <a href="{{path('tech_listAvancement')}}"><i class="fa fa-list"></i> Ajouter/Lister Avancement</a>
+                                   
+                                </li>
+                            </ul>
+                        </li>
+                        
                     </ul>
                 </section>
                 <!-- /.sidebar -->

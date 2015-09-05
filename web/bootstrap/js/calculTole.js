@@ -18,7 +18,10 @@ $("document").ready(function() {
         var prixutole = document.getElementById("prixUnitaireTole");
         var prixuisolant = document.getElementById("prixUnitaireIsolant");
         var prix = document.getElementById("prix");
-       
+        var prixMO = document.getElementById("prixMO");
+        var quantite = document.getElementById("quantite");
+       // var qteB = quantite.value * qtebrute.value;
+        //prix.value = ( parseFloat(qteB * prixuisolant.value)+ parseFloat(prixMO.value) + parseFloat(prixutole.value));
         if(document.getElementById("tole").value=="TUYAUTERIES")
         {
   
@@ -67,76 +70,62 @@ $("document").ready(function() {
             circ.value = (dnisole.value*3.14).toFixed(2);
             if(x >= 15 && x <= 50)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+         
                     
                     larg.value = (((parseFloat(circ.value))/10)*0.5).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+               
             }
             
             if(x >= 66 && x <= 102)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+           
                     
                     larg.value = (((parseFloat(circ.value))/10)*0.65).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+           
             }
             if(x >= 125 && x <= 200)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+             
                     
                     larg.value = (((parseFloat(circ.value))/10)*0.85).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+      
             }
             if(x >= 250 && x <= 350)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
-                    
+            
                     larg.value = (((parseFloat(circ.value))/10)*1.1).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+        
             }
             if(x >= 400 && x <= 600)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
-                    
+          
                     larg.value = (((parseFloat(circ.value))/10)*1.5).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+         
             }
             if(x >= 650 && x <= 1000)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+            
                     
                     larg.value = (((parseFloat(circ.value))/10)*2).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+           
             }
             
             
@@ -176,82 +165,70 @@ $("document").ready(function() {
         {
                 if(x >= 15 && x <= 50)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+         
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)*0.3).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+                
             }
             
             if(x >= 66 && x <= 102)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+           
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)*0.4).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+                
             }
             if(x >= 125 && x <= 200)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+             
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)*0.6).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+               
             }
             if(x >= 250 && x <= 350)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+            
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)*0.8).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+                
             }
             if(x >= 400 && x <= 600)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+                
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+                
             }
             if(x >= 650 && x <= 1000)
             {
-                if(epaisseur== 19 || epaisseur== 30 || epaisseur== 32 || epaisseur== 40 || epaisseur== 50 || epaisseur== 60 || epaisseur== 80 || epaisseur== 100 )
-
-                {
+          
                     dnisole.value = epaisseur*2+parseFloat(diamex);
                     circ.value = (dnisole.value*3.14).toFixed(2);
                     larg.value = (((parseFloat(circ.value))/10)*1.1).toFixed(3);
                     qtenet.value = ( parseFloat(recouv.value) + parseFloat(larg.value)).toFixed(2);
                     dechet.value = Math.round((qtenet.value*0.1)*100)/100;
                     qtebrute.value = (parseFloat(dechet.value) + parseFloat(qtenet.value)).toFixed(2) ;
-                }
+               
             }
             
              if(diamex >= 21 && diamex <= 180)

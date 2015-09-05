@@ -233,18 +233,42 @@ class UserController extends Controller
         ));
         }
         
-        public function suivieChartAction(){
-        // Chart
-        $series = array(
-        array("name" => "Suivie du projet", "data" => array(1,2,3,4,5,6,8))
-        );
-        $ob = new Highchart();
-        $ob->chart->renderTo('linechart'); // #id du div où afficher le graphe
-        $ob->title->text('Avancement du projet');
-        $ob->xAxis->title(array('text' => "Semaines"));
-        $ob->yAxis->title(array('text' => "Quantité"));
-        $ob->series($series);
-        return $this->render('AdminBundle:User:suivieChart.html.twig');
+        public function suivieChartAction($id){
+         $usr= $this->get('security.context')->getToken()->getUser();
+            $m=array();
+            $m=$usr;
+            $images = array();
+   
+         $images = base64_encode(stream_get_contents($m->getImage()));
+        $em = $this->container->get('doctrine')->getEntityManager();
+         $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+         $query = $em->createQuery(
+            'SELECT p
+            FROM AdminBundle:Avancement p
+            WHERE p.idprojet = :id
+            ORDER BY p.date ASC')
+                 ->setParameter('id', $id);  
+       $avanc = $query->getResult();
+        //$avanc = $em->getRepository('AdminBundle:Avancement')->findBy(array('idprojet' => $id));
+       $query2 = $em->createQuery(
+            'SELECT p
+            FROM AdminBundle:MAD p
+            WHERE p.idprojet = :id
+            ORDER BY p.date ASC')
+                 ->setParameter('id', $id);  
+       $mad = $query2->getResult();
+       // $mad = $em->getRepository('AdminBundle:MAD')->findBy(array('idprojet' => $id));
+       $query3 = $em->createQuery(
+            'SELECT p
+            FROM AdminBundle:Planification p
+            WHERE p.idprojet = :id
+            ORDER BY p.date ASC')
+                 ->setParameter('id', $id);  
+       $plan = $query3->getResult();
+        //$plan = $em->getRepository('AdminBundle:Planification')->findBy(array('idprojet' => $id));
+        return $this->render('AdminBundle:User:suivieChart.html.twig', array(
+        'avanc'=>$avanc,'img'=>$images,'projet'=>$modele,'mad'=>$mad,'plan'=>$plan,'id'=>$id
+        ));
         }
     
 }
