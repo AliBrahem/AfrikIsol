@@ -15,7 +15,6 @@ class AvancementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-         
             ->add('date','date')
             ->add('chargePrefaHr')
             ->add('chargePrefaHommes')
@@ -23,9 +22,18 @@ class AvancementType extends AbstractType
             ->add('chargePrevMontaHommes')
             ->add('chargeReelleMontaHr')
             ->add('chargeReelleMontaHomme')
-            ->add('isolant')
             ->add('quantite')
-        ;
+            ->add( 'isolant', 'entity', array(
+    'class' => 'BackOffice\AdminBundle\Entity\Tole',
+    'property' => 'id',
+    'query_builder' => function(\Doctrine\ORM\EntityRepository $er ) {
+        return $er->createQueryBuilder('t')
+                  ->orderBy('t.quantite', 'ASC')
+                  ->where('t.idprojet = ?1')
+                 
+                  ->setParameter(1,3);
+}    
+        ));
     }
     
     /**

@@ -3,70 +3,43 @@
 namespace BackOffice\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BackOffice\AdminBundle\Form\CoudeType;
 use BackOffice\AdminBundle\Form\ProjetType;
-use BackOffice\AdminBundle\Form\GanttType;
 use BackOffice\AdminBundle\Form\AvancementType;
 use BackOffice\AdminBundle\Entity\Planification;
+use BackOffice\AdminBundle\Entity\Tole;
 use BackOffice\AdminBundle\Entity\MAD;
 use BackOffice\AdminBundle\Form\PlanificationType;
 use BackOffice\AdminBundle\Form\MADType;
+use BackOffice\AdminBundle\Form\ToleType;
 use BackOffice\AdminBundle\Form\ClientType;
-use BackOffice\AdminBundle\Entity\Coude;
 use BackOffice\AdminBundle\Entity\Projet;
 use BackOffice\AdminBundle\Entity\Avancement;
 use BackOffice\AdminBundle\Entity\Client;
 use BackOffice\AdminBundle\Entity\Gantt;
-use BackOffice\AdminBundle\Entity\Tuyauteries;
-use BackOffice\AdminBundle\Entity\Reduction;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class TechController extends Controller
 {
     public function indexAction()
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
         
-        return $this->render('AdminBundle:Technique:indexTech.html.twig' , array('img' => $images));
+        return $this->render('AdminBundle:Technique:indexTech.html.twig');
     }
     public function listerToleaction($id)
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+       
         $em = $this->container->get('doctrine')->getEntityManager();
-        $tuyauteries = $em->getRepository('AdminBundle:Tuyauteries')->findBy(array("idprojet"=>$id));
-        $coudes = $em->getRepository('AdminBundle:Coude')->findBy(array("idprojet"=>$id));
-        $reductions = $em->getRepository('AdminBundle:Reduction')->findBy(array("idprojet"=>$id));
+        $toles = $em->getRepository('AdminBundle:Tole')->findBy(array("idprojet"=>$id));
         
-        return $this->render('AdminBundle:Technique:listerTole.html.twig', array('TUY' => $tuyauteries ,'Coudes' => $coudes,'Reductions' => $reductions,'img' => $images));
+        return $this->render('AdminBundle:Technique:listerTole.html.twig', array('tole' => $toles));
     }
     
    
     
     public function calculToleAction($id)
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-        
+
         $Request = $this->getRequest();
 
 
@@ -76,105 +49,66 @@ class TechController extends Controller
                 $diametreinter  =   $Request->get('diametreinter');
                 $epaisseur      =   $Request->get('epaisseur');
                 $dnext          =   $Request->get('dnext');
+                $pouce          =   $Request->get('pouce');
                 $dnisole        =   $Request->get('dnisole');
                 $circ           =   $Request->get('circ');
                 $recouv         =   $Request->get('recouv');
-                $largeurtole    =   $Request->get('largeurtole');
+                $nbcouche    =   $Request->get('nbcouche');
+                $unite    =   $Request->get('unite');
                 $qtenet         =   $Request->get('qtenet');
                 $dechet         =   $Request->get('dechet');
                 $qtebrute       =   $Request->get('qtebrute');
                 $tempsprefa     =   $Request->get('tempsprefa');
                 $tempsmonta     =   $Request->get('tempsmonta');
+                $prefamonta     =   $Request->get('prefamonta');
                 $prixUnitaireTole    =   $Request->get('prixUnitaireTole');
-                $prixUnitaireIsolant =   $Request->get('prixUnitaireIsolant');
+                $prixUnitaireIsolantMm =   $Request->get('prixUnitaireIsolantMm');
+                $prixUnitaireIsolantML =   $Request->get('prixUnitaireIsolantML');
                 $quantite           =   $Request->get('quantite');
                 $prix           =   $Request->get('prix');
-                
-                if($tole == "TUYAUTERIES")
-                {        
-                        $modele = new Tuyauteries();
+                $prixMO           =   $Request->get('prixMO');
+                $accessoire           =   $Request->get('accessoire');
+                $echaff           =   $Request->get('echaffaudage');
+                      
+                        $modele = new Tole();
+                        $modele->setType($tole);
                         $modele->setDiametreinter($diametreinter);
                         $modele->setDnext($dnext);
                         $modele->setEpaisseur($epaisseur);
                         $modele->setDnisole($dnisole);
                         $modele->setCirc($circ);
                         $modele->setRecouv($recouv);
-                        $modele->setLargeurtole($largeurtole);
-                        $modele->setQuantite($qtenet);
+                        $modele->setPouce($pouce);
+                        $modele->setNbCouche($nbcouche);
+                        $modele->setUnite($unite);
+                        $modele->setEchaffaudage($echaff);
+                        $modele->setAccessoires($accessoire);
+                        $modele->setPrixMO($prixMO);
+                        $modele->setQuantite($quantite);
                         $modele->setDechet($dechet);
                         $modele->setQtebrute($qtebrute);
                         $modele->setTempsprefa($tempsprefa);
                         $modele->setTempsMonta($tempsmonta);
-                        $modele->setPrixUnitaireTole(0);
-                        $modele->setPrixUnitaireIsolant(0);
-                        $modele->setPrixMO(0);
-                        $modele->setQuantite($quantite);
-                        $modele->setPrix(0);
-                        $modele->setIdprojet($id);
-                        $em = $this->container->get('doctrine')->getEntityManager();
-                        $em->persist($modele);
-                        $em->flush();
-                        return $this->redirect($this->generateUrl("tech_listerTole", array('id' => $id)));
-                }        
-                if($tole == "COUDE")
-                {        
-                        $modele = new Coude();
-                        $modele->setDiametreinter($diametreinter);
-                        $modele->setDnext($dnext);
-                        $modele->setEpaisseur($epaisseur);
-                        $modele->setDnisole($dnisole);
-                        $modele->setCirc($circ);
-                        $modele->setRecouv($recouv);
-                        $modele->setLargeurtole($largeurtole);
+                        $modele->setTempsPrefaMonta($prefamonta);
+                        $modele->setPrixUnitaireTole($prixUnitaireTole);
+                        $modele->setPrixUnitaireIsolantMm($prixUnitaireIsolantMm);
+                        $modele->setPrixUnitaireIsolantML($prixUnitaireIsolantML);
                         $modele->setQtenet($qtenet);
-                        $modele->setDechet($dechet);
-                        $modele->setQtebrute($qtebrute);
-                        $modele->setTempsprefa($tempsprefa);
-                        $modele->setTempsMonta($tempsmonta);
-                        $modele->setPrixUnitaireTole(0);
-                        $modele->setPrixUnitaireIsolant(0);
-                        $modele->setPrix(0);
-                        $modele->setPrixMO(0);
-                        $modele->setQuantite($quantite);
-                        $modele->setIdprojet($id);
+                        $modele->setPrix($prix);
+                        $modele->setEtat("En attente");
                         $em = $this->container->get('doctrine')->getEntityManager();
-                        $em->persist($modele);
-                        $em->flush();
-                        return $this->redirect($this->generateUrl("tech_listerTole", array('id' => $id)));
-                }
-                if($tole == "REDUCTION")
-                {        
-                        $modele = new Reduction();
-                        $modele->setDiametreinter($diametreinter);
-                        $modele->setDnext($dnext);
-                        $modele->setEpaisseur($epaisseur);
-                        $modele->setDnisole($dnisole);
-                        $modele->setCirc($circ);
-                        $modele->setRecouv($recouv);
-                        $modele->setLargeurtole($largeurtole);
-                        $modele->setQtenet($qtenet);
-                        $modele->setDechet($dechet);
-                        $modele->setQtebrute($qtebrute);
-                        $modele->setTempsprefa($tempsprefa);
-                        $modele->setTempsMonta($tempsmonta);
-                        $modele->setPrixUnitaireTole(0);
-                        $modele->setPrixUnitaireIsolant(0);
-                        $modele->setPrix(0);
-                        $modele->setPrixMO(0);
-                        $modele->setQuantite($quantite);
-                        $modele->setIdprojet($id);
-                        $em = $this->container->get('doctrine')->getEntityManager();
-                        $em->persist($modele);
-                        $em->flush();
+                        $projet = $em->getRepository('AdminBundle:Projet')->find($id);
+                        $modele->setIdprojet($projet);
                         
+                        $em->persist($modele);
+                        $em->flush();
+
                         return $this->redirect($this->generateUrl("tech_listerTole", array('id' =>$id)));
-                }
-                //return $this->redirect($this->generateUrl("tech_listerTUYAUTERIES"));
-            
+      
         }
 
 
-        return $this->render('AdminBundle:Technique:calculTole.html.twig' , array('img' => $images,'id'=>$id)
+        return $this->render('AdminBundle:Technique:calculTole.html.twig' , array('id'=>$id)
               //  , array('form' => $form->createView())
                 );
         
@@ -182,17 +116,11 @@ class TechController extends Controller
     }
     
     public function generatePdfTubeAction() {
-        
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+      
         $em = $this->container->get('doctrine')->getEntityManager();
         $modeles = $em->getRepository('AdminBundle:Coude')->findAll();
         
-        $html = $this->renderView('AdminBundle:Technique:GenererTubePDF.html.twig', array('Modeles' => $modeles ,'img' => $images)
+        $html = $this->renderView('AdminBundle:Technique:GenererTubePDF.html.twig', array('Modeles' => $modeles)
           
         );
         return new Response(
@@ -204,13 +132,7 @@ class TechController extends Controller
     }
     
     public function addProjetAction()
-    {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+    {  
         
          $projet = new Projet();
         $form = $this->container->get('form.factory')->create(new ProjetType(), $projet);
@@ -229,61 +151,64 @@ class TechController extends Controller
             }
         }
          
-        return $this->render('AdminBundle:Technique:addProjet.html.twig' , array('img' => $images,'form' => $form->createView()));
+        return $this->render('AdminBundle:Technique:addProjet.html.twig' , array('form' => $form->createView()));
     }
     
     public function listerProjetAction()
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+  
         $em = $this->container->get('doctrine')->getEntityManager();
         $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
         $plan = $em->getRepository('AdminBundle:Gantt')->findAll();
-        return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'img' => $images,'plan' => $plan));
+        return $this->render('AdminBundle:Technique:listProjet.html.twig', array('Modeles' => $modeles ,'plan' => $plan));
     }
     
     public function listerAvancementAction()
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+       
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+        //$query = $em->createQuery("SELECT p FROM AdminBundle:Projet p Join AdminBundle:Avancement i where p.id = i.idprojet");
+        //$modeles = $query->getResult();
+             return $this->render('AdminBundle:Technique:listAvancement.html.twig', array('Modeles' => $modeles));
+    }
+     public function listerPlanificationAction()
+    {
         $em = $this->container->get('doctrine')->getEntityManager();
         //$modeles = $em->getRepository('AdminBundle:Projet')->findAll();
-        $query = $em->createQuery("SELECT e FROM AdminBundle:Projet e where e.id IN (Select i.idprojet From AdminBundle:Avancement i )");
+        $query = $em->createQuery("SELECT p FROM AdminBundle:Projet p Join AdminBundle:Planification i where p.id = i.idprojet");
         $modeles = $query->getResult();
-             return $this->render('AdminBundle:Technique:listAvancement.html.twig', array('Modeles' => $modeles ,'img' => $images));
+             return $this->render('AdminBundle:Technique:listPlan.html.twig', array('Modeles' => $modeles));
+    }
+    public function listerGanttAction()
+    {
+ 
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+       
+       return $this->render('AdminBundle:Technique:listGantt.html.twig', array('Modeles' => $modeles));
+    }
+    public function listerMADAction()
+    {
+     
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+        
+       return $this->render('AdminBundle:Technique:listMAD.html.twig', array('Modeles' => $modeles));
     }
     
     public function listToleAction()
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+
         $em = $this->container->get('doctrine')->getEntityManager();
         $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
-        return $this->render('AdminBundle:Technique:listTole.html.twig', array('Modeles' => $modeles ,'img' => $images));
+        return $this->render('AdminBundle:Technique:listTole.html.twig', array('Modeles' => $modeles));
     }
     
     
     public function addClientAction()
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
+      
          $client = new Client();
         $form = $this->container->get('form.factory')->create(new ClientType(), $client);
 
@@ -294,50 +219,53 @@ class TechController extends Controller
             $form->bind($Request);
 
             if ($form->isValid()) {
+                
                 $em = $this->container->get('doctrine')->getEntityManager();
+                
+                $src = $Request->files->get('photo');
+
+                $stream = fopen($src, 'rb');
+                
+                $client->setImage(stream_get_contents($stream));
                 $em->persist($client);
                 $em->flush();
                 return $this->redirect($this->generateUrl("tech_listClient"));
             }
         }
          
-        return $this->render('AdminBundle:Technique:addClient.html.twig' , array('img' => $images,'form' => $form->createView()));
+        return $this->render('AdminBundle:Technique:addClient.html.twig' , array('form' => $form->createView()));
     }
     
     public function listerClientAction()
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
+   
         $em = $this->container->get('doctrine')->getEntityManager();
         $modeles = $em->getRepository('AdminBundle:Client')->findAll();
         
-        return $this->render('AdminBundle:Technique:listClient.html.twig', array('Modeles' => $modeles ,'img' => $images));
+        $m = array();
+        $m = $modeles;
+        $logos = array();
+        for ($i = 0; $i < count($m); $i++) {
+            $logos[$i] = base64_encode(stream_get_contents($m[$i]->getImage()));
+        }
+        
+        return $this->render('AdminBundle:Technique:listClient.html.twig', array('logos' => $logos ,'Modeles' => $modeles));
     }
     
     public function addGanttAction($id)
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-         
-        
-        $Request = $this->getRequest();
 
+        $Request = $this->getRequest();
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Projet')->find($id);
 
         if ($Request->getMethod() == 'POST') {
          
             if ( $Request->get('titem1')!="" && $Request->get('dated1')!="" && $Request->get('datef1')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                
+                
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem1'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated1')));
                 $plan->setDateFin(new \DateTime($Request->get('datef1')));
@@ -347,8 +275,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem2')!="" && $Request->get('dated2')!="" && $Request->get('datef2')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                 $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem2'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated2')));
                 $plan->setDateFin(new \DateTime($Request->get('datef2')));
@@ -359,8 +286,7 @@ class TechController extends Controller
             
             if ( $Request->get('titem3')!="" && $Request->get('dated3')!="" && $Request->get('datef3')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem3'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated3')));
                 $plan->setDateFin(new \DateTime($Request->get('datef3')));
@@ -370,8 +296,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem4')!="" && $Request->get('dated4')!="" && $Request->get('datef4')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                 $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem4'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated4')));
                 $plan->setDateFin(new \DateTime($Request->get('datef4')));
@@ -381,8 +306,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem5')!="" && $Request->get('dated5')!="" && $Request->get('datef5')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem5'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated5')));
                 $plan->setDateFin(new \DateTime($Request->get('datef5')));
@@ -392,8 +316,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem6')!="" && $Request->get('dated6')!="" && $Request->get('datef6')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem6'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated6')));
                 $plan->setDateFin(new \DateTime($Request->get('datef6')));
@@ -403,8 +326,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem7')!="" && $Request->get('dated7')!="" && $Request->get('datef7')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+               $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem7'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated7')));
                 $plan->setDateFin(new \DateTime($Request->get('datef7')));
@@ -414,8 +336,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem8')!="" && $Request->get('dated8')!="" && $Request->get('datef8')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem8'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated8')));
                 $plan->setDateFin(new \DateTime($Request->get('datef8')));
@@ -425,8 +346,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem9')!="" && $Request->get('dated9')!="" && $Request->get('datef9')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem9'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated9')));
                 $plan->setDateFin(new \DateTime($Request->get('datef9')));
@@ -436,8 +356,7 @@ class TechController extends Controller
             }
             if ( $Request->get('titem10')!="" && $Request->get('dated10')!="" && $Request->get('datef10')!="") {
                 $plan = new Gantt();
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $plan->setIdprojet($modele);
                 $plan->setItem($Request->get('titem10'));
                 $plan->setDateDebut(new \DateTime($Request->get('dated10')));
                 $plan->setDateFin(new \DateTime($Request->get('datef10')));
@@ -449,48 +368,67 @@ class TechController extends Controller
              return $this->redirect($this->generateUrl("admin_gantt",array('id'=>$id)));
         }
          
-        return $this->render('AdminBundle:Technique:addPlan.html.twig' , array('img' => $images,'id'=>$id));
+        return $this->render('AdminBundle:Technique:addGantt.html.twig' , array('id'=>$id));
     }
     
     public function addAvancementAction($id)
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-         $plan = new Avancement();
-        $form = $this->container->get('form.factory')->create(new AvancementType(), $plan);
 
+         $plan = new Avancement();
+
+         $form = $this->createFormBuilder($plan)
+
+            ->add('date','date')
+            ->add('chargePrefaHr')
+            ->add('chargePrefaHommes')
+            ->add('chargePrevMontaHr')
+            ->add('chargePrevMontaHommes')
+            ->add('chargeReelleMontaHr')
+            ->add('chargeReelleMontaHomme')
+            ->add('quantite')
+            ->add( 'isolant', 'entity', array(
+    'class' => 'BackOffice\AdminBundle\Entity\Tole',
+    'property' => 'id',
+    'query_builder' => function(\Doctrine\ORM\EntityRepository $er ) use ( $id ) {
+        return $er->createQueryBuilder('t')
+                  ->orderBy('t.quantite', 'ASC')
+                  ->where('t.idprojet = ?1')
+                  ->Andwhere('t.quantite>0')
+                  ->Andwhere('t.etat = 1')
+                  ->setParameter(1,$id);
+                                                                     }    
+        ))
+            ->getForm();
+         
+        
+        $request = $this->getRequest();
+        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
+        
         $Request = $this->getRequest();
 
-
         if ($Request->getMethod() == 'POST') {
-            $form->bind($Request);
-
-            if ($form->isValid()) {
+           if ($form->handleRequest($request)->isValid()) {
+            $plan = $form->getData();
+        
                 $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $tole = $plan->getIsolant();
+                $tole->setQuantite($tole->getQuantite()-$plan->getQuantite());
+                $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+                $plan->setIdprojet($modele);
                 $em->persist($plan);
+                $em->flush();
+                $em->persist($tole);
                 $em->flush();
                 return $this->redirect($this->generateUrl("admin_grapheSuivie",array('id'=>$id)));
             }
         }
          
-        return $this->render('AdminBundle:Technique:addAvancement.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
+        return $this->render('AdminBundle:Technique:addAvancement.html.twig' , array('form' => $form->createView(),"id"=>$id));
     }
     
     public function addPlanAction($id)
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
+
          $plan = new Planification();
         $form = $this->container->get('form.factory')->create(new PlanificationType(), $plan);
 
@@ -502,25 +440,20 @@ class TechController extends Controller
 
             if ($form->isValid()) {
                 $em = $this->container->get('doctrine')->getEntityManager();
-                $plan->setIdprojet($id);
+                $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+                $plan->setIdprojet($modele);
                 $em->persist($plan);
                 $em->flush();
                 return $this->redirect($this->generateUrl("admin_grapheSuivie",array('id'=>$id)));
             }
         }
          
-        return $this->render('AdminBundle:Technique:addPlanification.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
+        return $this->render('AdminBundle:Technique:addPlanification.html.twig' , array('form' => $form->createView(),"id"=>$id));
     }
     
     public function addMADAction($id)
     {   
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
+
          $mad = new MAD();
         $form = $this->container->get('form.factory')->create(new MADType(), $mad);
 
@@ -532,172 +465,62 @@ class TechController extends Controller
 
             if ($form->isValid()) {
                 $em = $this->container->get('doctrine')->getEntityManager();
-                $mad->setIdprojet($id);
+                $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+                $mad->setIdprojet($modele);
                 $em->persist($mad);
                 $em->flush();
                 return $this->redirect($this->generateUrl("admin_grapheSuivie",array('id'=>$id)));
             }
         }
          
-        return $this->render('AdminBundle:Technique:addMAD.html.twig' , array('img' => $images,'form' => $form->createView(),"id"=>$id));
+        return $this->render('AdminBundle:Technique:addMAD.html.twig' , array('form' => $form->createView(),"id"=>$id));
     }
-    
-    public function findTUYAction($epaisseur){
-        // Chart
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
+     
+     public function updateToleAction($id)
+    {
+
+        $entity = $em->getRepository('AdminBundle:Tole')->find($id);
+         $form = $this->container->get('form.factory')->create(new ToleType(), $entity);
+
+
+        $Request = $this->getRequest();
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+            if ($form->isValid()) {
+
+                $em->persist($entity);
+                $em->flush();
+               return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $entity->getIdprojet()->getId())));
    
-         $images = base64_encode(stream_get_contents($m->getImage()));
+            }
+        }
+
+
+         return $this->render('AdminBundle:Technique:updTole.html.twig', array('form' => $form->createView(),'id'=> $id));
+       
+    }
+
+    
+    public function findToleAction($id){
+
         $em = $this->container->get('doctrine')->getEntityManager();
-        $modele = $em->getRepository('AdminBundle:Tuyauteries')->findBy(array("epaisseur"=>$epaisseur));
+        $modele = $em->getRepository('AdminBundle:Tole')->find($id);
         $response = new JsonResponse();
-        
-        return $response->setData(array('tuy'=>$modele[2]->getDiametreinter()));
+        if($modele)
+        {
+        $prefa=$modele->getTempsprefa();
+        $monta=$modele->getTempsMonta(); 
+        $quantite = $modele->getQuantite();
+        }
+        else
+        {
+            $prefa = null;
+            $monta=null;
+            $quantite=null;
+        }
+        return $response->setData(array('prefa'=>$prefa,'monta'=>$monta,'quantite'=>$quantite));
         //echo ''.$modele->getPreavis();
      }
      
-     public function updateTUYAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-        $entity = $em->getRepository('AdminBundle:Tuyauteries')->find($id);
-        
-        
-        
-        $form = $this->createFormBuilder($entity)
-                 ->add('diametreinter')
-            ->add('dnext')
-            ->add('epaisseur')
-            ->add('dnisole')
-            ->add('circ')
-            ->add('recouv')
-            ->add('largeurtole')
-            ->add('quantite')
-            ->add('dechet')
-            ->add('qtebrute')
-            ->add('tempsprefa')
-            ->add('tempsMonta')
-            ->add('prixUnitaireTole')
-            ->add('prixUnitaireIsolant')
-            ->add('prix')
-            ->getForm();
-        $form->setData($entity);
-        $request = $this->getRequest();
-        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
-        if ($form->handleRequest($request)->isValid()) {
-            $objToPersist = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($objToPersist);
-            $em->flush();
-       
-        return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
-   
-        }
-      
-        
-         return $this->render('AdminBundle:Technique:updTUY.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
-       
-    }
-    
-    public function updateCoudeAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-        $entity = $em->getRepository('AdminBundle:Coude')->find($id);
-        
-        
-        
-        $form = $this->createFormBuilder($entity)
-                 ->add('diametreinter')
-            ->add('dnext')
-            ->add('epaisseur')
-            ->add('dnisole')
-            ->add('circ')
-            ->add('recouv')
-            ->add('largeurtole')
-            ->add('quantite')
-            ->add('dechet')
-            ->add('qtebrute')
-            ->add('tempsprefa')
-            ->add('tempsMonta')
-            ->add('prixUnitaireTole')
-            ->add('prixUnitaireIsolant')
-            ->add('prix')
-            ->getForm();
-        $form->setData($entity);
-        $request = $this->getRequest();
-        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
-        if ($form->handleRequest($request)->isValid()) {
-            $objToPersist = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($objToPersist);
-            $em->flush();
-          return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
-   
-        }
-      
-        
-         return $this->render('AdminBundle:Technique:updCoude.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
-       
-    }
-    
-    public function updateRedAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
-        $entity = $em->getRepository('AdminBundle:Reduction')->find($id);
-        
-        
-        
-        $form = $this->createFormBuilder($entity)
-                 ->add('diametreinter')
-            ->add('dnext')
-            ->add('epaisseur')
-            ->add('dnisole')
-            ->add('circ')
-            ->add('recouv')
-            ->add('largeurtole')
-            ->add('quantite')
-            ->add('dechet')
-            ->add('qtebrute')
-            ->add('tempsprefa')
-            ->add('tempsMonta')
-            ->add('prixUnitaireTole')
-            ->add('prixUnitaireIsolant')
-            ->add('prix')
-            ->getForm();
-        $form->setData($entity);
-        $request = $this->getRequest();
-        //verifie si le formulaire est submitter puis il récupère les données de la requête si la requête est porteuxe des données 
-        if ($form->handleRequest($request)->isValid()) {
-            $objToPersist = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($objToPersist);
-            $em->flush();
-            return $this->redirect($this->generateUrl("tech_listerTole", array('id'=> $objToPersist->getIdprojet())));
-   
-        }
-      
-        
-         return $this->render('AdminBundle:Technique:updRed.html.twig', array('form' => $form->createView(),'img' => $images,'id'=> $id));
-       
-    }
 }
 

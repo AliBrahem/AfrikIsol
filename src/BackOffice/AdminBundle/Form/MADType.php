@@ -19,9 +19,10 @@ class MADType extends AbstractType
             ->add('designation')
             ->add('date','date')
             ->add('dnext')
-            ->add('longueur')
-            ->add('coude90')
-            ->add('coude45')
+            ->add('longueur','number')
+            ->add('coude')
+            ->add('surface')    
+            ->add('tuyauterie')
             ->add('reduction')
             ->add('te')
             ->add('brides')
@@ -30,6 +31,8 @@ class MADType extends AbstractType
             ->add('couche1')
             ->add('couche2')
             ->add('couche3')
+            ->add('couche4')    
+            ->add('couche5')    
             ->add('quantite')
         ;
     }

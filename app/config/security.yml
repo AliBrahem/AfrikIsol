@@ -32,7 +32,35 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/indexSUPAD, role: ROLE_ADMIN}
         - { path: ^/updateProfile, role: ROLE_ADMIN}
+        - { path: ^/updOtherUser, role: ROLE_ADMIN}
+        - { path: ^/deleteUser, role: ROLE_ADMIN}
+        - { path: ^/listerUsers, role: ROLE_ADMIN}
         - { path: ^/displayProfile, role: ROLE_ADMIN}
-        
-
-    
+        - { path: ^/chartGantt, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/suivieChart, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/calculTole, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listerTole, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listProjet, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listAvancement, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listPlanification, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listGantt, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listMAD, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addProjet, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addClient, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listClient, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/listTole, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addAvancement, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addGantt, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addPlanification, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/addMAD, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/indexTech, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/updTole, role: [ROLE_ADMIN,ROLE_TECHNIQUE]}
+        - { path: ^/indexLog, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/addStock, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/listStock, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/addMvt, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/listMvt, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/listAllMvt, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/listDmd, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+        - { path: ^/updDmd, role: [ROLE_ADMIN,ROLE_LOGISTIQUE]}
+       

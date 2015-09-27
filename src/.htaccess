@@ -1,1 +1,11 @@
-deny from all
+<VirtualHost *:80>
+    ServerName www.afrikisolAPP.com
+    DocumentRoot "C:/wamp/www/Symfony"
+
+    <Directory "C:/wamp/www/Symfony">
+        DirectoryIndex app.php
+        Options -Indexes
+        AllowOverride All
+        Allow from All
+    </Directory>
+</VirtualHost>

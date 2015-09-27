@@ -1,0 +1,396 @@
+<?php
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
+use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use Symfony\Component\DependencyInjection\Exception\LogicException;
+use Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
+
+/**
+ * appDevDebugProjectContainer.
+ *
+ * This class has been auto-generated
+ * by the Symfony Dependency Injection Component.
+ */
+class appDevDebugProjectContainer extends Container
+{
+    private $parameters;
+    private $targetDirs = array();
+
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $dir = __DIR__;
+        for ($i = 1; $i <= 4; ++$i) {
+            $this->targetDirs[$i] = $dir = dirname($dir);
+        }
+        $this->parameters = $this->getDefaultParameters();
+
+        $this->services =
+        $this->scopedServices =
+        $this->scopeStacks = array();
+        $this->scopes = array('request' => 'container');
+        $this->scopeChildren = array('request' => array());
+        $this->methodMap = array(
+            'acme.demo.listener' => 'getAcme_Demo_ListenerService',
+            'annotation_reader' => 'getAnnotationReaderService',
+            'assetic.asset_factory' => 'getAssetic_AssetFactoryService',
+            'assetic.asset_manager' => 'getAssetic_AssetManagerService',
+            'assetic.cache' => 'getAssetic_CacheService',
+            'assetic.controller' => 'getAssetic_ControllerService',
+            'assetic.filter.cssrewrite' => 'getAssetic_Filter_CssrewriteService',
+            'assetic.filter_manager' => 'getAssetic_FilterManagerService',
+            'assetic.request_listener' => 'getAssetic_RequestListenerService',
+            'assetic.value_supplier.default' => 'getAssetic_ValueSupplier_DefaultService',
+            'cache_clearer' => 'getCacheClearerService',
+            'cache_warmer' => 'getCacheWarmerService',
+            'controller_name_converter' => 'getControllerNameConverterService',
+            'data_collector.request' => 'getDataCollector_RequestService',
+            'data_collector.router' => 'getDataCollector_RouterService',
+            'debug.controller_resolver' => 'getDebug_ControllerResolverService',
+            'debug.deprecation_logger_listener' => 'getDebug_DeprecationLoggerListenerService',
+            'debug.emergency_logger_listener' => 'getDebug_EmergencyLoggerListenerService',
+            'debug.event_dispatcher' => 'getDebug_EventDispatcherService',
+            'debug.stopwatch' => 'getDebug_StopwatchService',
+            'debug.templating.engine.php' => 'getDebug_Templating_Engine_PhpService',
+            'doctrine' => 'getDoctrineService',
+            'doctrine.dbal.connection_factory' => 'getDoctrine_Dbal_ConnectionFactoryService',
+            'doctrine.dbal.default_connection' => 'getDoctrine_Dbal_DefaultConnectionService',
+            'doctrine.dbal.logger.profiling.default' => 'getDoctrine_Dbal_Logger_Profiling_DefaultService',
+            'doctrine.orm.default_entity_manager' => 'getDoctrine_Orm_DefaultEntityManagerService',
+            'doctrine.orm.default_manager_configurator' => 'getDoctrine_Orm_DefaultManagerConfiguratorService',
+            'doctrine.orm.validator.unique' => 'getDoctrine_Orm_Validator_UniqueService',
+            'doctrine.orm.validator_initializer' => 'getDoctrine_Orm_ValidatorInitializerService',
+            'event_dispatcher' => 'getEventDispatcherService',
+            'file_locator' => 'getFileLocatorService',
+            'filesystem' => 'getFilesystemService',
+            'form.csrf_provider' => 'getForm_CsrfProviderService',
+            'form.factory' => 'getForm_FactoryService',
+            'form.registry' => 'getForm_RegistryService',
+            'form.resolved_type_factory' => 'getForm_ResolvedTypeFactoryService',
+            'form.type.birthday' => 'getForm_Type_BirthdayService',
+            'form.type.button' => 'getForm_Type_ButtonService',
+            'form.type.checkbox' => 'getForm_Type_CheckboxService',
+            'form.type.choice' => 'getForm_Type_ChoiceService',
+            'form.type.collection' => 'getForm_Type_CollectionService',
+            'form.type.country' => 'getForm_Type_CountryService',
+            'form.type.currency' => 'getForm_Type_CurrencyService',
+            'form.type.date' => 'getForm_Type_DateService',
+            'form.type.datetime' => 'getForm_Type_DatetimeService',
+            'form.type.email' => 'getForm_Type_EmailService',
+            'form.type.entity' => 'getForm_Type_EntityService',
+            'form.type.file' => 'getForm_Type_FileService',
+            'form.type.form' => 'getForm_Type_FormService',
+            'form.type.hidden' => 'getForm_Type_HiddenService',
+            'form.type.integer' => 'getForm_Type_IntegerService',
+            'form.type.language' => 'getForm_Type_LanguageService',
+            'form.type.locale' => 'getForm_Type_LocaleService',
+            'form.type.money' => 'getForm_Type_MoneyService',
+            'form.type.number' => 'getForm_Type_NumberService',
+            'form.type.password' => 'getForm_Type_PasswordService',
+            'form.type.percent' => 'getForm_Type_PercentService',
+            'form.type.radio' => 'getForm_Type_RadioService',
+            'form.type.repeated' => 'getForm_Type_RepeatedService',
+            'form.type.reset' => 'getForm_Type_ResetService',
+            'form.type.search' => 'getForm_Type_SearchService',
+            'form.type.submit' => 'getForm_Type_SubmitService',
+            'form.type.text' => 'getForm_Type_TextService',
+            'form.type.textarea' => 'getForm_Type_TextareaService',
+            'form.type.time' => 'getForm_Type_TimeService',
+            'form.type.timezone' => 'getForm_Type_TimezoneService',
+            'form.type.url' => 'getForm_Type_UrlService',
+            'form.type_extension.csrf' => 'getForm_TypeExtension_CsrfService',
+            'form.type_extension.form.http_foundation' => 'getForm_TypeExtension_Form_HttpFoundationService',
+            'form.type_extension.form.validator' => 'getForm_TypeExtension_Form_ValidatorService',
+            'form.type_extension.repeated.validator' => 'getForm_TypeExtension_Repeated_ValidatorService',
+            'form.type_extension.submit.validator' => 'getForm_TypeExtension_Submit_ValidatorService',
+            'form.type_guesser.doctrine' => 'getForm_TypeGuesser_DoctrineService',
+            'form.type_guesser.validator' => 'getForm_TypeGuesser_ValidatorService',
+            'fos_user.change_password.form.factory' => 'getFosUser_ChangePassword_Form_FactoryService',
+            'fos_user.change_password.form.type' => 'getFosUser_ChangePassword_Form_TypeService',
+            'fos_user.listener.authentication' => 'getFosUser_Listener_AuthenticationService',
+            'fos_user.listener.flash' => 'getFosUser_Listener_FlashService',
+            'fos_user.listener.resetting' => 'getFosUser_Listener_ResettingService',
+            'fos_user.mailer' => 'getFosUser_MailerService',
+            'fos_user.profile.form.factory' => 'getFosUser_Profile_Form_FactoryService',
+            'fos_user.profile.form.type' => 'getFosUser_Profile_Form_TypeService',
+            'fos_user.registration.form.factory' => 'getFosUser_Registration_Form_FactoryService',
+            'fos_user.registration.form.type' => 'getFosUser_Registration_Form_TypeService',
+            'fos_user.resetting.form.factory' => 'getFosUser_Resetting_Form_FactoryService',
+            'fos_user.resetting.form.type' => 'getFosUser_Resetting_Form_TypeService',
+            'fos_user.security.interactive_login_listener' => 'getFosUser_Security_InteractiveLoginListenerService',
+            'fos_user.security.login_manager' => 'getFosUser_Security_LoginManagerService',
+            'fos_user.user_manager' => 'getFosUser_UserManagerService',
+            'fos_user.user_provider.username' => 'getFosUser_UserProvider_UsernameService',
+            'fos_user.username_form_type' => 'getFosUser_UsernameFormTypeService',
+            'fos_user.util.email_canonicalizer' => 'getFosUser_Util_EmailCanonicalizerService',
+            'fos_user.util.token_generator' => 'getFosUser_Util_TokenGeneratorService',
+            'fos_user.util.user_manipulator' => 'getFosUser_Util_UserManipulatorService',
+            'fragment.handler' => 'getFragment_HandlerService',
+            'fragment.listener' => 'getFragment_ListenerService',
+            'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
+            'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
+            'http_kernel' => 'getHttpKernelService',
+            'image' => 'getImageService',
+            'kernel' => 'getKernelService',
+            'knp_snappy.image' => 'getKnpSnappy_ImageService',
+            'knp_snappy.pdf' => 'getKnpSnappy_PdfService',
+            'locale_listener' => 'getLocaleListenerService',
+            'logger' => 'getLoggerService',
+            'monolog.handler.chromephp' => 'getMonolog_Handler_ChromephpService',
+            'monolog.handler.debug' => 'getMonolog_Handler_DebugService',
+            'monolog.handler.firephp' => 'getMonolog_Handler_FirephpService',
+            'monolog.handler.main' => 'getMonolog_Handler_MainService',
+            'monolog.logger.deprecation' => 'getMonolog_Logger_DeprecationService',
+            'monolog.logger.doctrine' => 'getMonolog_Logger_DoctrineService',
+            'monolog.logger.emergency' => 'getMonolog_Logger_EmergencyService',
+            'monolog.logger.event' => 'getMonolog_Logger_EventService',
+            'monolog.logger.profiler' => 'getMonolog_Logger_ProfilerService',
+            'monolog.logger.request' => 'getMonolog_Logger_RequestService',
+            'monolog.logger.router' => 'getMonolog_Logger_RouterService',
+            'monolog.logger.security' => 'getMonolog_Logger_SecurityService',
+            'monolog.logger.snappy' => 'getMonolog_Logger_SnappyService',
+            'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
+            'ob_highcharts.twig.highcharts_extension' => 'getObHighcharts_Twig_HighchartsExtensionService',
+            'profiler' => 'getProfilerService',
+            'profiler_listener' => 'getProfilerListenerService',
+            'property_accessor' => 'getPropertyAccessorService',
+            'redirect.after.login' => 'getRedirect_After_LoginService',
+            'request' => 'getRequestService',
+            'response_listener' => 'getResponseListenerService',
+            'router' => 'getRouterService',
+            'router.request_context' => 'getRouter_RequestContextService',
+            'router_listener' => 'getRouterListenerService',
+            'routing.loader' => 'getRouting_LoaderService',
+            'security.access.decision_manager' => 'getSecurity_Access_DecisionManagerService',
+            'security.authentication.manager' => 'getSecurity_Authentication_ManagerService',
+            'security.authentication.session_strategy' => 'getSecurity_Authentication_SessionStrategyService',
+            'security.authentication.trust_resolver' => 'getSecurity_Authentication_TrustResolverService',
+            'security.context' => 'getSecurity_ContextService',
+            'security.encoder_factory' => 'getSecurity_EncoderFactoryService',
+            'security.firewall' => 'getSecurity_FirewallService',
+            'security.firewall.map.context.main' => 'getSecurity_Firewall_Map_Context_MainService',
+            'security.rememberme.response_listener' => 'getSecurity_Rememberme_ResponseListenerService',
+            'security.secure_random' => 'getSecurity_SecureRandomService',
+            'security.user_checker' => 'getSecurity_UserCheckerService',
+            'security.validator.user_password' => 'getSecurity_Validator_UserPasswordService',
+            'sensio_distribution.webconfigurator' => 'getSensioDistribution_WebconfiguratorService',
+            'sensio_framework_extra.cache.listener' => 'getSensioFrameworkExtra_Cache_ListenerService',
+            'sensio_framework_extra.controller.listener' => 'getSensioFrameworkExtra_Controller_ListenerService',
+            'sensio_framework_extra.converter.datetime' => 'getSensioFrameworkExtra_Converter_DatetimeService',
+            'sensio_framework_extra.converter.doctrine.orm' => 'getSensioFrameworkExtra_Converter_Doctrine_OrmService',
+            'sensio_framework_extra.converter.listener' => 'getSensioFrameworkExtra_Converter_ListenerService',
+            'sensio_framework_extra.converter.manager' => 'getSensioFrameworkExtra_Converter_ManagerService',
+            'sensio_framework_extra.view.guesser' => 'getSensioFrameworkExtra_View_GuesserService',
+            'sensio_framework_extra.view.listener' => 'getSensioFrameworkExtra_View_ListenerService',
+            'service_container' => 'getServiceContainerService',
+            'session' => 'getSessionService',
+            'session.handler' => 'getSession_HandlerService',
+            'session.save_listener' => 'getSession_SaveListenerService',
+            'session.storage.filesystem' => 'getSession_Storage_FilesystemService',
+            'session.storage.native' => 'getSession_Storage_NativeService',
+            'session.storage.php_bridge' => 'getSession_Storage_PhpBridgeService',
+            'session_listener' => 'getSessionListenerService',
+            'streamed_response_listener' => 'getStreamedResponseListenerService',
+            'swiftmailer.email_sender.listener' => 'getSwiftmailer_EmailSender_ListenerService',
+            'swiftmailer.mailer.default' => 'getSwiftmailer_Mailer_DefaultService',
+            'swiftmailer.mailer.default.plugin.messagelogger' => 'getSwiftmailer_Mailer_Default_Plugin_MessageloggerService',
+            'swiftmailer.mailer.default.spool' => 'getSwiftmailer_Mailer_Default_SpoolService',
+            'swiftmailer.mailer.default.transport' => 'getSwiftmailer_Mailer_Default_TransportService',
+            'swiftmailer.mailer.default.transport.eventdispatcher' => 'getSwiftmailer_Mailer_Default_Transport_EventdispatcherService',
+            'swiftmailer.mailer.default.transport.real' => 'getSwiftmailer_Mailer_Default_Transport_RealService',
+            'templating' => 'getTemplatingService',
+            'templating.asset.package_factory' => 'getTemplating_Asset_PackageFactoryService',
+            'templating.filename_parser' => 'getTemplating_FilenameParserService',
+            'templating.globals' => 'getTemplating_GlobalsService',
+            'templating.helper.actions' => 'getTemplating_Helper_ActionsService',
+            'templating.helper.assets' => 'getTemplating_Helper_AssetsService',
+            'templating.helper.code' => 'getTemplating_Helper_CodeService',
+            'templating.helper.form' => 'getTemplating_Helper_FormService',
+            'templating.helper.logout_url' => 'getTemplating_Helper_LogoutUrlService',
+            'templating.helper.request' => 'getTemplating_Helper_RequestService',
+            'templating.helper.router' => 'getTemplating_Helper_RouterService',
+            'templating.helper.security' => 'getTemplating_Helper_SecurityService',
+            'templating.helper.session' => 'getTemplating_Helper_SessionService',
+            'templating.helper.slots' => 'getTemplating_Helper_SlotsService',
+            'templating.helper.translator' => 'getTemplating_Helper_TranslatorService',
+            'templating.loader' => 'getTemplating_LoaderService',
+            'templating.locator' => 'getTemplating_LocatorService',
+            'templating.name_parser' => 'getTemplating_NameParserService',
+            'translation.dumper.csv' => 'getTranslation_Dumper_CsvService',
+            'translation.dumper.ini' => 'getTranslation_Dumper_IniService',
+            'translation.dumper.mo' => 'getTranslation_Dumper_MoService',
+            'translation.dumper.php' => 'getTranslation_Dumper_PhpService',
+            'translation.dumper.po' => 'getTranslation_Dumper_PoService',
+            'translation.dumper.qt' => 'getTranslation_Dumper_QtService',
+            'translation.dumper.res' => 'getTranslation_Dumper_ResService',
+            'translation.dumper.xliff' => 'getTranslation_Dumper_XliffService',
+            'translation.dumper.yml' => 'getTranslation_Dumper_YmlService',
+            'translation.extractor' => 'getTranslation_ExtractorService',
+            'translation.extractor.php' => 'getTranslation_Extractor_PhpService',
+            'translation.loader' => 'getTranslation_LoaderService',
+            'translation.loader.csv' => 'getTranslation_Loader_CsvService',
+            'translation.loader.dat' => 'getTranslation_Loader_DatService',
+            'translation.loader.ini' => 'getTranslation_Loader_IniService',
+            'translation.loader.mo' => 'getTranslation_Loader_MoService',
+            'translation.loader.php' => 'getTranslation_Loader_PhpService',
+            'translation.loader.po' => 'getTranslation_Loader_PoService',
+            'translation.loader.qt' => 'getTranslation_Loader_QtService',
+            'translation.loader.res' => 'getTranslation_Loader_ResService',
+            'translation.loader.xliff' => 'getTranslation_Loader_XliffService',
+            'translation.loader.yml' => 'getTranslation_Loader_YmlService',
+            'translation.writer' => 'getTranslation_WriterService',
+            'translator.default' => 'getTranslator_DefaultService',
+            'twig' => 'getTwigService',
+            'twig.controller.exception' => 'getTwig_Controller_ExceptionService',
+            'twig.exception_listener' => 'getTwig_ExceptionListenerService',
+            'twig.extension.acme.demo' => 'getTwig_Extension_Acme_DemoService',
+            'twig.loader' => 'getTwig_LoaderService',
+            'twig.translation.extractor' => 'getTwig_Translation_ExtractorService',
+            'uri_signer' => 'getUriSignerService',
+            'validator' => 'getValidatorService',
+            'validator.mapping.class_metadata_factory' => 'getValidator_Mapping_ClassMetadataFactoryService',
+            'web_profiler.controller.exception' => 'getWebProfiler_Controller_ExceptionService',
+            'web_profiler.controller.profiler' => 'getWebProfiler_Controller_ProfilerService',
+            'web_profiler.controller.router' => 'getWebProfiler_Controller_RouterService',
+            'web_profiler.debug_toolbar' => 'getWebProfiler_DebugToolbarService',
+        );
+        $this->aliases = array(
+            'database_connection' => 'doctrine.dbal.default_connection',
+            'debug.templating.engine.twig' => 'templating',
+            'doctrine.orm.entity_manager' => 'doctrine.orm.default_entity_manager',
+            'fos_user.util.username_canonicalizer' => 'fos_user.util.email_canonicalizer',
+            'mailer' => 'swiftmailer.mailer.default',
+            'sensio.distribution.webconfigurator' => 'sensio_distribution.webconfigurator',
+            'session.storage' => 'session.storage.native',
+            'swiftmailer.mailer' => 'swiftmailer.mailer.default',
+            'swiftmailer.plugin.messagelogger' => 'swiftmailer.mailer.default.plugin.messagelogger',
+            'swiftmailer.spool' => 'swiftmailer.mailer.default.spool',
+            'swiftmailer.transport' => 'swiftmailer.mailer.default.transport',
+            'swiftmailer.transport.real' => 'swiftmailer.mailer.default.transport.real',
+            'translator' => 'translator.default',
+        );
+    }
+
+    /**
+     * Gets the 'acme.demo.listener' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Acme\DemoBundle\EventListener\ControllerListener A Acme\DemoBundle\EventListener\ControllerListener instance.
+     */
+    protected function getAcme_Demo_ListenerService()
+    {
+        return $this->services['acme.demo.listener'] = new \Acme\DemoBundle\EventListener\ControllerListener($this->get('twig.extension.acme.demo'));
+    }
+
+    /**
+     * Gets the 'annotation_reader' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Doctrine\Common\Annotations\FileCacheReader A Doctrine\Common\Annotations\FileCacheReader instance.
+     */
+    protected function getAnnotationReaderService()
+    {
+        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), (__DIR__.'/annotations'), true);
+    }
+
+    /**
+     * Gets the 'assetic.asset_manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Assetic\Factory\LazyAssetManager A Assetic\Factory\LazyAssetManager instance.
+     */
+    protected function getAssetic_AssetManagerService()
+    {
+        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache((__DIR__.'/assetic/config')), true)));
+
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', ($this->targetDirs[2].'/Resources/views'), '/\\.[^.]+\\.twig$/'), 'twig');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'assetic.controller' service.
+     *
+     * @return \Symfony\Bundle\AsseticBundle\Controller\AsseticController A Symfony\Bundle\AsseticBundle\Controller\AsseticController instance.
+     */
+    protected function getAssetic_ControllerService()
+    {
+        $instance = new \Symfony\Bundle\AsseticBundle\Controller\AsseticController($this->get('request'), $this->get('assetic.asset_manager'), $this->get('assetic.cache'), false, $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+
+        if ($this->has('assetic.value_supplier.default')) {
+            $instance->setValueSupplier($this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        }
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'assetic.filter.cssrewrite' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Assetic\Filter\CssRewriteFilter A Assetic\Filter\CssRewriteFilter instance.
+     */
+    protected function getAssetic_Filter_CssrewriteService()
+    {
+        return $this->services['assetic.filter.cssrewrite'] = new \Assetic\Filter\CssRewriteFilter();
+    }
+
+    /**
+     * Gets the 'assetic.filter_manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Bundle\AsseticBundle\FilterManager A Symfony\Bundle\AsseticBundle\FilterManager instance.
+     */
+    protected function getAssetic_FilterManagerService()
+    {
+        return $this->services['assetic.filter_manager'] = new \Symfony\Bundle\AsseticBundle\FilterManager($this, array('cssrewrite' => 'assetic.filter.cssrewrite'));
+    }
+
+    /**
+     * Gets the 'assetic.request_listener' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Bundle\AsseticBundle\EventListener\RequestListener A Symfony\Bundle\AsseticBundle\EventListener\RequestListener instance.
+     */
+    protected function getAssetic_RequestListenerService()
+    {
+        return $this->services['assetic.request_listener'] = new \Symfony\Bundle\AsseticBundle\EventListener\RequestListener();
+    }
+
+    /**
+     * Gets the 'cache_clearer' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer A Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer instance.
+     */
+    protected function getCacheClearerService()
+    {
+        return $this->services['cache_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer(array());
+    }
+
+    /**
+     * Gets the 'cache_warmer' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate A Symfony\Component\Ht

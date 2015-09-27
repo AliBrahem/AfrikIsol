@@ -5,6 +5,7 @@ namespace BackOffice\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Planification
  * @ORM\Entity
  * @ORM\Table(name="Planification")
  */
@@ -17,9 +18,12 @@ class Planification {
     protected $id;
     
     /**
-     * @var integer
+     * @var \Projet
      *
-     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Projet", referencedColumnName="id")
+     * })
      */
     protected $idprojet;
     
@@ -41,9 +45,7 @@ class Planification {
         return $this->id;
     }
 
-    function getIdprojet() {
-        return $this->idprojet;
-    }
+  
 
     function getDate() {
         return $this->date;
@@ -57,8 +59,27 @@ class Planification {
         $this->id = $id;
     }
 
-    function setIdprojet($idprojet) {
+     /**
+     * Set idevent
+     *
+     * @param \BackOffice\AdminBundle\Entity\Projet $idprojet
+     * @return Planification
+     */
+    public function setIdprojet(\BackOffice\AdminBundle\Entity\Projet $idprojet = null)
+    {
         $this->idprojet = $idprojet;
+    
+        return $this;
+    }
+
+    /**
+     * Get idprojet
+     *
+     * @return \BackOffice\AdminBundle\Entity\Projet 
+     */
+    public function getIdprojet()
+    {
+        return $this->idprojet;
     }
 
     function setDate(\DateTime $date) {

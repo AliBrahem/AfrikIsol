@@ -57,6 +57,7 @@ class appDevDebugProjectContainer extends Container
             'debug.event_dispatcher' => 'getDebug_EventDispatcherService',
             'debug.stopwatch' => 'getDebug_StopwatchService',
             'debug.templating.engine.php' => 'getDebug_Templating_Engine_PhpService',
+            'demande' => 'getDemandeService',
             'doctrine' => 'getDoctrineService',
             'doctrine.dbal.connection_factory' => 'getDoctrine_Dbal_ConnectionFactoryService',
             'doctrine.dbal.default_connection' => 'getDoctrine_Dbal_DefaultConnectionService',
@@ -135,6 +136,7 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'http_kernel' => 'getHttpKernelService',
+            'image' => 'getImageService',
             'kernel' => 'getKernelService',
             'knp_snappy.image' => 'getKnpSnappy_ImageService',
             'knp_snappy.pdf' => 'getKnpSnappy_PdfService',
@@ -515,6 +517,19 @@ class appDevDebugProjectContainer extends Container
         $instance->setHelpers(array('slots' => 'templating.helper.slots', 'assets' => 'templating.helper.assets', 'request' => 'templating.helper.request', 'session' => 'templating.helper.session', 'router' => 'templating.helper.router', 'actions' => 'templating.helper.actions', 'code' => 'templating.helper.code', 'translator' => 'templating.helper.translator', 'form' => 'templating.helper.form', 'logout_url' => 'templating.helper.logout_url', 'security' => 'templating.helper.security', 'assetic' => 'assetic.helper.dynamic'));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'demande' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \BackOffice\AdminBundle\Twig\Extension\DemandeExtension A BackOffice\AdminBundle\Twig\Extension\DemandeExtension instance.
+     */
+    protected function getDemandeService()
+    {
+        return $this->services['demande'] = new \BackOffice\AdminBundle\Twig\Extension\DemandeExtension($this->get('doctrine'));
     }
 
     /**
@@ -1594,6 +1609,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'image' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \BackOffice\AdminBundle\Twig\Extension\ImgExtension A BackOffice\AdminBundle\Twig\Extension\ImgExtension instance.
+     */
+    protected function getImageService()
+    {
+        return $this->services['image'] = new \BackOffice\AdminBundle\Twig\Extension\ImgExtension();
+    }
+
+    /**
      * Gets the 'kernel' service.
      *
      * This service is shared.
@@ -2167,23 +2195,113 @@ class appDevDebugProjectContainer extends Container
 
         $l = new \Symfony\Component\HttpFoundation\RequestMatcher('^/updateProfile');
 
-        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/displayProfile');
+        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/updOtherUser');
 
-        $n = new \Symfony\Component\Security\Http\AccessMap();
-        $n->add($g, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $n->add($h, array(0 => 'ROLE_ADMIN'), NULL);
-        $n->add($i, array(0 => 'ROLE_ADMIN'), NULL);
-        $n->add($j, array(0 => 'ROLE_ADMIN'), NULL);
-        $n->add($k, array(0 => 'ROLE_ADMIN'), NULL);
-        $n->add($l, array(0 => 'ROLE_ADMIN'), NULL);
-        $n->add($m, array(0 => 'ROLE_ADMIN'), NULL);
+        $n = new \Symfony\Component\HttpFoundation\RequestMatcher('^/deleteUser');
 
-        $o = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
+        $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listerUsers');
 
-        $p = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $o, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($o, '/login'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/logout'));
-        $p->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $p = new \Symfony\Component\HttpFoundation\RequestMatcher('^/displayProfile');
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($n, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c), 2 => $p, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $o, 'main', $this->get('redirect.after.login'), new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $o, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '55a7193e2b61e', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $n, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $o, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $o, '/login', false), NULL, NULL, $a));
+        $q = new \Symfony\Component\HttpFoundation\RequestMatcher('^/chartGantt');
+
+        $r = new \Symfony\Component\HttpFoundation\RequestMatcher('^/suivieChart');
+
+        $s = new \Symfony\Component\HttpFoundation\RequestMatcher('^/calculTole');
+
+        $t = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listerTole');
+
+        $u = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listProjet');
+
+        $v = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listAvancement');
+
+        $w = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listPlanification');
+
+        $x = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listGantt');
+
+        $y = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listMAD');
+
+        $z = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addProjet');
+
+        $aa = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addClient');
+
+        $ba = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listClient');
+
+        $ca = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listTole');
+
+        $da = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addAvancement');
+
+        $ea = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addGantt');
+
+        $fa = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addPlanification');
+
+        $ga = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addMAD');
+
+        $ha = new \Symfony\Component\HttpFoundation\RequestMatcher('^/indexTech');
+
+        $ia = new \Symfony\Component\HttpFoundation\RequestMatcher('^/updTole');
+
+        $ja = new \Symfony\Component\HttpFoundation\RequestMatcher('^/indexLog');
+
+        $ka = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addStock');
+
+        $la = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listStock');
+
+        $ma = new \Symfony\Component\HttpFoundation\RequestMatcher('^/addMvt');
+
+        $na = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listMvt');
+
+        $oa = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listAllMvt');
+
+        $pa = new \Symfony\Component\HttpFoundation\RequestMatcher('^/listDmd');
+
+        $qa = new \Symfony\Component\HttpFoundation\RequestMatcher('^/updDmd');
+
+        $ra = new \Symfony\Component\Security\Http\AccessMap();
+        $ra->add($g, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $ra->add($h, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($i, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($j, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($k, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($l, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($m, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($n, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($o, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($p, array(0 => 'ROLE_ADMIN'), NULL);
+        $ra->add($q, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($r, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($s, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($t, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($u, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($v, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($w, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($x, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($y, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($z, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($aa, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ba, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ca, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($da, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ea, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($fa, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ga, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ha, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ia, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_TECHNIQUE'), NULL);
+        $ra->add($ja, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($ka, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($la, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($ma, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($na, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($oa, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($pa, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+        $ra->add($qa, array(0 => 'ROLE_ADMIN', 1 => 'ROLE_LOGISTIQUE'), NULL);
+
+        $sa = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
+
+        $ta = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $sa, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($sa, '/login'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/logout'));
+        $ta->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($ra, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c), 2 => $ta, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $sa, 'main', $this->get('redirect.after.login'), new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $sa, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '56072d421bc24', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $ra, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $sa, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $sa, '/login', false), NULL, NULL, $a));
     }
 
     /**
@@ -3368,6 +3486,8 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(), $this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
+        $instance->addExtension($this->get('image'));
+        $instance->addExtension($this->get('demande'));
         $instance->addExtension($this->get('ob_highcharts.twig.highcharts_extension'));
         $instance->addExtension($this->get('twig.extension.acme.demo'));
         $instance->addGlobal('app', $this->get('templating.globals'));
@@ -3690,7 +3810,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('55a7193e2b61e')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('56072d421bc24')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 

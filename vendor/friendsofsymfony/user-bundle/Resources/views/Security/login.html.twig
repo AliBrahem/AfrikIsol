@@ -3,15 +3,13 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+
 <div class="login-box">
       <div class="login-logo">
         <a href="../../index2.html"><b>Afrik</b>Isol</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Connectez-vous</p>
+          <h3>  <p class="login-box-msg">Connectez-vous</p> </h3>
 <form action="{{ path("fos_user_security_check") }}" method="post">
     
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
@@ -26,13 +24,17 @@
     <div class="row">
             <div class="col-xs-8">    
               <div class="checkbox icheck">
-                  <br>
+                 
+                  <h4>
                   <label for="remember_me">
-                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <input type="checkbox" class="minimal"id="remember_me" name="_remember_me" value="on" />
                   {{ 'security.login.remember_me'|trans }}
                   </label>
-
-              </div>                        
+                  </h4>
+              </div>  
+                  {% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
             </div><!-- /.col -->
             <div class="col-xs-4">
                 <button type="submit" id="_submit" name="_submit" class="btn btn-primary btn-block btn-flat"> Connexion</button>

@@ -137,13 +137,16 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                     <div class=\"navbar-custom-menu\">
                         <ul class=\"nav navbar-nav\">
                             <li class=\"dropdown user user-menu\">
-                                <a href=\"";
+                                ";
         // line 82
+        $context["imag"] = $this->env->getExtension('img_extension')->afficheImg($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()));
+        // line 83
+        echo "                                <a href=\"";
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\" class=\"dropdown-toggle\" >
                                     <img src=\"data:image/png;base64,";
-        // line 83
-        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        // line 84
+        echo twig_escape_filter($this->env, (isset($context["imag"]) ? $context["imag"] : $this->getContext($context, "imag")), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\" />
                                     <span class=\"hidden-xs\">Déconnexion</span>
                                 </a>
@@ -165,15 +168,16 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                     <!-- Sidebar user panel -->
                     <div class=\"user-panel\">
                         <div class=\"pull-left image\">
+                            
                             <img src=\"data:image/png;base64,";
-        // line 104
-        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        // line 106
+        echo twig_escape_filter($this->env, (isset($context["imag"]) ? $context["imag"] : $this->getContext($context, "imag")), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\" />                                  
                       
                         </div>
                         <div class=\"pull-left info\">
                             <p>";
-        // line 108
+        // line 110
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
         echo " </p>
                             <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
@@ -194,62 +198,19 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                         <li class=\"header\">Menu de navigation</li>
                         <li class=\"active treeview\">
                             <a href=\"#\">
-                                <i class=\"fa fa-edit\"></i> <span>Gestion des Tôles</span> <i class=\"fa fa-angle-left pull-right\"></i>
-                            </a>
-                            <ul class=\"treeview-menu\">
-                                <li class=\"active\">
-                                    <a href=\"";
-        // line 131
-        echo $this->env->getExtension('routing')->getPath("tech_calculTole", array("id" => 0));
-        echo "\"><i class=\"fa fa-calculator\"></i> Calculer tôle</a>
-                                  
-                                </li>
-                                <li>
-                                    <a href=\"";
-        // line 135
-        echo $this->env->getExtension('routing')->getPath("tech_listerTUYAUTERIES");
-        echo "\"><i class=\"fa fa-list\"></i> Lister tôles</a>
-                                   
-                                </li>
-                            </ul>
-                        </li>
-                         <li class=\"active treeview\">
-                            <a href=\"#\">
-                                <i class=\"fa fa-clipboard\"></i> <span>Gestion des Projets</span> <i class=\"fa fa-angle-left pull-right\"></i>
-                            </a>
-                            <ul class=\"treeview-menu\">
-                                <li class=\"active\">
-                                    <a href=\"";
-        // line 146
-        echo $this->env->getExtension('routing')->getPath("tech_addProjet");
-        echo "\"><i class=\"fa fa-plus-square-o\"></i> Ajouter Projet</a>
-                                  
-                                </li>
-                                <li>
-                                    <a href=\"";
-        // line 150
-        echo $this->env->getExtension('routing')->getPath("tech_listProjet");
-        echo "\"><i class=\"fa fa-list-ul\"></i> Lister projets</a>
-                                   
-                                </li>
-                               
-                            </ul>
-                        </li>
-                        <li class=\"active treeview\">
-                            <a href=\"#\">
                                 <i class=\"fa fa-slideshare\"></i> <span>Gestion des Clients</span> <i class=\"fa fa-angle-left pull-right\"></i>
                             </a>
                             <ul class=\"treeview-menu\">
                                 <li class=\"active\">
                                     <a href=\"";
-        // line 162
+        // line 133
         echo $this->env->getExtension('routing')->getPath("tech_addClient");
         echo "\"><i class=\"fa fa-plus\"></i> Ajouter Client</a>
                                   
                                 </li>
                                 <li>
                                     <a href=\"";
-        // line 166
+        // line 137
         echo $this->env->getExtension('routing')->getPath("tech_listClient");
         echo "\"><i class=\"fa fa-th-list\"></i> Lister Clients</a>
                                    
@@ -257,6 +218,60 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                                
                             </ul>
                         </li>
+                        <li class=\"active treeview\">
+                            <a href=\"#\">
+                                <i class=\"fa fa-clipboard\"></i> <span>Gestion des Projets</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                            </a>
+                            <ul class=\"treeview-menu\">
+                                <li class=\"active\">
+                                    <a href=\"";
+        // line 149
+        echo $this->env->getExtension('routing')->getPath("tech_addProjet");
+        echo "\"><i class=\"fa fa-plus-square-o\"></i> Ajouter Projet</a>
+                                  
+                                </li>
+                                <li>
+                                    <a href=\"";
+        // line 153
+        echo $this->env->getExtension('routing')->getPath("tech_listProjet");
+        echo "\"><i class=\"fa fa-list-ul\"></i> Lister projets</a>
+                                   
+                                </li>
+                                <li>
+                                  <a href=\"";
+        // line 157
+        echo $this->env->getExtension('routing')->getPath("tech_listGantt");
+        echo "\"><i class=\"fa fa-bar-chart\"></i>Planification des travaux</a>
+                                </li> 
+                                <li>
+                                   <a href=\"";
+        // line 160
+        echo $this->env->getExtension('routing')->getPath("tech_listTole");
+        echo "\"><i class=\"fa fa-edit\"></i> Ajouter/Lister tôles</a>  
+                                </li>
+                                <li>
+                                   <a href=\"";
+        // line 163
+        echo $this->env->getExtension('routing')->getPath("tech_listPlan");
+        echo "\"><i class=\"fa fa-area-chart\"></i>Planification </a> 
+                                </li>
+                                <li>
+                                  <a href=\"";
+        // line 166
+        echo $this->env->getExtension('routing')->getPath("tech_listAvancement");
+        echo "\"><i class=\"fa fa-area-chart\"></i>Avancement</a>   
+                                </li>
+                                <li>
+                                   <a href=\"";
+        // line 169
+        echo $this->env->getExtension('routing')->getPath("tech_listMAD");
+        echo "\"><i class=\"fa fa-area-chart\"></i>Mise à disposition</a>     
+                                </li>
+                             
+                            </ul>
+                        </li>
+
+                        
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -281,31 +296,31 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                     <br>
                     <br>
                     ";
-        // line 195
+        // line 199
         $this->displayBlock('user_content', $context, $blocks);
-        // line 210
+        // line 214
         echo "                         
                          <br>
                          <br>
                          ";
-        // line 213
+        // line 217
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 214
+            // line 218
             echo "            ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 215
+                // line 219
                 echo "                ";
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 216
+                    // line 220
                     echo "                    <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                         <h3> ";
-                    // line 217
+                    // line 221
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo " </h3>
                     </div>
@@ -314,21 +329,21 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 220
+                // line 224
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 221
+            // line 225
             echo "        ";
         }
-        // line 222
+        // line 226
         echo "                </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
             <footer class=\"main-footer\">
 
-                <strong>Copyright &copy; 2014-2015 <a href=\"http://www.facebook.com/Brahem.Ali\">Ali Brahem</a>.</strong> All rights reserved.
+                <strong>Copyright &copy; 2014-2015 <a href=\"\">Ali Brahem</a>.</strong> All rights reserved.
             </footer>
 
             <!-- Control Sidebar -->      
@@ -340,7 +355,7 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
 
         <!-- jQuery 2.1.4 -->
         <script src=\"";
-        // line 237
+        // line 241
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jQuery/jQuery-2.1.4.min.js"), "html", null, true);
         echo "\"></script>
         <!-- jQuery UI 1.11.2 -->
@@ -351,99 +366,107 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
         </script>
         <!-- Bootstrap 3.3.2 JS -->
         <script src=\"";
-        // line 245
+        // line 249
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>  
         <script src=\"";
-        // line 246
+        // line 250
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/calculTole.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+        <script src=\"";
+        // line 251
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/avancement.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Morris.js charts -->
         <script src=\"http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js\"></script>
         <script src=\"";
-        // line 249
+        // line 254
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/morris/morris.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Sparkline -->
         <script src=\"";
-        // line 251
+        // line 256
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jvectormap -->
         <script src=\"";
-        // line 253
+        // line 258
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 254
+        // line 259
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jQuery Knob Chart -->
         <script src=\"";
-        // line 256
+        // line 261
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/knob/jquery.knob.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- daterangepicker -->
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 259
+        // line 264
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- datepicker -->
         <script src=\"";
-        // line 261
+        // line 266
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datepicker/bootstrap-datepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src=\"";
-        // line 263
+        // line 268
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Slimscroll -->
         <script src=\"";
-        // line 265
+        // line 270
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- FastClick -->
         <script src=\"";
-        // line 267
+        // line 272
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
         <!-- AdminLTE App -->
         <script src=\"";
-        // line 269
+        // line 274
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>    
 
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src=\"";
-        // line 272
+        // line 277
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/pages/dashboard.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>   
         <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 274
+        // line 279
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/jquery.dataTables.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 275
+        // line 280
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/dataTables.bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
+      <link href=\"";
+        // line 281
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/loading.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
        
 
         <!-- AdminLTE for demo purposes -->
         <script src=\"";
-        // line 279
+        // line 285
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/demo.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     </body>
 </html>";
     }
 
-    // line 195
+    // line 199
     public function block_user_content($context, array $blocks = array())
     {
-        // line 196
+        // line 200
         echo "           
                     <!-- Small boxes (Stat box) -->
                     <div class=\"row\">
@@ -472,6 +495,6 @@ class __TwigTemplate_ee6cc84bbe8565020c36e52a87b90b50b457f0489ace8431ea5afb022df
 
     public function getDebugInfo()
     {
-        return array (  447 => 196,  444 => 195,  437 => 279,  430 => 275,  426 => 274,  421 => 272,  415 => 269,  410 => 267,  405 => 265,  400 => 263,  395 => 261,  390 => 259,  384 => 256,  379 => 254,  375 => 253,  370 => 251,  365 => 249,  359 => 246,  355 => 245,  344 => 237,  327 => 222,  324 => 221,  318 => 220,  309 => 217,  304 => 216,  299 => 215,  294 => 214,  292 => 213,  287 => 210,  285 => 195,  253 => 166,  246 => 162,  231 => 150,  224 => 146,  210 => 135,  203 => 131,  177 => 108,  170 => 104,  146 => 83,  142 => 82,  99 => 42,  94 => 40,  89 => 38,  84 => 36,  79 => 34,  74 => 32,  69 => 30,  65 => 29,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
+        return array (  470 => 200,  467 => 199,  460 => 285,  453 => 281,  449 => 280,  445 => 279,  440 => 277,  434 => 274,  429 => 272,  424 => 270,  419 => 268,  414 => 266,  409 => 264,  403 => 261,  398 => 259,  394 => 258,  389 => 256,  384 => 254,  378 => 251,  374 => 250,  370 => 249,  359 => 241,  342 => 226,  339 => 225,  333 => 224,  324 => 221,  319 => 220,  314 => 219,  309 => 218,  307 => 217,  302 => 214,  300 => 199,  267 => 169,  261 => 166,  255 => 163,  249 => 160,  243 => 157,  236 => 153,  229 => 149,  214 => 137,  207 => 133,  181 => 110,  174 => 106,  149 => 84,  144 => 83,  142 => 82,  99 => 42,  94 => 40,  89 => 38,  84 => 36,  79 => 34,  74 => 32,  69 => 30,  65 => 29,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
     }
 }

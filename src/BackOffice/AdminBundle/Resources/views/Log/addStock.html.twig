@@ -8,34 +8,20 @@
              <h1> Ajout au Stock </h1>
              <br>
             <table id="example2" class="table table-bordered table-hover">
-                <tr>
-                    <td>  <label for="exampleInputEmail1">Date </label>  </td>
-                    <td>{{ form_widget(form.date) }}</td>
-                    </tr>
-                <tr>
-                    <td>  <label for="exampleInputEmail1">Nature MVT </label>  </td>
-                    <td> {{ form_widget(form.nature) }} </td>
-                    </tr>
+               
                 <tr>
                     <td>  <label for="exampleInputEmail1">Désignation </label>  </td>
                     <td> {{ form_widget(form.designation) }} </td>
                      </tr>
                 <tr>
+                    <td>  <label for="exampleInputEmail1">Nature du stock </label>  </td>
+                    <td> {{ form_widget(form.nature) }} </td>
+                     </tr>     
+                <tr>
                     <td>  <label for="exampleInputEmail1">Unité</label>  </td>
                     <td> {{ form_widget(form.unite) }}</td>
                      </tr>
-                <tr>
-                    <td>  <label for="exampleInputEmail1">Nombre </label>  </td>
-                    <td> {{ form_widget(form.nombre) }}</td>
-                    </tr>
-                <tr>
-                    <td>  <label for="exampleInputEmail1">Quantité Disponible </label>  </td>
-                    <td> {{ form_widget(form.qtedispo) }} </td>
-                     </tr>
-                <tr>
-                    <td>  <label for="exampleInputEmail1">Quantité demandée</label>  </td>
-                    <td> {{ form_widget(form.qtedemande) }} </td>
-                     </tr>
+               
                 <tr>
                     <td>  <label for="exampleInputEmail1">Quantité stock</label>  </td>
                     <td> {{ form_widget(form.qteStock) }} </td>

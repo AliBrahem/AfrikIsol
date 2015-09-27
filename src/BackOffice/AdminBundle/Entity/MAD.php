@@ -5,6 +5,7 @@ namespace BackOffice\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * MAD
  * @ORM\Entity
  * @ORM\Table(name="MAD")
  */
@@ -19,9 +20,12 @@ class MAD {
     protected $id;
     
     /**
-     * @var integer
+     * @var \Projet
      *
-     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Projet", referencedColumnName="id")
+     * })
      */
     protected $idprojet;
     
@@ -56,17 +60,23 @@ class MAD {
     /**
      * @var integer
      *
-     * @ORM\Column(name="Coude90", type="integer", nullable=true)
+     * @ORM\Column(name="Coude", type="integer", nullable=true)
      */
-    private $coude90;
+    private $coude;
     
     /**
      * @var integer
      *
-     * @ORM\Column(name="Coude45", type="integer", nullable=true)
+     * @ORM\Column(name="Tuyauterie", type="integer", nullable=true)
      */
-    private $coude45;
+    private $tuyauterie;
     
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Surface", type="integer", nullable=true)
+     */
+    private $surface;
     /**
      * @var integer
      *
@@ -124,6 +134,19 @@ class MAD {
     protected $couche3;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="Couche4", type="string", nullable=true)
+     */
+    protected $couche4;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Couche5", type="string", nullable=true)
+     */
+    protected $couche5;
+    
+    /**
      * @var float
      *
      * @ORM\Column(name="Quantite", type="float", nullable=false)
@@ -132,10 +155,6 @@ class MAD {
     
     function getId() {
         return $this->id;
-    }
-
-    function getIdprojet() {
-        return $this->idprojet;
     }
 
     function getDesignation() {
@@ -154,13 +173,11 @@ class MAD {
         return $this->longueur;
     }
 
-    function getCoude90() {
-        return $this->coude90;
+    function getCoude() {
+        return $this->coude;
     }
 
-    function getCoude45() {
-        return $this->coude45;
-    }
+  
 
     function getReduction() {
         return $this->reduction;
@@ -202,8 +219,27 @@ class MAD {
         $this->id = $id;
     }
 
-    function setIdprojet($idprojet) {
+     /**
+     * Set idevent
+     *
+     * @param \BackOffice\AdminBundle\Entity\Projet $idprojet
+     * @return Avancement
+     */
+    public function setIdprojet(\BackOffice\AdminBundle\Entity\Projet $idprojet = null)
+    {
         $this->idprojet = $idprojet;
+    
+        return $this;
+    }
+
+    /**
+     * Get idprojet
+     *
+     * @return \BackOffice\AdminBundle\Entity\Projet 
+     */
+    public function getIdprojet()
+    {
+        return $this->idprojet;
     }
 
     function setDesignation($designation) {
@@ -222,12 +258,8 @@ class MAD {
         $this->longueur = $longueur;
     }
 
-    function setCoude90($coude90) {
-        $this->coude90 = $coude90;
-    }
-
-    function setCoude45($coude45) {
-        $this->coude45 = $coude45;
+    function setCoude($coude) {
+        $this->coude = $coude;
     }
 
     function setReduction($reduction) {
@@ -265,6 +297,40 @@ class MAD {
     function setQuantite($quantite) {
         $this->quantite = $quantite;
     }
+    
+    function getTuyauterie() {
+        return $this->tuyauterie;
+    }
+
+    function getCouche4() {
+        return $this->couche4;
+    }
+
+    function getCouche5() {
+        return $this->couche5;
+    }
+
+    function setTuyauterie($tuyauterie) {
+        $this->tuyauterie = $tuyauterie;
+    }
+
+    function setCouche4($couche4) {
+        $this->couche4 = $couche4;
+    }
+
+    function setCouche5($couche5) {
+        $this->couche5 = $couche5;
+    }
+    function getSurface() {
+        return $this->surface;
+    }
+
+    function setSurface($surface) {
+        $this->surface = $surface;
+    }
+
+
+    
 
 
 }

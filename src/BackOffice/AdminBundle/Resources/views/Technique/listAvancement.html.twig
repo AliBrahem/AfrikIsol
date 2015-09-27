@@ -12,6 +12,7 @@
                   <table id="example1" class="table table-bordered table-striped">
             <thead>
                <tr>
+                   <th>ID Projet</th>
                     <th>Nature Projet</th>
                     <th>Lieu</th>
                     <th>Client</th>
@@ -28,9 +29,10 @@
                 {% for Modele in Modeles %}
                   
                     <tr>
+                        <td> {{Modele.id}} </td>
                         <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
-                        <td> {{Modele.idClient}} </td>
+                        <td> {{Modele.idClient.societe}} </td>
                      
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>

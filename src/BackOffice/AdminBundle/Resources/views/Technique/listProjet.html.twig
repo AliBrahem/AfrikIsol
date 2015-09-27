@@ -12,6 +12,7 @@
                   <table id="example1" class="table table-bordered table-striped">
             <thead>
                <tr>
+                   <th>ID Projet</th>
                     <th>Nature Projet</th>
                     <th>Lieu</th>
                     <th>Client</th>
@@ -19,10 +20,7 @@
                     <th>Charges</th>
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
-                    <th>Planification</th>
-                    <th>Avancement</th>
-                    <th>Ajouter Tôle</th>
-                    <th>Lister Tôle</th>
+                 
                 </tr>
             </thead>
             <tbody>
@@ -30,19 +28,15 @@
                
                   
                     <tr>
+                        <td> {{Modele.id}} </td>
                         <td> {{Modele.nature}} </td>
                         <td> {{Modele.lieu}} </td>
-                        <td> {{Modele.idClient}} </td>
+                        <td> {{Modele.idClient.societe}} </td>
                      
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
-                  
-                        <td><a href="{{path("admin_gantt",{'id':Modele.id})}}"> Afficher </a></td>
-                        <td><a href="{{path("admin_grapheSuivie",{'id':Modele.id})}}"> Afficher </a></td>
-                        <td><a href="{{path("tech_calculTole",{'id':Modele.id})}}"> Ajouter Tôle </a></td>
-                         <td><a href="{{path("tech_listerTole",{'id':Modele.id})}}"> Lister Tôle </a></td>
-                        
+              
                                </tr>
                        
                  {% endfor %}

@@ -12,16 +12,14 @@
                   <table id="example1" class="table table-bordered table-striped">
             <thead>
                <tr>
-                    <th>Date</th>
-                    <th>Nature MVT </th>
+                   <th>Identifiant</th>
                     <th>Désignation </th>
-                    
+                    <th>Nature </th>
                     <th>Unité </th>
-                    <th>Nombre </th>
-                    <th>Quantité disponible</th>
-                    <th>Quantité demandée</th>
+                   
                     <th>Quantité Stock</th>
-                    
+                    <th>Gestion Mouvement</th>
+                    <th>Lister Mouvement</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,16 +27,15 @@
                
                   
                     <tr>
-                        <td> {{Modele.date|date(' d/m/Y', false) }} </td>
-                        <td> {{Modele.nature}} </td>
+                        <td> {{Modele.id}} </td>
                         <td> {{Modele.designation}} </td>
-                     
+                        <td> {{Modele.nature}} </td>
                         <td> {{Modele.unite}} </td>
-                        <td> {{Modele.nombre}} </td>
-                        <td> {{Modele.qtedispo}} </td>
-                        <td> {{Modele.qtedemande}} </td>
-                        <td> {{Modele.qteStock}} </td>
                         
+                        <td> {{Modele.qteStock}} </td>
+                        <td><a href="{{path("log_addMvt",{'id':Modele.id})}}"> Gérer </a></td>
+                       <td><a href="{{path("log_listMvt",{'idstock':Modele.id})}}"> Lister </a></td>
+                       
                     </tr>
                        
                  {% endfor %}

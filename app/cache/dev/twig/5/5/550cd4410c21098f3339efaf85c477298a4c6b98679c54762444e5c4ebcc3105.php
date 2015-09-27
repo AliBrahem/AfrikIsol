@@ -37,62 +37,56 @@ class __TwigTemplate_550cd4410c21098f3339efaf85c477298a4c6b98679c54762444e5c4ebc
                   <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                <tr>
-                    <th>Date</th>
-                    <th>Nature MVT </th>
+                   <th>Identifiant</th>
                     <th>Désignation </th>
-                    
+                    <th>Nature </th>
                     <th>Unité </th>
-                    <th>Nombre </th>
-                    <th>Quantité disponible</th>
-                    <th>Quantité demandée</th>
+                   
                     <th>Quantité Stock</th>
-                    
+                    <th>Gestion Mouvement</th>
+                    <th>Lister Mouvement</th>
                 </tr>
             </thead>
             <tbody>
                  ";
-        // line 28
+        // line 26
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 29
+            // line 27
             echo "               
                   
                     <tr>
                         <td> ";
-            // line 32
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Modele"], "date", array()), " d/m/Y", false), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "id", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 33
+            // line 31
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "designation", array()), "html", null, true);
+            echo " </td>
+                        <td> ";
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 34
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "designation", array()), "html", null, true);
-            echo " </td>
-                     
-                        <td> ";
-            // line 36
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "unite", array()), "html", null, true);
             echo " </td>
+                        
                         <td> ";
-            // line 37
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nombre", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
-            // line 38
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "qtedispo", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
-            // line 39
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "qtedemande", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
-            // line 40
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "qteStock", array()), "html", null, true);
             echo " </td>
-                        
+                        <td><a href=\"";
+            // line 36
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("log_addMvt", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+            echo "\"> Gérer </a></td>
+                       <td><a href=\"";
+            // line 37
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("log_listMvt", array("idstock" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+            echo "\"> Lister </a></td>
+                       
                     </tr>
                        
                  ";
@@ -100,7 +94,7 @@ class __TwigTemplate_550cd4410c21098f3339efaf85c477298a4c6b98679c54762444e5c4ebc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 42
         echo "            </tbody>            
         </table>
                 </div>
@@ -125,6 +119,6 @@ class __TwigTemplate_550cd4410c21098f3339efaf85c477298a4c6b98679c54762444e5c4ebc
 
     public function getDebugInfo()
     {
-        return array (  104 => 45,  93 => 40,  89 => 39,  85 => 38,  81 => 37,  77 => 36,  72 => 34,  68 => 33,  64 => 32,  59 => 29,  55 => 28,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  98 => 42,  87 => 37,  83 => 36,  79 => 35,  74 => 33,  70 => 32,  66 => 31,  62 => 30,  57 => 27,  53 => 26,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

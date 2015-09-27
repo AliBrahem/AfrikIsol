@@ -95,7 +95,7 @@ $(function () {
             
         },
         title: {
-            text: 'Planning des travaux pour le projet'
+            text: 'Planning des travaux pour le projet {{projet.id}}'
         },
         xAxis: {
             type: 'datetime',
@@ -131,7 +131,15 @@ $(function () {
         plotOptions: {
             series: {
                 grouping: false
-            }
+            },
+            xrange :
+               {
+                   dataLabels: {
+    enabled: true,
+    formatter: function () {
+        return '<b> '+ Highcharts.dateFormat ('%e. %b ', this.point.x)+" -> " + Highcharts.dateFormat ('%e. %b %Y', this.point.x2) +'</b>';
+    }
+        }}
         },
           
         series: [{
@@ -167,4 +175,4 @@ $(function () {
    
 });
 </script>
-<div id="container" style="min-width: 700px; height: 700px; margin: 0 auto"></div>
+<div id="container" style="min-width: 500px; height: 700px; margin: 0 auto"></div>

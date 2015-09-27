@@ -113,7 +113,10 @@ type=\"text/javascript\"></script>
             
         },
         title: {
-            text: 'Planning des travaux pour le projet'
+            text: 'Planning des travaux pour le projet ";
+        // line 98
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["projet"]) ? $context["projet"] : $this->getContext($context, "projet")), "id", array()), "html", null, true);
+        echo "'
         },
         xAxis: {
             type: 'datetime',
@@ -194,7 +197,15 @@ type=\"text/javascript\"></script>
         plotOptions: {
             series: {
                 grouping: false
-            }
+            },
+            xrange :
+               {
+                   dataLabels: {
+    enabled: true,
+    formatter: function () {
+        return '<b> '+ Highcharts.dateFormat ('%e. %b ', this.point.x)+\" -> \" + Highcharts.dateFormat ('%e. %b %Y', this.point.x2) +'</b>';
+    }
+        }}
         },
           
         series: [{
@@ -207,7 +218,7 @@ type=\"text/javascript\"></script>
             data: [
               
                    ";
-        // line 146
+        // line 154
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")));
         $context['loop'] = array(
@@ -224,13 +235,13 @@ type=\"text/javascript\"></script>
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["Plan"]) {
-            // line 147
+            // line 155
             echo "                               ";
             if ( !$this->getAttribute($context["loop"], "last", array())) {
-                // line 148
+                // line 156
                 echo "                   {
                     x : Date.UTC( \"";
-                // line 149
+                // line 157
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "Y"), "html", null, true);
                 echo "\", \"";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "m"), "html", null, true);
@@ -238,7 +249,7 @@ type=\"text/javascript\"></script>
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "d"), "html", null, true);
                 echo "\") ,
                      x2 : Date.UTC( \"";
-                // line 150
+                // line 158
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "Y"), "html", null, true);
                 echo "\", \"";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "m"), "html", null, true);
@@ -246,17 +257,17 @@ type=\"text/javascript\"></script>
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "d"), "html", null, true);
                 echo "\") ,     
                       y: ";
-                // line 151
+                // line 159
                 echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index0", array()), "html", null, true);
                 echo "  
                     },  
                       ";
             } else {
-                // line 153
+                // line 161
                 echo " 
                     {
                     x : Date.UTC( \"";
-                // line 155
+                // line 163
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "Y"), "html", null, true);
                 echo "\", \"";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "m"), "html", null, true);
@@ -264,7 +275,7 @@ type=\"text/javascript\"></script>
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateDebut", array()), "d"), "html", null, true);
                 echo "\") ,
                      x2 : Date.UTC( \"";
-                // line 156
+                // line 164
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "Y"), "html", null, true);
                 echo "\", \"";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "m"), "html", null, true);
@@ -272,13 +283,13 @@ type=\"text/javascript\"></script>
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "dateFin", array()), "d"), "html", null, true);
                 echo "\") ,     
                       y: ";
-                // line 157
+                // line 165
                 echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index0", array()), "html", null, true);
                 echo "
                     }       
                        ";
             }
-            // line 159
+            // line 167
             echo "    
                      
                    ";
@@ -294,7 +305,7 @@ type=\"text/javascript\"></script>
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Plan'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 161
+        // line 169
         echo " 
                    ]
                 
@@ -304,7 +315,7 @@ type=\"text/javascript\"></script>
    
 });
 </script>
-<div id=\"container\" style=\"min-width: 700px; height: 700px; margin: 0 auto\"></div>
+<div id=\"container\" style=\"min-width: 500px; height: 700px; margin: 0 auto\"></div>
 ";
     }
 
@@ -320,6 +331,6 @@ type=\"text/javascript\"></script>
 
     public function getDebugInfo()
     {
-        return array (  298 => 161,  282 => 159,  276 => 157,  268 => 156,  260 => 155,  256 => 153,  250 => 151,  242 => 150,  234 => 149,  231 => 148,  228 => 147,  211 => 146,  180 => 117,  165 => 116,  160 => 115,  157 => 114,  151 => 113,  148 => 112,  131 => 111,  19 => 1,);
+        return array (  309 => 169,  293 => 167,  287 => 165,  279 => 164,  271 => 163,  267 => 161,  261 => 159,  253 => 158,  245 => 157,  242 => 156,  239 => 155,  222 => 154,  183 => 117,  168 => 116,  163 => 115,  160 => 114,  154 => 113,  151 => 112,  134 => 111,  118 => 98,  19 => 1,);
     }
 }

@@ -57,7 +57,10 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
     <!-- date-range-picker -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js\" type=\"text/javascript\"></script>
-
+    <script src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/stock.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href=\"";
@@ -137,13 +140,16 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                     <div class=\"navbar-custom-menu\">
                         <ul class=\"nav navbar-nav\">
                             <li class=\"dropdown user user-menu\">
-                                <a href=\"";
+                                ";
         // line 82
+        $context["imag"] = $this->env->getExtension('img_extension')->afficheImg($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()));
+        // line 83
+        echo "                                <a href=\"";
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\" class=\"dropdown-toggle\" >
                                     <img src=\"data:image/png;base64,";
-        // line 83
-        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        // line 84
+        echo twig_escape_filter($this->env, (isset($context["imag"]) ? $context["imag"] : $this->getContext($context, "imag")), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\" />
                                     <span class=\"hidden-xs\">Déconnexion</span>
                                 </a>
@@ -165,15 +171,16 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                     <!-- Sidebar user panel -->
                     <div class=\"user-panel\">
                         <div class=\"pull-left image\">
+                            
                             <img src=\"data:image/png;base64,";
-        // line 104
-        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        // line 106
+        echo twig_escape_filter($this->env, (isset($context["imag"]) ? $context["imag"] : $this->getContext($context, "imag")), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\" />                                  
                       
                         </div>
                         <div class=\"pull-left info\">
                             <p>";
-        // line 108
+        // line 110
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
         echo " </p>
                             <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
@@ -199,16 +206,25 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                             <ul class=\"treeview-menu\">
                                 <li class=\"active\">
                                     <a href=\"";
-        // line 131
+        // line 133
         echo $this->env->getExtension('routing')->getPath("log_addStock");
         echo "\"><i class=\"fa fa-calculator\"></i> Ajouter au stock</a>
                                   
                                 </li>
                                 <li>
                                     <a href=\"";
-        // line 135
+        // line 137
         echo $this->env->getExtension('routing')->getPath("log_listStock");
         echo "\"><i class=\"fa fa-list\"></i> Lister Stock</a>
+                                   
+                                </li>
+                                <li>
+                                    <a href=\"";
+        // line 141
+        echo $this->env->getExtension('routing')->getPath("log_listDmd");
+        echo "\"><i class=\"fa fa-list\"></i> Demandes <span class=\"label label-primary pull-right\">";
+        echo twig_escape_filter($this->env, $this->env->getExtension('dmd_extension')->calcul(0), "html", null, true);
+        echo "</span></a>
                                    
                                 </li>
                             </ul>
@@ -225,7 +241,7 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                 <section class=\"content-header\">
                     <h1>
                         Tableau de bord
-                        <small>Service Technique</small>
+                        <small>Service Logistique</small>
                     </h1>
                     <ol class=\"breadcrumb\">
                       
@@ -238,31 +254,31 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                     <br>
                     <br>
                     ";
-        // line 164
+        // line 170
         $this->displayBlock('user_content', $context, $blocks);
-        // line 179
+        // line 185
         echo "                         
                          <br>
                          <br>
                          ";
-        // line 182
+        // line 188
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 183
+            // line 189
             echo "            ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 184
+                // line 190
                 echo "                ";
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 185
+                    // line 191
                     echo "                    <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                         <h3> ";
-                    // line 186
+                    // line 192
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo " </h3>
                     </div>
@@ -271,16 +287,16 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 189
+                // line 195
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 190
+            // line 196
             echo "        ";
         }
-        // line 191
+        // line 197
         echo "                </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
             <footer class=\"main-footer\">
@@ -297,7 +313,7 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
 
         <!-- jQuery 2.1.4 -->
         <script src=\"";
-        // line 206
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jQuery/jQuery-2.1.4.min.js"), "html", null, true);
         echo "\"></script>
         <!-- jQuery UI 1.11.2 -->
@@ -308,99 +324,99 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
         </script>
         <!-- Bootstrap 3.3.2 JS -->
         <script src=\"";
-        // line 214
+        // line 220
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>  
         <script src=\"";
-        // line 215
+        // line 221
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/calculTole.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Morris.js charts -->
         <script src=\"http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js\"></script>
         <script src=\"";
-        // line 218
+        // line 224
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/morris/morris.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Sparkline -->
         <script src=\"";
-        // line 220
+        // line 226
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jvectormap -->
         <script src=\"";
-        // line 222
+        // line 228
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 223
+        // line 229
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- jQuery Knob Chart -->
         <script src=\"";
-        // line 225
+        // line 231
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/knob/jquery.knob.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- daterangepicker -->
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js\" type=\"text/javascript\"></script>
         <script src=\"";
-        // line 228
+        // line 234
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- datepicker -->
         <script src=\"";
-        // line 230
+        // line 236
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datepicker/bootstrap-datepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src=\"";
-        // line 232
+        // line 238
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- Slimscroll -->
         <script src=\"";
-        // line 234
+        // line 240
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
         <!-- FastClick -->
         <script src=\"";
-        // line 236
+        // line 242
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
         <!-- AdminLTE App -->
         <script src=\"";
-        // line 238
+        // line 244
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>    
 
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src=\"";
-        // line 241
+        // line 247
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/pages/dashboard.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>   
         <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 243
+        // line 249
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/jquery.dataTables.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 244
+        // line 250
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/dataTables.bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
        
 
         <!-- AdminLTE for demo purposes -->
         <script src=\"";
-        // line 248
+        // line 254
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/js/demo.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     </body>
 </html>";
     }
 
-    // line 164
+    // line 170
     public function block_user_content($context, array $blocks = array())
     {
-        // line 165
+        // line 171
         echo "           
                     <!-- Small boxes (Stat box) -->
                     <div class=\"row\">
@@ -429,6 +445,6 @@ class __TwigTemplate_e2e4c6d5b9d2d3c396147c2a57a88d83354c1d5b78326d3356684dbe7c7
 
     public function getDebugInfo()
     {
-        return array (  404 => 165,  401 => 164,  394 => 248,  387 => 244,  383 => 243,  378 => 241,  372 => 238,  367 => 236,  362 => 234,  357 => 232,  352 => 230,  347 => 228,  341 => 225,  336 => 223,  332 => 222,  327 => 220,  322 => 218,  316 => 215,  312 => 214,  301 => 206,  284 => 191,  281 => 190,  275 => 189,  266 => 186,  261 => 185,  256 => 184,  251 => 183,  249 => 182,  244 => 179,  242 => 164,  210 => 135,  203 => 131,  177 => 108,  170 => 104,  146 => 83,  142 => 82,  99 => 42,  94 => 40,  89 => 38,  84 => 36,  79 => 34,  74 => 32,  69 => 30,  65 => 29,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
+        return array (  420 => 171,  417 => 170,  410 => 254,  403 => 250,  399 => 249,  394 => 247,  388 => 244,  383 => 242,  378 => 240,  373 => 238,  368 => 236,  363 => 234,  357 => 231,  352 => 229,  348 => 228,  343 => 226,  338 => 224,  332 => 221,  328 => 220,  317 => 212,  300 => 197,  297 => 196,  291 => 195,  282 => 192,  277 => 191,  272 => 190,  267 => 189,  265 => 188,  260 => 185,  258 => 170,  224 => 141,  217 => 137,  210 => 133,  184 => 110,  177 => 106,  152 => 84,  147 => 83,  145 => 82,  102 => 42,  97 => 40,  92 => 38,  87 => 36,  82 => 34,  77 => 32,  72 => 30,  68 => 29,  62 => 26,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
     }
 }

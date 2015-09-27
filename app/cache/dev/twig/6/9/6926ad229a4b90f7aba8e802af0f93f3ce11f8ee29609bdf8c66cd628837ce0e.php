@@ -67,17 +67,24 @@ type=\"text/javascript\"></script>
             verticalAlign: 'middle',
             borderWidth: 0
         },
+                 plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                }
+                
+            }},
         series: [
         {
             name: 'Avancement réel'
             ";
-        // line 52
+        // line 59
         if ((isset($context["avanc"]) ? $context["avanc"] : $this->getContext($context, "avanc"))) {
             echo "  
              ";
-            // line 53
+            // line 60
             $context["var"] = 0;
-            // line 54
+            // line 61
             echo "            ,data: [";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["avanc"]) ? $context["avanc"] : $this->getContext($context, "avanc")));
@@ -95,15 +102,15 @@ type=\"text/javascript\"></script>
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["Avanc"]) {
-                // line 55
+                // line 62
                 echo "               
             ";
-                // line 56
+                // line 63
                 $context["var"] = ((isset($context["var"]) ? $context["var"] : $this->getContext($context, "var")) + $this->getAttribute($context["Avanc"], "quantite", array()));
-                // line 57
+                // line 64
                 echo "                             ";
                 if ( !$this->getAttribute($context["loop"], "last", array())) {
-                    // line 58
+                    // line 65
                     echo "                   [Date.UTC( \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Avanc"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
@@ -117,10 +124,10 @@ type=\"text/javascript\"></script>
                     echo ")*100],
                          ";
                 } else {
-                    // line 59
+                    // line 66
                     echo "   
                              [Date.UTC( \"";
-                    // line 60
+                    // line 67
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Avanc"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Avanc"], "date", array()), "m"), "html", null, true);
@@ -133,7 +140,7 @@ type=\"text/javascript\"></script>
                     echo ")*100]
                              ";
                 }
-                // line 62
+                // line 69
                 echo "                         
                           ";
                 ++$context['loop']['index0'];
@@ -148,21 +155,21 @@ type=\"text/javascript\"></script>
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Avanc'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 70
             echo " ]
                               ";
         }
-        // line 65
+        // line 72
         echo "        }
          ,{
             name: 'Mise à disposition'
             ";
-        // line 68
+        // line 75
         if ((isset($context["mad"]) ? $context["mad"] : $this->getContext($context, "mad"))) {
-            // line 69
+            // line 76
             echo "             ";
             $context["var2"] = 0;
-            // line 70
+            // line 77
             echo "            ,data: [";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["mad"]) ? $context["mad"] : $this->getContext($context, "mad")));
@@ -180,13 +187,13 @@ type=\"text/javascript\"></script>
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["Mad"]) {
-                // line 71
+                // line 78
                 echo "                ";
                 $context["var2"] = ((isset($context["var2"]) ? $context["var2"] : $this->getContext($context, "var2")) + $this->getAttribute($context["Mad"], "quantite", array()));
-                // line 72
+                // line 79
                 echo "                             ";
                 if ( !$this->getAttribute($context["loop"], "last", array())) {
-                    // line 73
+                    // line 80
                     echo "                    [  Date.UTC( \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Mad"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
@@ -200,10 +207,10 @@ type=\"text/javascript\"></script>
                     echo ")*100],
                          ";
                 } else {
-                    // line 74
+                    // line 81
                     echo "   
                              [ Date.UTC( \"";
-                    // line 75
+                    // line 82
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Mad"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Mad"], "date", array()), "m"), "html", null, true);
@@ -216,7 +223,7 @@ type=\"text/javascript\"></script>
                     echo ")*100]
                              ";
                 }
-                // line 76
+                // line 83
                 echo " 
                           ";
                 ++$context['loop']['index0'];
@@ -231,22 +238,22 @@ type=\"text/javascript\"></script>
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Mad'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 77
+            // line 84
             echo " ]
                               ";
         }
-        // line 79
+        // line 86
         echo "        }
        , {
             name: 'Avancement prévisionnel'
             ";
-        // line 82
+        // line 89
         if ((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan"))) {
             echo " 
              ";
-            // line 83
+            // line 90
             $context["var3"] = 0;
-            // line 84
+            // line 91
             echo "            ,data: [";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")));
@@ -264,13 +271,13 @@ type=\"text/javascript\"></script>
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["Plan"]) {
-                // line 85
+                // line 92
                 echo "                ";
                 $context["var3"] = ((isset($context["var3"]) ? $context["var3"] : $this->getContext($context, "var3")) + $this->getAttribute($context["Plan"], "quantite", array()));
-                // line 86
+                // line 93
                 echo "                             ";
                 if ( !$this->getAttribute($context["loop"], "last", array())) {
-                    // line 87
+                    // line 94
                     echo "                   [Date.UTC( \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
@@ -284,10 +291,10 @@ type=\"text/javascript\"></script>
                     echo ")*100],
                          ";
                 } else {
-                    // line 88
+                    // line 95
                     echo "   
                              [Date.UTC( \"";
-                    // line 89
+                    // line 96
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "date", array()), "Y"), "html", null, true);
                     echo "\", \"";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["Plan"], "date", array()), "m"), "html", null, true);
@@ -300,7 +307,7 @@ type=\"text/javascript\"></script>
                     echo ")*100]
                              ";
                 }
-                // line 90
+                // line 97
                 echo " 
                           ";
                 ++$context['loop']['index0'];
@@ -315,11 +322,11 @@ type=\"text/javascript\"></script>
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Plan'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 91
+            // line 98
             echo "]
                               ";
         }
-        // line 93
+        // line 100
         echo "        }
     ]
     });
@@ -340,6 +347,6 @@ type=\"text/javascript\"></script>
 
     public function getDebugInfo()
     {
-        return array (  323 => 93,  319 => 91,  304 => 90,  291 => 89,  288 => 88,  274 => 87,  271 => 86,  268 => 85,  250 => 84,  248 => 83,  244 => 82,  239 => 79,  235 => 77,  220 => 76,  207 => 75,  204 => 74,  190 => 73,  187 => 72,  184 => 71,  166 => 70,  163 => 69,  161 => 68,  156 => 65,  152 => 63,  137 => 62,  124 => 60,  121 => 59,  107 => 58,  104 => 57,  102 => 56,  99 => 55,  81 => 54,  79 => 53,  75 => 52,  31 => 11,  19 => 1,);
+        return array (  330 => 100,  326 => 98,  311 => 97,  298 => 96,  295 => 95,  281 => 94,  278 => 93,  275 => 92,  257 => 91,  255 => 90,  251 => 89,  246 => 86,  242 => 84,  227 => 83,  214 => 82,  211 => 81,  197 => 80,  194 => 79,  191 => 78,  173 => 77,  170 => 76,  168 => 75,  163 => 72,  159 => 70,  144 => 69,  131 => 67,  128 => 66,  114 => 65,  111 => 64,  109 => 63,  106 => 62,  88 => 61,  86 => 60,  82 => 59,  31 => 11,  19 => 1,);
     }
 }

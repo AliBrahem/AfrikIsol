@@ -1,0 +1,225 @@
+a:8:{s:5:"token";s:6:"07e03d";s:6:"parent";N;s:8:"children";a:0:{}s:4:"data";a:11:{s:6:"config";C:62:"Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector":2105:{a:16:{s:8:"app_name";N;s:11:"app_version";N;s:5:"token";s:6:"07e03d";s:15:"symfony_version";s:6:"2.3.31";s:4:"name";s:3:"app";s:3:"env";s:3:"dev";s:5:"debug";b:1;s:11:"php_version";s:6:"5.5.12";s:14:"xdebug_enabled";b:1;s:14:"eaccel_enabled";b:0;s:11:"apc_enabled";b:0;s:14:"xcache_enabled";b:0;s:16:"wincache_enabled";b:0;s:20:"zend_opcache_enabled";b:0;s:7:"bundles";a:16:{s:15:"FrameworkBundle";s:81:"C:\wamp\www\AfriqueIsol\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle";s:14:"SecurityBundle";s:80:"C:\wamp\www\AfriqueIsol\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle";s:10:"TwigBundle";s:76:"C:\wamp\www\AfriqueIsol\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle";s:13:"MonologBundle";s:82:"C:\wamp\www\AfriqueIsol\vendor\symfony\monolog-bundle\Symfony\Bundle\MonologBundle";s:17:"SwiftmailerBundle";s:57:"C:\wamp\www\AfriqueIsol\vendor\symfony\swiftmailer-bundle";s:13:"AsseticBundle";s:82:"C:\wamp\www\AfriqueIsol\vendor\symfony\assetic-bundle\Symfony\Bundle\AsseticBundle";s:14:"DoctrineBundle";s:86:"C:\wamp\www\AfriqueIsol\vendor\doctrine\doctrine-bundle\Doctrine\Bundle\DoctrineBundle";s:26:"SensioFrameworkExtraBundle";s:95:"C:\wamp\www\AfriqueIsol\vendor\sensio\framework-extra-bundle\Sensio\Bundle\FrameworkExtraBundle";s:11:"AdminBundle";s:50:"C:\wamp\www\AfriqueIsol\src\BackOffice\AdminBundle";s:13:"FOSUserBundle";s:59:"C:\wamp\www\AfriqueIsol\vendor\friendsofsymfony\user-bundle";s:15:"KnpSnappyBundle";s:80:"C:/wamp/www/AfriqueIsol/vendor/knplabs/knp-snappy-bundle/Knp/Bundle/SnappyBundle";s:18:"ObHighchartsBundle";s:51:"C:\wamp\www\AfriqueIsol\vendor\ob\highcharts-bundle";s:14:"AcmeDemoBundle";s:43:"C:\wamp\www\AfriqueIsol\src\Acme\DemoBundle";s:17:"WebProfilerBundle";s:83:"C:\wamp\www\AfriqueIsol\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle";s:24:"SensioDistributionBundle";s:90:"C:\wamp\www\AfriqueIsol\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle";s:21:"SensioGeneratorBundle";s:84:"C:\wamp\www\AfriqueIsol\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle";}s:9:"sapi_name";s:14:"apache2handler";}}s:7:"request";C:63:"Symfony\Component\HttpKernel\DataCollector\RequestDataCollector":24924:{a:18:{s:6:"format";s:4:"html";s:7:"content";s:0:"";s:12:"content_type";s:24:"text/html; charset=UTF-8";s:11:"status_text";s:21:"Internal Server Error";s:11:"status_code";i:500;s:13:"request_query";a:0:{}s:15:"request_request";a:0:{}s:15:"request_headers";a:10:{s:4:"host";a:1:{i:0;s:9:"localhost";}s:10:"connection";a:1:{i:0;s:10:"keep-alive";}s:13:"cache-control";a:1:{i:0;s:9:"max-age=0";}s:6:"accept";a:1:{i:0;s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";}s:25:"upgrade-insecure-requests";a:1:{i:0;s:1:"1";}s:10:"user-agent";a:1:{i:0;s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36";}s:15:"accept-encoding";a:1:{i:0;s:19:"gzip, deflate, sdch";}s:15:"accept-language";a:1:{i:0;s:35:"fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4";}s:6:"cookie";a:1:{i:0;s:36:"PHPSESSID=fercjgekt99u0h8675mkr8f023";}s:14:"x-php-ob-level";a:1:{i:0;i:1;}}s:14:"request_server";a:38:{s:9:"HTTP_HOST";s:9:"localhost";s:15:"HTTP_CONNECTION";s:10:"keep-alive";s:18:"HTTP_CACHE_CONTROL";s:9:"max-age=0";s:11:"HTTP_ACCEPT";s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";s:30:"HTTP_UPGRADE_INSECURE_REQUESTS";s:1:"1";s:15:"HTTP_USER_AGENT";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36";s:20:"HTTP_ACCEPT_ENCODING";s:19:"gzip, deflate, sdch";s:20:"HTTP_ACCEPT_LANGUAGE";s:35:"fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4";s:11:"HTTP_COOKIE";s:36:"PHPSESSID=fercjgekt99u0h8675mkr8f023";s:4:"PATH";s:286:"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\x64\;C:\wamp\bin\php\php5.5.12;C:\Program Files (x86)\Skype\Phone\;";s:10:"SystemRoot";s:10:"C:\Windows";s:7:"COMSPEC";s:27:"C:\Windows\system32\cmd.exe";s:7:"PATHEXT";s:53:".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC";s:6:"WINDIR";s:10:"C:\Windows";s:16:"SERVER_SIGNATURE";s:79:"<address>Apache/2.4.9 (Win64) PHP/5.5.12 Server at localhost Port 80</address>
+";s:15:"SERVER_SOFTWARE";s:31:"Apache/2.4.9 (Win64) PHP/5.5.12";s:11:"SERVER_NAME";s:9:"localhost";s:11:"SERVER_ADDR";s:9:"127.0.0.1";s:11:"SERVER_PORT";s:2:"80";s:11:"REMOTE_ADDR";s:9:"127.0.0.1";s:13:"DOCUMENT_ROOT";s:12:"C:/wamp/www/";s:14:"REQUEST_SCHEME";s:4:"http";s:14:"CONTEXT_PREFIX";s:0:"";s:21:"CONTEXT_DOCUMENT_ROOT";s:12:"C:/wamp/www/";s:12:"SERVER_ADMIN";s:17:"admin@example.com";s:15:"SCRIPT_FILENAME";s:39:"C:/wamp/www/AfriqueIsol/web/app_dev.php";s:11:"REMOTE_PORT";s:5:"49912";s:17:"GATEWAY_INTERFACE";s:7:"CGI/1.1";s:15:"SERVER_PROTOCOL";s:8:"HTTP/1.1";s:14:"REQUEST_METHOD";s:3:"GET";s:12:"QUERY_STRING";s:0:"";s:11:"REQUEST_URI";s:38:"/AfriqueIsol/web/app_dev.php/indexTech";s:11:"SCRIPT_NAME";s:28:"/AfriqueIsol/web/app_dev.php";s:9:"PATH_INFO";s:10:"/indexTech";s:15:"PATH_TRANSLATED";s:21:"C:\wamp\www\indexTech";s:8:"PHP_SELF";s:38:"/AfriqueIsol/web/app_dev.php/indexTech";s:18:"REQUEST_TIME_FLOAT";d:1441927785.902;s:12:"REQUEST_TIME";i:1441927785;}s:15:"request_cookies";a:1:{s:9:"PHPSESSID";s:26:"fercjgekt99u0h8675mkr8f023";}s:18:"request_attributes";a:2:{s:11:"_controller";s:61:"BackOffice\AdminBundle\Controller\TechController::indexAction";s:6:"_route";s:10:"tech_index";}s:16:"response_headers";a:5:{s:13:"cache-control";a:1:{i:0;s:8:"no-cache";}s:4:"date";a:1:{i:0;s:29:"Thu, 10 Sep 2015 23:29:48 GMT";}s:13:"x-debug-token";a:1:{i:0;s:6:"07e03d";}s:19:"x-chromelogger-data";a:1:{i:0;s:19928:"eyJ2ZXJzaW9uIjoiNC4wIiwiY29sdW1ucyI6WyJsYWJlbCIsImxvZyIsImJhY2t0cmFjZSIsInR5cGUiXSwicm93cyI6W1sicmVxdWVzdCIsIk1hdGNoZWQgcm91dGUgXCJ0ZWNoX2luZGV4XCIgKHBhcmFtZXRlcnM6IFwiX2NvbnRyb2xsZXJcIjogXCJCYWNrT2ZmaWNlXFxBZG1pbkJ1bmRsZVxcQ29udHJvbGxlclxcVGVjaENvbnRyb2xsZXI6OmluZGV4QWN0aW9uXCIsIFwiX3JvdXRlXCI6IFwidGVjaF9pbmRleFwiKSIsInVua25vd24iLCJpbmZvIl0sWyJyZXF1ZXN0Iix7Im1lc3NhZ2UiOiJVbmNhdWdodCBQSFAgRXhjZXB0aW9uIFR3aWdfRXJyb3JfUnVudGltZTogXCJBbiBleGNlcHRpb24gaGFzIGJlZW4gdGhyb3duIGR1cmluZyB0aGUgcmVuZGVyaW5nIG9mIGEgdGVtcGxhdGUgKFwiRmFpbGVkIHRvIHdyaXRlIGNhY2hlIGZpbGUgXCJDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XC90d2lnXC82XC82XC82NjQzM2U2NzcxOWUyNjNjYjM0OWVkNDc0NDEwOWNjZjIyNjZmNzhiNjAxMmE3ZDQ3ZTIyNjc2OWMzOTMyZjRkLnBocFwiLlwiKSBpbiBcIkFkbWluQnVuZGxlOlRlY2huaXF1ZTppbmRleFRlY2guaHRtbC50d2lnXCIgYXQgbGluZSAzLlwiIGF0IEM6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFxhcHBcXGNhY2hlXFxkZXZcXGNsYXNzZXMucGhwIGxpbmUgNDUyOCIsImNvbnRleHQiOnsiZXhjZXB0aW9uIjp7InhkZWJ1Z19tZXNzYWdlIjoiPHRyPjx0aCBhbGlnbj0nbGVmdCcgYmdjb2xvcj0nI2Y1NzkwMCcgY29sc3Bhbj1cIjVcIj48c3BhbiBzdHlsZT0nYmFja2dyb3VuZC1jb2xvcjogI2NjMDAwMDsgY29sb3I6ICNmY2U5NGY7IGZvbnQtc2l6ZTogeC1sYXJnZTsnPiggISApPFwvc3Bhbj4gUnVudGltZUV4Y2VwdGlvbjogRmFpbGVkIHRvIHdyaXRlIGNhY2hlIGZpbGUgXCJDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XC90d2lnXC82XC82XC82NjQzM2U2NzcxOWUyNjNjYjM0OWVkNDc0NDEwOWNjZjIyNjZmNzhiNjAxMmE3ZDQ3ZTIyNjc2OWMzOTMyZjRkLnBocFwiLiBpbiBDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XFxjbGFzc2VzLnBocCBvbiBsaW5lIDxpPjM0MzI8XC9pPjxcL3RoPjxcL3RyPlxuPHRyPjx0aCBhbGlnbj0nbGVmdCcgYmdjb2xvcj0nI2U5Yjk2ZScgY29sc3Bhbj0nNSc+Q2FsbCBTdGFjazxcL3RoPjxcL3RyPlxuPHRyPjx0aCBhbGlnbj0nY2VudGVyJyBiZ2NvbG9yPScjZWVlZWVjJz4jPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5UaW1lPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5NZW1vcnk8XC90aD48dGggYWxpZ249J2xlZnQnIGJnY29sb3I9JyNlZWVlZWMnPkZ1bmN0aW9uPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5Mb2NhdGlvbjxcL3RoPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuMDAwMDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjI0NzI5NjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz57bWFpbn0oICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcd2ViXFxhcHBfZGV2LnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXGFwcF9kZXYucGhwPGI+OjxcL2I+MDxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4yPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuMDE4MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjE5NTkwMDA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQ29tcG9uZW50XFxIdHRwS2VybmVsXFxLZXJuZWwtPmhhbmRsZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx3ZWJcXGFwcF9kZXYucGhwJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYXBwX2Rldi5waHA8Yj46PFwvYj4yODxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4zPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNDM5MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjEyOTQzMDI0PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPlN5bWZvbnlcXENvbXBvbmVudFxcSHR0cEtlcm5lbFxcRGVwZW5kZW5jeUluamVjdGlvblxcQ29udGFpbmVyQXdhcmVIdHRwS2VybmVsLT5oYW5kbGUoICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYm9vdHN0cmFwLnBocC5jYWNoZTxiPjo8XC9iPjIzMTk8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+NDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjQzOTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xMjk0NDk1MjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxDb21wb25lbnRcXEh0dHBLZXJuZWxcXEh0dHBLZXJuZWwtPmhhbmRsZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFxhcHBcXGJvb3RzdHJhcC5waHAuY2FjaGUnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxib290c3RyYXAucGhwLmNhY2hlPGI+OjxcL2I+MzA0MzxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz41PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNDM5MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjEyOTQ1NDE2PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPlN5bWZvbnlcXENvbXBvbmVudFxcSHR0cEtlcm5lbFxcSHR0cEtlcm5lbC0+aGFuZGxlUmF3KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcYm9vdHN0cmFwLnBocC5jYWNoZScgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXGJvb3RzdHJhcC5waHAuY2FjaGU8Yj46PFwvYj4yOTE0PFwvdGQ+PFwvdHI+XG48dHI+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjY8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42NDUwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTU5OTA4ODA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+PGEgaHJlZj0naHR0cDpcL1wvd3d3LnBocC5uZXRcL2Z1bmN0aW9uLmNhbGwtdXNlci1mdW5jLWFycmF5OntDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlOjI5NDB9JyB0YXJnZXQ9J19uZXcnPmNhbGxfdXNlcl9mdW5jX2FycmF5OntDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlOjI5NDB9PFwvYT5cbiggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFxhcHBcXGJvb3RzdHJhcC5waHAuY2FjaGUnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxib290c3RyYXAucGhwLmNhY2hlPGI+OjxcL2I+Mjk0MDxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz43PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNjQ1MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjE1OTkxMDcyPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPkJhY2tPZmZpY2VcXEFkbWluQnVuZGxlXFxDb250cm9sbGVyXFxUZWNoQ29udHJvbGxlci0+aW5kZXhBY3Rpb24oICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYm9vdHN0cmFwLnBocC5jYWNoZTxiPjo8XC9iPjI5NDA8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+ODxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY0NTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNTk5MTI0ODxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxCdW5kbGVcXEZyYW1ld29ya0J1bmRsZVxcQ29udHJvbGxlclxcQ29udHJvbGxlci0+cmVuZGVyKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXHNyY1xcQmFja09mZmljZVxcQWRtaW5CdW5kbGVcXENvbnRyb2xsZXJcXFRlY2hDb250cm9sbGVyLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXFRlY2hDb250cm9sbGVyLnBocDxiPjo8XC9iPjI3PFwvdGQ+PFwvdHI+XG48dHI+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjk8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42ODMwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTcyNTY1ODQ8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxUd2lnRW5naW5lLT5yZW5kZXJSZXNwb25zZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx2ZW5kb3JcXHN5bWZvbnlcXHN5bWZvbnlcXHNyY1xcU3ltZm9ueVxcQnVuZGxlXFxGcmFtZXdvcmtCdW5kbGVcXENvbnRyb2xsZXJcXENvbnRyb2xsZXIucGhwJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcQ29udHJvbGxlci5waHA8Yj46PFwvYj4xMDc8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42ODMwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTcyNjA2NzI8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxEZWJ1Z1xcVGltZWRUd2lnRW5naW5lLT5yZW5kZXIoICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcdmVuZG9yXFxzeW1mb255XFxzeW1mb255XFxzcmNcXFN5bWZvbnlcXEJ1bmRsZVxcVHdpZ0J1bmRsZVxcVHdpZ0VuZ2luZS5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxUd2lnRW5naW5lLnBocDxiPjo8XC9iPjEwNTxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xMTxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY4MzA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNzI2MTcxMjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxCdW5kbGVcXFR3aWdCdW5kbGVcXFR3aWdFbmdpbmUtPnJlbmRlciggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx2ZW5kb3JcXHN5bWZvbnlcXHN5bWZvbnlcXHNyY1xcU3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxEZWJ1Z1xcVGltZWRUd2lnRW5naW5lLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXFRpbWVkVHdpZ0VuZ2luZS5waHA8Yj46PFwvYj41MDxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xMjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY4NDA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNzI2MTc2MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxCcmlkZ2VcXFR3aWdcXFR3aWdFbmdpbmUtPnJlbmRlciggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx2ZW5kb3JcXHN5bWZvbnlcXHN5bWZvbnlcXHNyY1xcU3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxUd2lnRW5naW5lLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXFR3aWdFbmdpbmUucGhwPGI+OjxcL2I+NzY8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTM8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTEwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczNDc5Njg8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19UZW1wbGF0ZS0+cmVuZGVyKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXHZlbmRvclxcc3ltZm9ueVxcc3ltZm9ueVxcc3JjXFxTeW1mb255XFxCcmlkZ2VcXFR3aWdcXFR3aWdFbmdpbmUucGhwJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcVHdpZ0VuZ2luZS5waHA8Yj46PFwvYj41MzxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xNDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY5MTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNzM2NDY4MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5Ud2lnX1RlbXBsYXRlLT5kaXNwbGF5KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcY2xhc3Nlcy5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxjbGFzc2VzLnBocDxiPjo8XC9iPjQ1MDU8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTU8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTIwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczODQyMTY8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19UZW1wbGF0ZS0+ZGlzcGxheVdpdGhFcnJvckhhbmRsaW5nKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcY2xhc3Nlcy5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxjbGFzc2VzLnBocDxiPjo8XC9iPjQ0OTg8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTY8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTIwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczODQyODg8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+X19Ud2lnVGVtcGxhdGVfMzdkZTc5ZTJiOTU0ZGMyMDMxMjk3Yzg4YzYzMmY1NDEwZGE4OTk3MGQ1YjhiNTJjODI5NGEzMDNjMTliYjMxZC0+ZG9EaXNwbGF5KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcY2xhc3Nlcy5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxjbGFzc2VzLnBocDxiPjo8XC9iPjQ1MTc8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTc8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTIwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczODQ0ODg8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19UZW1wbGF0ZS0+Z2V0UGFyZW50KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcdHdpZ1xcM1xcN1xcMzdkZTc5ZTJiOTU0ZGMyMDMxMjk3Yzg4YzYzMmY1NDEwZGE4OTk3MGQ1YjhiNTJjODI5NGEzMDNjMTliYjMxZC5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFwzN2RlNzllMmI5NTRkYzIwMzEyOTdjODhjNjMyZjU0MTBkYTg5OTcwZDViOGI1MmM4Mjk0YTMwM2MxOWJiMzFkLnBocDxiPjo8XC9iPjE0PFwvdGQ+PFwvdHI+XG48dHI+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjE4PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNjkyMDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjE3Mzg0NTY4PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPl9fVHdpZ1RlbXBsYXRlXzM3ZGU3OWUyYjk1NGRjMjAzMTI5N2M4OGM2MzJmNTQxMGRhODk5NzBkNWI4YjUyYzgyOTRhMzAzYzE5YmIzMWQtPmRvR2V0UGFyZW50KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcY2xhc3Nlcy5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxjbGFzc2VzLnBocDxiPjo8XC9iPjQzODY8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTk8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTIwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczODYwMDA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19UZW1wbGF0ZS0+bG9hZFRlbXBsYXRlKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcdHdpZ1xcM1xcN1xcMzdkZTc5ZTJiOTU0ZGMyMDMxMjk3Yzg4YzYzMmY1NDEwZGE4OTk3MGQ1YjhiNTJjODI5NGEzMDNjMTliYjMxZC5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFwzN2RlNzllMmI5NTRkYzIwMzEyOTdjODhjNjMyZjU0MTBkYTg5OTcwZDViOGI1MmM4Mjk0YTMwM2MxOWJiMzFkLnBocDxiPjo8XC9iPjk8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MjA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42OTIwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTczODYwNDg8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19FbnZpcm9ubWVudC0+bG9hZFRlbXBsYXRlKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcY2FjaGVcXGRldlxcY2xhc3Nlcy5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxjbGFzc2VzLnBocDxiPjo8XC9iPjQ0NzY8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MjE8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MS4wODgxPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MjAzODEwODg8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+VHdpZ19FbnZpcm9ubWVudC0+d3JpdGVDYWNoZUZpbGUoICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XFxjbGFzc2VzLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXGNsYXNzZXMucGhwPGI+OjxcL2I+MjkxNzxcL3RkPjxcL3RyPlxuPHRyPjx0aCBhbGlnbj0nbGVmdCcgYmdjb2xvcj0nI2Y1NzkwMCcgY29sc3Bhbj1cIjVcIj48c3BhbiBzdHlsZT0nYmFja2dyb3VuZC1jb2xvcjogI2NjMDAwMDsgY29sb3I6ICNmY2U5NGY7IGZvbnQtc2l6ZTogeC1sYXJnZTsnPiggISApPFwvc3Bhbj4gVHdpZ19FcnJvcl9SdW50aW1lOiBBbiBleGNlcHRpb24gaGFzIGJlZW4gdGhyb3duIGR1cmluZyB0aGUgcmVuZGVyaW5nIG9mIGEgdGVtcGxhdGUgKFwiRmFpbGVkIHRvIHdyaXRlIGNhY2hlIGZpbGUgXCJDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XC90d2lnXC82XC82XC82NjQzM2U2NzcxOWUyNjNjYjM0OWVkNDc0NDEwOWNjZjIyNjZmNzhiNjAxMmE3ZDQ3ZTIyNjc2OWMzOTMyZjRkLnBocFwiLlwiKSBpbiBcIkFkbWluQnVuZGxlOlRlY2huaXF1ZTppbmRleFRlY2guaHRtbC50d2lnXCIgYXQgbGluZSAzLiBpbiBDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxjYWNoZVxcZGV2XFxjbGFzc2VzLnBocCBvbiBsaW5lIDxpPjQ1Mjg8XC9pPjxcL3RoPjxcL3RyPlxuPHRyPjx0aCBhbGlnbj0nbGVmdCcgYmdjb2xvcj0nI2U5Yjk2ZScgY29sc3Bhbj0nNSc+Q2FsbCBTdGFjazxcL3RoPjxcL3RyPlxuPHRyPjx0aCBhbGlnbj0nY2VudGVyJyBiZ2NvbG9yPScjZWVlZWVjJz4jPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5UaW1lPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5NZW1vcnk8XC90aD48dGggYWxpZ249J2xlZnQnIGJnY29sb3I9JyNlZWVlZWMnPkZ1bmN0aW9uPFwvdGg+PHRoIGFsaWduPSdsZWZ0JyBiZ2NvbG9yPScjZWVlZWVjJz5Mb2NhdGlvbjxcL3RoPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuMDAwMDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjI0NzI5NjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz57bWFpbn0oICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcd2ViXFxhcHBfZGV2LnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXGFwcF9kZXYucGhwPGI+OjxcL2I+MDxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4yPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuMDE4MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjE5NTkwMDA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQ29tcG9uZW50XFxIdHRwS2VybmVsXFxLZXJuZWwtPmhhbmRsZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx3ZWJcXGFwcF9kZXYucGhwJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYXBwX2Rldi5waHA8Yj46PFwvYj4yODxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4zPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNDM5MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjEyOTQzMDI0PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPlN5bWZvbnlcXENvbXBvbmVudFxcSHR0cEtlcm5lbFxcRGVwZW5kZW5jeUluamVjdGlvblxcQ29udGFpbmVyQXdhcmVIdHRwS2VybmVsLT5oYW5kbGUoICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYm9vdHN0cmFwLnBocC5jYWNoZTxiPjo8XC9iPjIzMTk8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+NDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjQzOTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xMjk0NDk1MjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxDb21wb25lbnRcXEh0dHBLZXJuZWxcXEh0dHBLZXJuZWwtPmhhbmRsZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFxhcHBcXGJvb3RzdHJhcC5waHAuY2FjaGUnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxib290c3RyYXAucGhwLmNhY2hlPGI+OjxcL2I+MzA0MzxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz41PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNDM5MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjEyOTQ1NDE2PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPlN5bWZvbnlcXENvbXBvbmVudFxcSHR0cEtlcm5lbFxcSHR0cEtlcm5lbC0+aGFuZGxlUmF3KCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXGFwcFxcYm9vdHN0cmFwLnBocC5jYWNoZScgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXGJvb3RzdHJhcC5waHAuY2FjaGU8Yj46PFwvYj4yOTE0PFwvdGQ+PFwvdHI+XG48dHI+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjY8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42NDUwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTU5OTA4ODA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+PGEgaHJlZj0naHR0cDpcL1wvd3d3LnBocC5uZXRcL2Z1bmN0aW9uLmNhbGwtdXNlci1mdW5jLWFycmF5OntDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlOjI5NDB9JyB0YXJnZXQ9J19uZXcnPmNhbGxfdXNlcl9mdW5jX2FycmF5OntDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlOjI5NDB9PFwvYT5cbiggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFxhcHBcXGJvb3RzdHJhcC5waHAuY2FjaGUnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxib290c3RyYXAucGhwLmNhY2hlPGI+OjxcL2I+Mjk0MDxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz43PFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjAuNjQ1MDxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0ncmlnaHQnPjE1OTkxMDcyPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnPkJhY2tPZmZpY2VcXEFkbWluQnVuZGxlXFxDb250cm9sbGVyXFxUZWNoQ29udHJvbGxlci0+aW5kZXhBY3Rpb24oICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcYXBwXFxib290c3RyYXAucGhwLmNhY2hlJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcYm9vdHN0cmFwLnBocC5jYWNoZTxiPjo8XC9iPjI5NDA8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+ODxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY0NTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNTk5MTI0ODxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxCdW5kbGVcXEZyYW1ld29ya0J1bmRsZVxcQ29udHJvbGxlclxcQ29udHJvbGxlci0+cmVuZGVyKCAgKTxcL3RkPjx0ZCB0aXRsZT0nQzpcXHdhbXBcXHd3d1xcQWZyaXF1ZUlzb2xcXHNyY1xcQmFja09mZmljZVxcQWRtaW5CdW5kbGVcXENvbnRyb2xsZXJcXFRlY2hDb250cm9sbGVyLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXFRlY2hDb250cm9sbGVyLnBocDxiPjo8XC9iPjI3PFwvdGQ+PFwvdHI+XG48dHI+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdjZW50ZXInPjk8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42ODMwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTcyNTY1ODQ8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxUd2lnRW5naW5lLT5yZW5kZXJSZXNwb25zZSggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx2ZW5kb3JcXHN5bWZvbnlcXHN5bWZvbnlcXHNyY1xcU3ltZm9ueVxcQnVuZGxlXFxGcmFtZXdvcmtCdW5kbGVcXENvbnRyb2xsZXJcXENvbnRyb2xsZXIucGhwJyBiZ2NvbG9yPScjZWVlZWVjJz4uLlxcQ29udHJvbGxlci5waHA8Yj46PFwvYj4xMDc8XC90ZD48XC90cj5cbjx0cj48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MTA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J2NlbnRlcic+MC42ODMwPFwvdGQ+PHRkIGJnY29sb3I9JyNlZWVlZWMnIGFsaWduPSdyaWdodCc+MTcyNjA2NzI8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYyc+U3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxEZWJ1Z1xcVGltZWRUd2lnRW5naW5lLT5yZW5kZXIoICApPFwvdGQ+PHRkIHRpdGxlPSdDOlxcd2FtcFxcd3d3XFxBZnJpcXVlSXNvbFxcdmVuZG9yXFxzeW1mb255XFxzeW1mb255XFxzcmNcXFN5bWZvbnlcXEJ1bmRsZVxcVHdpZ0J1bmRsZVxcVHdpZ0VuZ2luZS5waHAnIGJnY29sb3I9JyNlZWVlZWMnPi4uXFxUd2lnRW5naW5lLnBocDxiPjo8XC9iPjEwNTxcL3RkPjxcL3RyPlxuPHRyPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4xMTxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJyBhbGlnbj0nY2VudGVyJz4wLjY4MzA8XC90ZD48dGQgYmdjb2xvcj0nI2VlZWVlYycgYWxpZ249J3JpZ2h0Jz4xNzI2MTcxMjxcL3RkPjx0ZCBiZ2NvbG9yPScjZWVlZWVjJz5TeW1mb255XFxCdW5kbGVcXFR3aWdCdW5kbGVcXFR3aWdFbmdpbmUtPnJlbmRlciggICk8XC90ZD48dGQgdGl0bGU9J0M6XFx3YW1wXFx3d3dcXEFmcmlxdWVJc29sXFx2ZW5kb3JcXHN5bWZvbnlcXHN5bWZvbnlcXHNyY1xcU3ltZm9ueVxcQnVuZGxlXFxUd2lnQnVuZGxlXFxEZWJ1Z1xcVGltZWRUd2lnRW5naW5lLnBocCcgYmdjb2xvcj0nI2VlZWVlYyc+Li5cXFRpbWVkVHdpZ0VuZ2luZS5waHA8Yj46PFwvYj41MDxcL3RkPjxcL3RyPlxuIn19fSwidW5rbm93biIsImVycm9yIl1dLCJyZXF1ZXN0X3VyaSI6IlwvQWZyaXF1ZUlzb2xcL3dlYlwvYXBwX2Rldi5waHBcL2luZGV4VGVjaCJ9";}s:12:"content-type";a:1:{i:0;s:24:"text/html; charset=UTF-8";}}s:16:"session_metadata";a:3:{s:7:"Created";s:29:"Thu, 10 Sep 15 17:30:35 +0200";s:9:"Last used";s:29:"Fri, 11 Sep 15 01:29:40 +0200";s:8:"Lifetime";s:1:"0";}s:18:"session_attributes";a:1:{s:14:"_security_main";s:808:"C:74:"Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken":720:{a:3:{i:0;N;i:1;s:4:"main";i:2;s:680:"a:4:{i:0;C:34:"BackOffice\AdminBundle\Entity\User":217:{a:9:{i:0;s:88:"8XHR9E/1AxYWPx6alM820e2kWZql+a+zJ9fcAz+pL+zlVRJ+tv6gQf03tCmqhiVp5mZfT7f3Cja0kDSxYiAsZg==";i:1;s:31:"myao1drvfpcwkcwo8k4o4ws4c0k8s4g";i:2;s:3:"ali";i:3;s:3:"Ali";i:4;b:0;i:5;b:0;i:6;b:0;i:7;b:1;i:8;i:3;}}i:1;b:1;i:2;a:3:{i:0;O:41:"Symfony\Component\Security\Core\Role\Role":1:{s:47:" Symfony\Component\Security\Core\Role\Role role";s:0:"";}i:1;O:41:"Symfony\Component\Security\Core\Role\Role":1:{s:47:" Symfony\Component\Security\Core\Role\Role role";s:10:"ROLE_ADMIN";}i:2;O:41:"Symfony\Component\Security\Core\Role\Role":1:{s:47:" Symfony\Component\Security\Core\Role\Role role";s:9:"ROLE_USER";}}i:3;a:0:{}}";}}";}s:7:"flashes";a:0:{}s:9:"path_info";s:10:"/indexTech";s:10:"controller";a:4:{s:5:"class";s:48:"BackOffice\AdminBundle\Controller\TechController";s:6:"method";s:11:"indexAction";s:4:"file";s:80:"C:\wamp\www\AfriqueIsol\src\BackOffice\AdminBundle\Controller\TechController.php";s:4:"line";i:24;}s:6:"locale";s:2:"fr";}}s:9:"exception";C:65:"Symfony\Component\HttpKernel\DataCollector\ExceptionDataCollector":46103:{a:1:{s:9:"exception";O:50:"Symfony\Component\Debug\Exception\FlattenException":10:{s:59:" Symfony\Component\Debug\Exception\FlattenException message";s:271:"An exception has been thrown during the rendering of a template ("Failed to write cache file "C:\wamp\www\AfriqueIsol\app\cache\dev/twig/6/6/66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c3932f4d.php".") in "AdminBundle:Technique:indexTech.html.twig" at line 3.";s:56:" Symfony\Component\Debug\Exception\FlattenException code";i:0;s:60:" Symfony\Component\Debug\Exception\FlattenException previous";O:50:"Symfony\Component\Debug\Exception\FlattenException":10:{s:59:" Symfony\Component\Debug\Exception\FlattenException message";s:145:"Failed to write cache file "C:\wamp\www\AfriqueIsol\app\cache\dev/twig/6/6/66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c3932f4d.php".";s:56:" Symfony\Component\Debug\Exception\FlattenException code";i:0;s:60:" Symfony\Component\Debug\Exception\FlattenException previous";N;s:57:" Symfony\Component\Debug\Exception\FlattenException trace";a:21:{i:0;a:8:{s:9:"namespace";s:0:"";s:11:"short_class";s:0:"";s:5:"class";s:0:"";s:4:"type";s:0:"";s:8:"function";s:0:"";s:4:"file";s:49:"C:\wamp\www\AfriqueIsol\app\cache\dev\classes.php";s:4:"line";i:3432;s:4:"args";a:0:{}}i:1;a:8:{s:9:"namespace";s:0:"";s:11:"short_class";s:16:"Twig_Environment";s:5:"class";s:16:"Twig_Environment";s:4:"type";s:2:"->";s:8:"function";s:14:"writeCacheFile";s:4:"file";s:49:"C:\wamp\www\AfriqueIsol\app\cache\dev\classes.php";s:4:"line";i:2917;s:4:"args";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:115:"C:\wamp\www\AfriqueIsol\app\cache\dev/twig/6/6/66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c3932f4d.php";}i:1;a:2:{i:0;s:6:"string";i:1;s:27567:"<?php
+
+/* AdminBundle::layoutSUP.html.twig */
+class __TwigTemplate_66433e67719e263cb349ed4744109ccf2266f78b6012a7d47e226769c3932f4d extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+            'user_content' => array($this, 'block_user_content'),
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=\"UTF-8\">
+        <title>AfrikIsol | Dashboard</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- Bootstrap 3.3.4 -->
+        <link href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />    
+        <!-- FontAwesome 4.3.0 -->
+        <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- Ionicons 2.0.0 -->
+        <link href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\" rel=\"stylesheet\" type=\"text/css\" />    
+        <!-- Theme style -->
+        <link href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/AdminLTE.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+       <!-- DATA TABLES -->
+        <link href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datatables/dataTables.bootstrap.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        
+        <link href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/skins/_all-skins.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- iCheck -->
+        <link href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/iCheck/flat/blue.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- Morris chart -->
+        <link href=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/morris/morris.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- jvectormap -->
+        <link href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- Date Picker -->
+        <link href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/datepicker/datepicker3.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- Daterange picker -->
+        <link href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/daterangepicker/daterangepicker-bs3.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+         <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js\" type=\"text/javascript\"></script>
+          <script type=\"text/javascript\">
+      \$(function () {
+        \$(\"#example1\").dataTable();
+        \$('#example2').dataTable({
+          \"bPaginate\": true,
+          \"bLengthChange\": false,
+          \"bFilter\": false,
+          \"bSort\": true,
+          \"bInfo\": true,
+          \"bAutoWidth\": false
+        });
+      });
+    </script>
+
+    </head>
+    <body class=\"skin-blue sidebar-mini\">
+        <div class=\"wrapper\">
+
+            <header class=\"main-header\">
+                <!-- Logo -->
+                <a href=\"\" class=\"logo\" height=\"40\" width=\"40\">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class=\"logo-mini\"><b>A</b>AI</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class=\"logo-lg\"><b>Admin</b>AfrikIsol<br></span>
+                    
+                </a>
+                
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class=\"navbar navbar-static-top\" role=\"navigation\">
+                    <!-- Sidebar toggle button-->
+                    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"offcanvas\" role=\"button\">
+                        <span class=\"sr-only\">Toggle navigation</span>
+                    </a>
+                    <div class=\"navbar-custom-menu\">
+                        <ul class=\"nav navbar-nav\">
+                            <li class=\"dropdown user user-menu\">
+                                <a href=\"";
+        // line 69
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+        echo "\" class=\"dropdown-toggle\" >
+                                    <img src=\"data:image/png;base64,";
+        // line 70
+        echo twig_escape_filter($this->env, $this->env->getExtension('img_extension')->afficheImg($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())), "html", null, true);
+        echo "\" class=\"user-image\" alt=\"User Image\" />
+                                    <span class=\"hidden-xs\">Déconnexion</span>
+                                </a>
+
+                            </li>
+                            <!-- Control Sidebar Toggle Button 
+                            <li>
+                              <a href=\"#\" data-toggle=\"control-sidebar\"><i class=\"fa fa-gears\"></i></a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class=\"main-sidebar\">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class=\"sidebar\">
+                    <!-- Sidebar user panel -->
+                    <div class=\"user-panel\">
+                        <div class=\"pull-left image\">
+                            <img src=\"data:image/png;base64,";
+        // line 91
+        echo twig_escape_filter($this->env, $this->env->getExtension('img_extension')->afficheImg($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />                                  
+                      
+                        </div>
+                        <div class=\"pull-left info\">
+                            <p>";
+        // line 95
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
+        echo " </p>
+                            <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
+                        </div>
+                    </div>
+                    <!-- search form -->
+                    <form action=\"#\" method=\"get\" class=\"sidebar-form\">
+                        <div class=\"input-group\">
+                            <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\"/>
+                            <span class=\"input-group-btn\">
+                                <button type='submit' name='search' id='search-btn' class=\"btn btn-flat\"><i class=\"fa fa-search\"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class=\"sidebar-menu\">
+                        <li class=\"header\">Menu de navigation</li>
+                        <li class=\"active treeview\">
+                            <a href=\"#\">
+                                <i class=\"fa fa-desktop\"></i> <span>Gestion des comptes</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                            </a>
+                            <ul class=\"treeview-menu\">
+                                <li class=\"active\">
+                                    <a href=\"";
+        // line 118
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\"><i class=\"fa fa-user-secret\"></i> Mon compte<i class=\"fa fa-angle-left pull-right\"></i></a>
+                                    <ul class=\"treeview-menu\">
+                                        <li><a href=\"";
+        // line 120
+        echo $this->env->getExtension('routing')->getPath("admin_updateprofile");
+        echo "\"><i class=\"fa fa-wrench\"></i> Modifier infos</a></li>
+                                        <li><a href=\"";
+        // line 121
+        echo $this->env->getExtension('routing')->getPath("fos_user_change_password");
+        echo "\"><i class=\"fa fa-lock\"></i> Changer mot de passe</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=\"index2.html\"><i class=\"fa fa-users\"></i> Tous les utilisateurs<i class=\"fa fa-angle-left pull-right\"></i></a>
+                                    <ul class=\"treeview-menu\">
+                                        <li><a href=\"";
+        // line 127
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "\"><i class=\"fa fa-user-plus\"></i> Créer</a></li>
+                                        <li><a href=\"";
+        // line 128
+        echo $this->env->getExtension('routing')->getPath("admin_listerUser");
+        echo "\"><i class=\"fa fa-list-alt\"></i> Lister</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class=\"active treeview\">
+                            <a href=\"#\">
+                                <i class=\"fa fa-slideshare\"></i> <span>Gestion des Clients</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                            </a>
+                            <ul class=\"treeview-menu\">
+                                <li class=\"active\">
+                                    <a href=\"";
+        // line 139
+        echo $this->env->getExtension('routing')->getPath("tech_addClient");
+        echo "\"><i class=\"fa fa-plus\"></i> Ajouter Client</a>
+                                  
+                                </li>
+                                <li>
+                                    <a href=\"";
+        // line 143
+        echo $this->env->getExtension('routing')->getPath("te

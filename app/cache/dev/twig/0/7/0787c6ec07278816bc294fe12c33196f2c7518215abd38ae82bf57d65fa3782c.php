@@ -37,6 +37,7 @@ class __TwigTemplate_0787c6ec07278816bc294fe12c33196f2c7518215abd38ae82bf57d65fa
                   <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                <tr>
+                   <th>ID Projet</th>
                     <th>Nature Projet</th>
                     <th>Lieu</th>
                     <th>Client</th>
@@ -51,46 +52,50 @@ class __TwigTemplate_0787c6ec07278816bc294fe12c33196f2c7518215abd38ae82bf57d65fa
             </thead>
             <tbody>
                  ";
-        // line 28
+        // line 29
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 29
+            // line 30
             echo "               
                   
                     <tr>
                         <td> ";
-            // line 32
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
             // line 33
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "id", array()), "html", null, true);
             echo " </td>
                         <td> ";
             // line 34
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "idClient", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "nature", array()), "html", null, true);
+            echo " </td>
+                        <td> ";
+            // line 35
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "lieu", array()), "html", null, true);
+            echo " </td>
+                        <td> ";
+            // line 36
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["Modele"], "idClient", array()), "societe", array()), "html", null, true);
             echo " </td>
                      
                         <td> ";
-            // line 36
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "charges", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 37
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixUnitaire", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 38
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
             echo " </td>
                   
                         <td><a href=\"";
-            // line 40
+            // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_calculTole", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
             echo "\"> Ajouter Tôle </a></td>
                          <td><a href=\"";
-            // line 41
+            // line 43
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_listerTole", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
             echo "\"> Lister Tôle </a></td>
                         
@@ -101,7 +106,7 @@ class __TwigTemplate_0787c6ec07278816bc294fe12c33196f2c7518215abd38ae82bf57d65fa
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 48
         echo "            </tbody>            
         </table>
                 </div>
@@ -126,6 +131,6 @@ class __TwigTemplate_0787c6ec07278816bc294fe12c33196f2c7518215abd38ae82bf57d65fa
 
     public function getDebugInfo()
     {
-        return array (  105 => 46,  94 => 41,  90 => 40,  85 => 38,  81 => 37,  77 => 36,  72 => 34,  68 => 33,  64 => 32,  59 => 29,  55 => 28,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  110 => 48,  99 => 43,  95 => 42,  90 => 40,  86 => 39,  82 => 38,  77 => 36,  73 => 35,  69 => 34,  65 => 33,  60 => 30,  56 => 29,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

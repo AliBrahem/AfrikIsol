@@ -15,13 +15,10 @@ class StockType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date','date')
-            ->add('nature')
             ->add('designation')
+             ->add('nature', 'choice', array('choices' => array('Matière première' => 'Matière première', 'Préfabrication' => 'Préfabrication'),'required'  => true))
+            
             ->add('unite')
-            ->add('nombre')
-            ->add('qtedispo')
-            ->add('qtedemande')
             ->add('qteStock')
         ;
     }

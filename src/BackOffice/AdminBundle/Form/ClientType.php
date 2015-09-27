@@ -17,11 +17,13 @@ class ClientType extends AbstractType
         $builder
             ->add('societe')
             ->add('secteurActivite')
+            ->add('matricule')
             ->add('telephone')
             ->add('telecopie')
             ->add('titreContact')
             ->add('contact')
-            ->add('credit')
+      
+            ->add('mail')
         ;
     }
     

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Devis</title>
+		<link rel="stylesheet" href="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/css/styleDevis.css')}}">
+		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
+		<script src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/js/scriptDevis.js')}}"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Devis</h1>
+			<address contenteditable>
+				<p>AfrikIsol</p>
+				<p>Boulevard de l’environnement 7035</p>
+				<p>Menzel Abderrahmane - Bizerte</p>
+                                <p>Tel : +(216) 72 57 06 25 / +(216) 72 57 24 98</p>
+                                <p>Fax : +(216) 72 57 13 22</p>
+                                <p>E-mail : contact@afrikisol.com</p>
+			</address>
+			<span><img alt="" src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~  asset('bootstrap/css/logo.png')}}"><input type="file" accept="image/*">
+                        </span>
+                        
+		</header>
+		<article>
+			<div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Type d'isolant </th>
+                    <th>DN intér</th>
+                    <th>DN ext</th>
+                    <th>Epaisseur</th>
+                    <th>DN ISOLE mm</th>
+                    <th>CIRC en mm</th>
+                    <th>RECOUV en mm</th>
+                    <th>QTE Net en ML</th>
+                    <th>Déchet</th>
+                    <th>QTE Brute/ML</th>
+                    <th>temps de préfa en mn/Homme</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td> {{Modele.type}} </td> 
+                        <td> {{Modele.diametreinter}} </td>
+                        <td> {{Modele.dnext}} </td>
+                        <td> {{Modele.epaisseur}} </td>
+                        <td> {{Modele.dnisole}} </td>
+                        <td> {{Modele.circ}} </td>
+                        <td> {{Modele.recouv}} </td>
+                        <td> {{Modele.quantite}} </td>
+                        <td> {{Modele.dechet}} </td>
+                        <td> {{Modele.qtebrute}} </td>
+                        <td> {{Modele.tempsprefa}} </td>
+                        
+                        
+                    </tr>
+              
+                
+            </tbody>            
+        </table>
+            </div><!-- /.box-body -->
+              
+		</article>
+            <br>
+            <br>
+            <br>
+            <br>
+		<aside>
+                    <div class="row no-print">
+            <div class="col-xs-12">
+              <a href="javascript:window.print()" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+            </div></div>
+                    
+			<h1><span contenteditable>Notes</span></h1>
+			<div contenteditable>
+				<p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+			</div>
+		</aside>
+	</body>
+</html>

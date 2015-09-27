@@ -35,20 +35,16 @@ class __TwigTemplate_0bbee6283e7b58ea37c712a37fa9976a3ce8ed6e14481678e558ae8129f
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("dist/css/AdminLTE.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
     <!-- iCheck -->
-    <link href=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("plugins/iCheck/square/blue.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\" />
-
+   
   </head>
   <body class=\"login-page\">
        ";
-        // line 18
+        // line 17
         echo "
             ";
-        // line 19
+        // line 18
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 20
+            // line 19
             echo "               
      
 
@@ -56,25 +52,25 @@ class __TwigTemplate_0bbee6283e7b58ea37c712a37fa9976a3ce8ed6e14481678e558ae8129f
         
              ";
         } else {
-            // line 26
+            // line 25
             echo "              
             ";
-            // line 27
+            // line 26
             $this->displayBlock('fos_user_content', $context, $blocks);
-            // line 32
+            // line 31
             echo "            ";
         }
-        // line 33
+        // line 32
         echo "        </div>
     </body>
 </html>
 ";
     }
 
-    // line 27
+    // line 26
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 28
+        // line 27
         echo "                
                 
                 
@@ -93,6 +89,6 @@ class __TwigTemplate_0bbee6283e7b58ea37c712a37fa9976a3ce8ed6e14481678e558ae8129f
 
     public function getDebugInfo()
     {
-        return array (  78 => 28,  75 => 27,  68 => 33,  65 => 32,  63 => 27,  60 => 26,  52 => 20,  50 => 19,  47 => 18,  40 => 13,  35 => 11,  28 => 7,  20 => 1,);
+        return array (  74 => 27,  71 => 26,  64 => 32,  61 => 31,  59 => 26,  56 => 25,  48 => 19,  46 => 18,  43 => 17,  35 => 11,  28 => 7,  20 => 1,);
     }
 }

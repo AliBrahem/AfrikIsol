@@ -1,0 +1,53 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutLog.html.twig"%}
+{% block user_content %}
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <form action="" {{ form_enctype(form) }} method="POST">
+             <h1> Ajout au Stock </h1>
+             <br>
+            <table id="example2" class="table table-bordered table-hover">
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Date </label>  </td>
+                    <td>{{ form_widget(form.date) }}</td>
+                    </tr>
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Nature MVT </label>  </td>
+                    <td> {{ form_widget(form.nature) }} </td>
+                    </tr>
+               
+                    <td>  <label for="exampleInputEmail1">Unité</label>  </td>
+                    <td> {{ form_widget(form.unite) }}</td>
+                     </tr>
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Nombre </label>  </td>
+                    <td> {{ form_widget(form.nombre) }}</td>
+                    </tr>
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Quantité Disponible </label>  </td>
+                    <td> {{ form_widget(form.qtedispo) }} </td>
+                     </tr>
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Quantité demandée</label>  </td>
+                    <td> {{ form_widget(form.qtedemande) }} </td>
+                     </tr>
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Quantité stock</label>  </td>
+                    <td> {{ form_widget(form.qteStock) }} </td>
+                </tr>
+                
+                
+                <tr>
+                         {{ form_rest(form) }}
+                </tr>
+            </table>
+    <div>
+        <input type="submit" class="btn btn-primary btn-block btn-flat" value="Ajouter Stock" />
+    </div>
+    </form>
+        </div>    
+    </div>
+    
+    
+{% endblock user_content %}

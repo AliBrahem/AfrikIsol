@@ -19,43 +19,26 @@ class UserController extends Controller
 {
     public function indexAction()
     {
-        
-       $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-            
-         $images = base64_encode(stream_get_contents($m->getImage()));
-         
+
         return $this->render('AdminBundle:Default:index.html.twig'
-                , array('img' => $images)
+               
                 );
     }
      public function showAction()
     {
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
+  
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
         return $this->render('AdminBundle:User:showProfile.html.twig', array(
-            'user' => $user, array('img' => $images)
+            'user' => $user
         ));
     }
     
     public function updateAction(Request $request) {
-       
         $user = $this->getUser();
-        $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
@@ -98,20 +81,12 @@ class UserController extends Controller
         }
 
         return $this->render('AdminBundle:User:updateProfile.html.twig', array(
-            'form' => $form->createView() ,'img' => $images
+            'form' => $form->createView()
         ));
     }
     
     public function listerAction() {
-        //access user manager services 
-
-        //$userManager = $this->get('fos_user.user_manager');
-        //$users = $userManager->findUsers();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
+    
         $query = $this->getDoctrine()->getEntityManager()
             ->createQuery(
                 'SELECT u FROM AdminBundle:User u WHERE u.roles NOT LIKE :role'
@@ -120,22 +95,14 @@ class UserController extends Controller
         $users = $query->getResult();
         
         
-        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users,'img' => $images));
+        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users));
     }
     
     public function updateOtherAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
-        
+        $em = $this->container->get('doctrine')->getEntityManager();
         $entity = $em->getRepository('AdminBundle:User')->find($id);
-        
-        
-        
+
         $form = $this->createFormBuilder($entity)
                 ->add('Username')
                 ->add('Email')
@@ -172,74 +139,51 @@ class UserController extends Controller
             )->setParameter('role', '%"ROLE_ADMIN"%');
 
             $users = $query->getResult();
-        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users,'img' => $images));
+        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users));
         }
         return $this->render('AdminBundle:User:updateOtherUser.html.twig',array(
-            'form' => $form->createView(),'id'=> $id,'img' => $images
+            'form' => $form->createView(),'id'=> $id
         ));
     }
     
     public function deleteAction($id) {
-
-       $em = $this->getDoctrine()->getManager();
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-         $images = base64_encode(stream_get_contents($m->getImage()));
         
+        $em = $this->container->get('doctrine')->getEntityManager();
         $entity = $em->getRepository('AdminBundle:User')->find($id);
         $em->remove($entity);
         $em->flush();
         $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
         
-        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users,'img' => $images));
+        return $this->render('AdminBundle:User:list.html.twig', array('users' =>   $users));
     }
     
      
     
      public function chartLineAction($id){
-        // Chart
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-   
-         $images = base64_encode(stream_get_contents($m->getImage()));
+     
         $em = $this->container->get('doctrine')->getEntityManager();
         $modele = $em->getRepository('AdminBundle:Projet')->find($id);
         $plan = $em->getRepository('AdminBundle:Avancement')->findOneBy(array('idprojet' => $id));
         
         return $this->render('AdminBundle:User:LineChart.html.twig', array(
-        'plan'=>$plan,'img'=>$images
+        'plan'=>$plan
         ));
         }
         
          public function chartGanttAction($id){
-        // Chart
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
-   
-         $images = base64_encode(stream_get_contents($m->getImage()));
+      
         $em = $this->container->get('doctrine')->getEntityManager();
         $modele = $em->getRepository('AdminBundle:Projet')->find($id);
         $plan = $em->getRepository('AdminBundle:Gantt')->findBy(array('idprojet' => $id));
      
         return $this->render('AdminBundle:User:gantt.html.twig', array(
-        'plan'=>$plan,'img'=>$images
+        'plan'=>$plan,'projet'=>$modele
         ));
         }
         
         public function suivieChartAction($id){
-         $usr= $this->get('security.context')->getToken()->getUser();
-            $m=array();
-            $m=$usr;
-            $images = array();
    
-         $images = base64_encode(stream_get_contents($m->getImage()));
         $em = $this->container->get('doctrine')->getEntityManager();
          $modele = $em->getRepository('AdminBundle:Projet')->find($id);
          $query = $em->createQuery(
@@ -267,7 +211,7 @@ class UserController extends Controller
        $plan = $query3->getResult();
         //$plan = $em->getRepository('AdminBundle:Planification')->findBy(array('idprojet' => $id));
         return $this->render('AdminBundle:User:suivieChart.html.twig', array(
-        'avanc'=>$avanc,'img'=>$images,'projet'=>$modele,'mad'=>$mad,'plan'=>$plan,'id'=>$id
+        'avanc'=>$avanc,'projet'=>$modele,'mad'=>$mad,'plan'=>$plan,'id'=>$id
         ));
         }
     

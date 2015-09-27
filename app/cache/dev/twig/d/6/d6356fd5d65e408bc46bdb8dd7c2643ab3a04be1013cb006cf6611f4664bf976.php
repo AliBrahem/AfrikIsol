@@ -65,17 +65,17 @@ class __TwigTemplate_d6356fd5d65e408bc46bdb8dd7c2643ab3a04be1013cb006cf6611f4664
         echo "</td>
                     </tr>
                     <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Coude 90 </label>  </td>
+                    <td>  <label for=\"exampleInputEmail1\">Coude</label>  </td>
                     <td>";
         // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "coude90", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "coude", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Coude 45 </label>  </td>
+                    <td>  <label for=\"exampleInputEmail1\">Tuyauterie </label>  </td>
                     <td>";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "coude45", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "tuyauterie", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
@@ -107,43 +107,64 @@ class __TwigTemplate_d6356fd5d65e408bc46bdb8dd7c2643ab3a04be1013cb006cf6611f4664
         echo "</td>
                     </tr>
                     <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Epaisseur </label>  </td>
+                    <td>  <label for=\"exampleInputEmail1\">Surface </label>  </td>
                     <td>";
         // line 53
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "surface", array()), 'widget');
+        echo "</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for=\"exampleInputEmail1\">Epaisseur </label>  </td>
+                    <td>";
+        // line 57
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "epaisseur", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Couche 1 </label>  </td>
                     <td>";
-        // line 57
+        // line 61
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "couche1", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Couche 2 </label>  </td>
                     <td>";
-        // line 61
+        // line 65
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "couche2", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Couche 3 </label>  </td>
                     <td>";
-        // line 65
+        // line 69
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "couche3", array()), 'widget');
+        echo "</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for=\"exampleInputEmail1\">Couche 4 </label>  </td>
+                    <td>";
+        // line 73
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "couche4", array()), 'widget');
+        echo "</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for=\"exampleInputEmail1\">Couche 5</label>  </td>
+                    <td>";
+        // line 77
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "couche5", array()), 'widget');
         echo "</td>
                     </tr>
                     <tr>
                     <td>  <label for=\"exampleInputEmail1\">Quantité </label>  </td>
                     <td>";
-        // line 69
+        // line 81
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "quantite", array()), 'widget');
         echo "</td>
                     </tr>
                 <tr>
                          ";
-        // line 72
+        // line 84
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
                 </tr>
@@ -171,6 +192,6 @@ class __TwigTemplate_d6356fd5d65e408bc46bdb8dd7c2643ab3a04be1013cb006cf6611f4664
 
     public function getDebugInfo()
     {
-        return array (  147 => 72,  141 => 69,  134 => 65,  127 => 61,  120 => 57,  113 => 53,  106 => 49,  99 => 45,  92 => 41,  85 => 37,  78 => 33,  71 => 29,  64 => 25,  57 => 21,  50 => 17,  43 => 13,  34 => 7,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  168 => 84,  162 => 81,  155 => 77,  148 => 73,  141 => 69,  134 => 65,  127 => 61,  120 => 57,  113 => 53,  106 => 49,  99 => 45,  92 => 41,  85 => 37,  78 => 33,  71 => 29,  64 => 25,  57 => 21,  50 => 17,  43 => 13,  34 => 7,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

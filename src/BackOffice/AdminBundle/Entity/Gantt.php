@@ -5,7 +5,7 @@ namespace BackOffice\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Projet
+ * Gantt
  *
  * @ORM\Table(name="Gantt")
  * @ORM\Entity
@@ -21,10 +21,13 @@ class Gantt {
      */
     private $id;   
     
-    /**
-     * @var integer
+     /**
+     * @var \Projet
      *
-     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Projet", referencedColumnName="id")
+     * })
      */
     protected $idprojet;
     
@@ -81,12 +84,27 @@ class Gantt {
         $this->dateFin = $dateFin;
     }
 
-    function getIdprojet() {
-        return $this->idprojet;
+    /**
+     * Set idevent
+     *
+     * @param \BackOffice\AdminBundle\Entity\Projet $idprojet
+     * @return Avancement
+     */
+    public function setIdprojet(\BackOffice\AdminBundle\Entity\Projet $idprojet = null)
+    {
+        $this->idprojet = $idprojet;
+    
+        return $this;
     }
 
-    function setIdprojet($idprojet) {
-        $this->idprojet = $idprojet;
+    /**
+     * Get idprojet
+     *
+     * @return \BackOffice\AdminBundle\Entity\Projet 
+     */
+    public function getIdprojet()
+    {
+        return $this->idprojet;
     }
 
 

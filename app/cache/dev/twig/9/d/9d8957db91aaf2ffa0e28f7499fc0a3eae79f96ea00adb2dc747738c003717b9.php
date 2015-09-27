@@ -94,7 +94,7 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
         echo "</td>
                 </tr>
                 <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Besoin en hébérgement </label>  </td>
+                    <td>  <label for=\"exampleInputEmail1\">Prix logement </label>  </td>
                     <td> ";
         // line 44
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "besoinHebergement", array()), 'widget');
@@ -108,7 +108,7 @@ class __TwigTemplate_9d8957db91aaf2ffa0e28f7499fc0a3eae79f96ea00adb2dc747738c003
         echo "</td>
                 </tr>
                 <tr>
-                    <td>  <label for=\"exampleInputEmail1\">Nombre de besoins en hébérgement </label>  </td>
+                    <td>  <label for=\"exampleInputEmail1\">Nombre de logement </label>  </td>
                     <td> ";
         // line 52
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbBesoinHebergement", array()), 'widget');

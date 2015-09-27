@@ -1,0 +1,66 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutLog.html.twig"%}
+{% block user_content %}
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+       <div class="box-header">
+                  <h3 class="box-title">Liste des demandes </h3>
+                </div><!-- /.box-header -->
+                 
+                <form id ="demandeform" class="demandeform" action="" method="post">
+    
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+               <tr>
+                   <th>Identifiant</th>
+                    <th>Isolant</th>
+                    <th>DN intér</th>
+                    <th>DN ext</th>
+                    <th>Epaisseur</th>
+                    <th>QTE Net</th>
+                    <th>Unité</th>
+                    <th>ID Projet</th>
+                    <th>Etat</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                 {% for Modele in Modeles %}
+                 
+                  
+                    <tr>
+                        <td> {{Modele.id}} </td>
+                        <td> {{Modele.type}} </td>
+                        <td> {{Modele.diametreinter}} </td>
+                        <td> {{Modele.dnext}} </td>
+                        <td> {{Modele.epaisseur}} </td>
+                        <td> {{Modele.quantite}} </td>
+                        <td> {{Modele.unite}} </td>
+                        <td> {{Modele.idprojet}} </td>
+                        <td> <label for="remember_me" >
+                <input type="checkbox" id="{{quantite}}" class="{{Modele.id}}" name="etat" value="{{Modele.quantite}}" />
+                  Confirmer
+                  </label> </td> 
+                  
+                    </tr>
+                       
+                 {% endfor %}
+            </tbody>  
+            
+        </table>
+                </div>
+            <div class="col-lg-3 col-xs-6">
+        <input type="submit" class="btn btn-primary btn-block btn-flat" value="Terminer" />
+        </div>
+                </form>
+             
+    </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

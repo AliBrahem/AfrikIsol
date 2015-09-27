@@ -10,8 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Projet {
-  //prix Main d'oeuvre + Accessoires + Tôle ( prix U + quantité )  
-  
+   
     /**
      * @var integer
      *
@@ -35,10 +34,13 @@ class Projet {
      */
     private $lieu;
     
-    /**
-     * @var integer
+   /**
+     * @var \Client
      *
-     * @ORM\Column(name="idClient", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Client", referencedColumnName="id")
+     * })
      */
     private $idClient;
     
@@ -209,9 +211,7 @@ class Projet {
         return $this->lieu;
     }
 
-    function getIdClient() {
-        return $this->idClient;
-    }
+   
 
     function getBesoinEchaffaudage() {
         return $this->besoinEchaffaudage;
@@ -309,10 +309,6 @@ class Projet {
         $this->lieu = $lieu;
     }
 
-    function setIdClient($idClient) {
-        $this->idClient = $idClient;
-    }
-
     function setBesoinEchaffaudage($besoinEchaffaudage) {
         $this->besoinEchaffaudage = $besoinEchaffaudage;
     }
@@ -404,6 +400,34 @@ class Projet {
     function setQuantite($quantite) {
         $this->quantite = $quantite;
     }
+    
+    /**
+     * Set idClient
+     *
+     * @param \BackOffice\AdminBundle\Entity\Client $idClient
+     * @return Projet
+     */
+    public function setIdclient(\BackOffice\AdminBundle\Entity\Client $idClient = null)
+    {
+        $this->idClient = $idClient;
+    
+        return $this;
+    }
 
+    /**
+     * Get idClient
+     *
+     * @return \BackOffice\AdminBundle\Entity\Client 
+     */
+    public function getIdclient()
+    {
+        return $this->idClient;
+    }
+    
+    public function __toString()
+{
+   // return "N°: ".$this->id." Nature : " .$this->nature ;
+       return "".$this->id;
+}
 
 }

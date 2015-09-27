@@ -6,4 +6,15 @@ services:
   redirect.after.login:
     class: BackOffice\AdminBundle\Redirection\AfterLoginRedirection
     arguments: [@router]
+    
+  image:
+      class: BackOffice\AdminBundle\Twig\Extension\ImgExtension
+      tags:
+          - { name: twig.extension }
+  demande:
+      class: BackOffice\AdminBundle\Twig\Extension\DemandeExtension
+      arguments:
+        doctrine: "@doctrine"
+      tags:
+          - { name: twig.extension }        
  

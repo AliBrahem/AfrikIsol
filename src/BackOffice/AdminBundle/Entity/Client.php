@@ -33,6 +33,13 @@ class Client {
     /**
      * @var integer
      *
+     * @ORM\Column(name="MatriculeFiscale", type="integer", nullable=true)
+     */
+    private $matricule;
+    
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="Telephone", type="integer", nullable=true)
      */
     private $telephone;
@@ -49,7 +56,7 @@ class Client {
      *
      * @ORM\Column(name="TitreContact", type="string", nullable=true)
      */
-    protected $titreContact;
+    private $titreContact;
     
     /**
      * @var integer
@@ -59,12 +66,18 @@ class Client {
     private $contact;
     
     /**
-     * @var float
+     * @var string
      *
-     * @ORM\Column(name="CreditDisponible", type="float", nullable=false)
+     * @ORM\Column(name="image", type="blob", nullable=false)
      */
-    private $credit;
+    private $image;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AdresseMail", type="string", nullable=true)
+     */
+    private $mail;
     function getId() {
         return $this->id;
     }
@@ -91,10 +104,6 @@ class Client {
 
     function getContact() {
         return $this->contact;
-    }
-
-    function getCredit() {
-        return $this->credit;
     }
 
     function setId($id) {
@@ -125,10 +134,33 @@ class Client {
         $this->contact = $contact;
     }
 
-    function setCredit($credit) {
-        $this->credit = $credit;
+    function getMatricule() {
+        return $this->matricule;
     }
 
+    function getImage() {
+        return $this->image;
+    }
 
+    function setMatricule($matricule) {
+        $this->matricule = $matricule;
+    }
+
+    function setImage($image) {
+        $this->image = $image;
+    }
+    function getMail() {
+        return $this->mail;
+    }
+
+    function setMail($mail) {
+        $this->mail = $mail;
+    }
+
+        
+     public function __toString()
+{
+    return "".$this->societe;
+}
     
 }

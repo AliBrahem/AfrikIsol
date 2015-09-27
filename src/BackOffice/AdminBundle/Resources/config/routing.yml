@@ -6,13 +6,13 @@ admin_graphe:
     defaults: { _controller: AdminBundle:User:chartLine } 
 admin_gantt:
     path:     /chartGantt/{id}
-    defaults: { _controller: AdminBundle:User:chartGantt }    
+    defaults: { _controller: AdminBundle:User:chartGantt }   
+admin_ganttJ:
+    path:     /chartGanttJ/{id}
+    defaults: { _controller: AdminBundle:User:chartGanttJ }    
 admin_grapheSuivie:
     path:     /suivieChart/{id}
-    defaults: { _controller: AdminBundle:User:suivieChart }     
-tech_findTUY:
-    path:     /findTUY/{epaisseur}
-    defaults: { _controller: AdminBundle:Tech:findTUY }    
+    defaults: { _controller: AdminBundle:User:suivieChart }         
 admin_updateprofile:
     pattern:  /updateProfile
     defaults: { _controller: AdminBundle:User:update }   
@@ -41,8 +41,17 @@ tech_listAvancement:
     pattern:  /listAvancement
     defaults: { _controller: AdminBundle:Tech:listerAvancement }   
 tech_listPlan:
-    pattern:  /listPlan
-    defaults: { _controller: AdminBundle:Tech:listerPlan }     
+    pattern:  /listPlanification
+    defaults: { _controller: AdminBundle:Tech:listerPlanification }      
+tech_listGantt:
+    pattern:  /listGantt
+    defaults: { _controller: AdminBundle:Tech:listerGantt }  
+tech_findTole:
+    pattern:  /findTole/{id}
+    defaults: { _controller: AdminBundle:Tech:findTole }     
+tech_listMAD:
+    pattern:  /listMAD
+    defaults: { _controller: AdminBundle:Tech:listerMAD }      
 tech_addProjet:
     pattern:  /addProjet
     defaults: { _controller: AdminBundle:Tech:addProjet}  
@@ -58,7 +67,7 @@ tech_listTole:
 tech_addAvancement:
     pattern:  /addAvancement/{id}
     defaults: { _controller: AdminBundle:Tech:addAvancement}    
-tech_addPlan:
+tech_addGantt:
     pattern:  /addGantt/{id}
     defaults: { _controller: AdminBundle:Tech:addGantt}    
 tech_addPlanification:
@@ -73,15 +82,10 @@ tech_genererPDFTUYAUTERIES:
 tech_index:
     pattern:  /indexTech
     defaults: { _controller: AdminBundle:Tech:index }  
-tech_updTUY:
-    pattern:  /updTUY/{id}
-    defaults: { _controller: AdminBundle:Tech:updateTUY }    
-tech_updCoude:
-    pattern:  /updCoude/{id}
-    defaults: { _controller: AdminBundle:Tech:updateCoude }    
-tech_updReduction:
-    pattern:  /updRed/{id}
-    defaults: { _controller: AdminBundle:Tech:updateRed }  
+tech_updTole:
+    pattern:  /updTole/{id}
+    defaults: { _controller: AdminBundle:Tech:updateTole }    
+ 
 log_index:
     pattern:  /indexLog
     defaults: { _controller: AdminBundle:Log:index }     
@@ -91,3 +95,18 @@ log_addStock:
 log_listStock:
     pattern:  /listStock
     defaults: { _controller: AdminBundle:Log:listStock } 
+log_addMvt:
+    pattern:  /addMvt/{id}
+    defaults: { _controller: AdminBundle:Log:addMvt }   
+log_listMvt:
+    pattern:  /listMvt/{idstock}
+    defaults: { _controller: AdminBundle:Log:listMvt }   
+log_listAllMvt:
+    pattern:  /listAllMvt
+    defaults: { _controller: AdminBundle:Log:listAllMvt }      
+log_listDmd:
+    pattern:  /listDmd
+    defaults: { _controller: AdminBundle:Log:listDmd }     
+log_updDmd:
+    pattern:  /updDmd/{id}/{q}
+    defaults: { _controller: AdminBundle:Log:updateDmd }     

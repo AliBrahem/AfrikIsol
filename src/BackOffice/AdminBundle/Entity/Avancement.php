@@ -18,9 +18,12 @@ class Avancement {
     protected $id;
     
     /**
-     * @var integer
+     * @var \Projet
      *
-     * @ORM\Column(name="Projet", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Projet", referencedColumnName="id")
+     * })
      */
     protected $idprojet;
     
@@ -72,9 +75,12 @@ class Avancement {
      */
     protected $chargeReelleMontaHomme;
     /**
-     * @var string
+     * @var \Tole
      *
-     * @ORM\Column(name="Isolant", type="string", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Tole")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Tole", referencedColumnName="id")
+     * })
      */
     protected $isolant;
     /**
@@ -86,10 +92,6 @@ class Avancement {
     
     function getId() {
         return $this->id;
-    }
-
-    function getIdprojet() {
-        return $this->idprojet;
     }
 
     function getDate() {
@@ -120,9 +122,7 @@ class Avancement {
         return $this->chargeReelleMontaHomme;
     }
 
-    function getIsolant() {
-        return $this->isolant;
-    }
+ 
 
     function getQuantite() {
         return $this->quantite;
@@ -132,8 +132,27 @@ class Avancement {
         $this->id = $id;
     }
 
-    function setIdprojet($idprojet) {
+    /**
+     * Set idprojet
+     *
+     * @param \BackOffice\AdminBundle\Entity\Projet $idprojet
+     * @return Projet
+     */
+    public function setIdprojet(\BackOffice\AdminBundle\Entity\Projet $idprojet = null)
+    {
         $this->idprojet = $idprojet;
+    
+        return $this;
+    }
+
+    /**
+     * Get idprojet
+     *
+     * @return \BackOffice\AdminBundle\Entity\Projet 
+     */
+    public function getIdprojet()
+    {
+        return $this->idprojet;
     }
 
     function setDate(\DateTime $date) {
@@ -164,15 +183,34 @@ class Avancement {
         $this->chargeReelleMontaHomme = $chargeReelleMontaHomme;
     }
 
-    function setIsolant($isolant) {
-        $this->isolant = $isolant;
-    }
+   
 
     function setQuantite($quantite) {
         $this->quantite = $quantite;
     }
 
+     /**
+     * Set isolant
+     *
+     * @param \BackOffice\AdminBundle\Entity\Tole $isolant
+     * @return Tole
+     */
+    public function setIsolant(\BackOffice\AdminBundle\Entity\Tole $isolant = null)
+    {
+        $this->isolant = $isolant;
+    
+        return $this;
+    }
 
+    /**
+     * Get isolant
+     *
+     * @return \BackOffice\AdminBundle\Entity\Tole
+     */
+    public function getIsolant()
+    {
+        return $this->isolant;
+    }
 
     
 }

@@ -17,8 +17,8 @@
                     <th>Téléphone </th>
                     <th>Numéro télécopie</th>
                     <th>Responsable à contacter</th>
-                    <th>Numéro du responsabl</th>
-                    <th>Crédit disponible</th>
+                    <th>Numéro du responsable</th>
+                    <th>Logo</th>
                     
                     
                 </tr>
@@ -32,7 +32,8 @@
                         <td> {{Modele.telecopie}} </td>
                         <td> {{Modele.titreContact}} </td>
                         <td> {{Modele.contact}} </td>
-                        <td> {{Modele.credit}} </td>
+                        <td>  <img src="data:image/png;base64,{{ logos[loop.index0] }}" width="90px" height="80px" alt="logo" title="logo"  class="property_img"/> </td>
+                           
                      
                     </tr>
                 {% endfor %}
