@@ -37,20 +37,22 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
                   <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                 <tr>
+                    <th>ID Client </th>
                     <th>Société </th>
+                    <th>Logo</th>
                     <th>Secteur d'activité </th>
                     <th>Téléphone </th>
                     <th>Numéro télécopie</th>
                     <th>Responsable à contacter</th>
                     <th>Numéro du responsable</th>
-                    <th>Logo</th>
                     
+                    <th>Modifier </th>
                     
                 </tr>
             </thead>
             <tbody>
                 ";
-        // line 27
+        // line 29
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Modeles"]) ? $context["Modeles"] : $this->getContext($context, "Modeles")));
         $context['loop'] = array(
@@ -67,36 +69,45 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["Modele"]) {
-            // line 28
+            // line 30
             echo "                    <tr>
                         <td> ";
-            // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "societe", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
-            // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "secteurActivite", array()), "html", null, true);
-            echo " </td>
-                        <td> ";
             // line 31
-            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "telephone", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "id", array()), "html", null, true);
             echo " </td>
                         <td> ";
             // line 32
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "societe", array()), "html", null, true);
+            echo " </td>
+                        <td>  <img src=\"data:image/png;base64,";
+            // line 33
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["logos"]) ? $context["logos"] : $this->getContext($context, "logos")), $this->getAttribute($context["loop"], "index0", array()), array(), "array"), "html", null, true);
+            echo "\" width=\"90px\" height=\"80px\" alt=\"logo\" title=\"logo\"  class=\"property_img\"/> </td>
+                       
+                        <td> ";
+            // line 35
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "secteurActivite", array()), "html", null, true);
+            echo " </td>
+                        <td> ";
+            // line 36
+            echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "telephone", array()), "html", null, true);
+            echo " </td>
+                        <td> ";
+            // line 37
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "telecopie", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 33
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "titreContact", array()), "html", null, true);
             echo " </td>
                         <td> ";
-            // line 34
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "contact", array()), "html", null, true);
             echo " </td>
-                        <td>  <img src=\"data:image/png;base64,";
-            // line 35
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["logos"]) ? $context["logos"] : $this->getContext($context, "logos")), $this->getAttribute($context["loop"], "index0", array()), array(), "array"), "html", null, true);
-            echo "\" width=\"90px\" height=\"80px\" alt=\"logo\" title=\"logo\"  class=\"property_img\"/> </td>
+                         <td><a href=\"";
+            // line 40
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_updClient", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+            echo "\"> Modifier Client </a></td>
                            
                      
                     </tr>
@@ -113,7 +124,7 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 45
         echo "            </tbody>            
         </table>
                 </div>
@@ -138,6 +149,6 @@ class __TwigTemplate_873458a2faefc26d9808a1f2bb0cb020f0bdd60af0fd3152b5cb2021fa4
 
     public function getDebugInfo()
     {
-        return array (  117 => 40,  98 => 35,  94 => 34,  90 => 33,  86 => 32,  82 => 31,  78 => 30,  74 => 29,  71 => 28,  54 => 27,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  128 => 45,  109 => 40,  105 => 39,  101 => 38,  97 => 37,  93 => 36,  89 => 35,  84 => 33,  80 => 32,  76 => 31,  73 => 30,  56 => 29,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

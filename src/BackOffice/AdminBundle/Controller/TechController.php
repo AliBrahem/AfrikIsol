@@ -478,7 +478,7 @@ class TechController extends Controller
      
      public function updateToleAction($id)
     {
-
+         $em = $this->container->get('doctrine')->getEntityManager();
         $entity = $em->getRepository('AdminBundle:Tole')->find($id);
          $form = $this->container->get('form.factory')->create(new ToleType(), $entity);
 
@@ -500,6 +500,57 @@ class TechController extends Controller
        
     }
 
+     public function updateProjetAction($id)
+    {
+         $em = $this->container->get('doctrine')->getEntityManager();
+        $entity = $em->getRepository('AdminBundle:Projet')->find($id);
+         $form = $this->container->get('form.factory')->create(new ProjetType(), $entity);
+
+
+        $Request = $this->getRequest();
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+            if ($form->isValid()) {
+
+                $em->persist($entity);
+                $em->flush();
+               return $this->redirect($this->generateUrl("tech_listProjet"));
+   
+            }
+        }
+
+
+         return $this->render('AdminBundle:Technique:updProjet.html.twig', array('form' => $form->createView(),'id'=> $id));
+       
+    }
+    
+     public function updateClientAction($id)
+    {
+         $em = $this->container->get('doctrine')->getEntityManager();
+        $entity = $em->getRepository('AdminBundle:Client')->find($id);
+         $form = $this->container->get('form.factory')->create(new ClientType(), $entity);
+
+
+        $Request = $this->getRequest();
+        if ($Request->getMethod() == 'POST') {
+            $form->bind($Request);
+            if ($form->isValid()) {
+                 $src = $Request->files->get('photo');
+
+                $stream = fopen($src, 'rb');
+                
+                $entity->setImage(stream_get_contents($stream));
+                $em->persist($entity);
+                $em->flush();
+               return $this->redirect($this->generateUrl("tech_listClient"));
+   
+            }
+        }
+
+
+         return $this->render('AdminBundle:Technique:updClient.html.twig', array('form' => $form->createView(),'id'=> $id));
+       
+    }
     
     public function findToleAction($id){
 

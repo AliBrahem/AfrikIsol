@@ -284,9 +284,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::indexAction',  '_route' => 'tech_index',);
         }
 
-        // tech_updTole
-        if (0 === strpos($pathinfo, '/updTole') && preg_match('#^/updTole/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updTole')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateToleAction',));
+        if (0 === strpos($pathinfo, '/upd')) {
+            // tech_updTole
+            if (0 === strpos($pathinfo, '/updTole') && preg_match('#^/updTole/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updTole')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateToleAction',));
+            }
+
+            // tech_updProjet
+            if (0 === strpos($pathinfo, '/updProjet') && preg_match('#^/updProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updProjet')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateProjetAction',));
+            }
+
+            // tech_updClient
+            if (0 === strpos($pathinfo, '/updClient') && preg_match('#^/updClient/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_updClient')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::updateClientAction',));
+            }
+
         }
 
         // log_index

@@ -45,7 +45,7 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
                     <th>Charges</th>
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
-                 
+                     <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
@@ -87,7 +87,11 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
             // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["Modele"], "prixTotal", array()), "html", null, true);
             echo " </td>
-              
+                        <td><a href=\"";
+            // line 39
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_updProjet", array("id" => $this->getAttribute($context["Modele"], "id", array()))), "html", null, true);
+            echo "\"> Modifier Projet </a></td>
+                        
                                </tr>
                        
                  ";
@@ -95,7 +99,7 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Modele'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 44
         echo "            </tbody>            
         </table>
                 </div>
@@ -120,6 +124,6 @@ class __TwigTemplate_39d1c67672736748d980e3e6b4d33a6b1bb7e1fb675bbef8e6d1c77da01
 
     public function getDebugInfo()
     {
-        return array (  99 => 43,  88 => 38,  84 => 37,  80 => 36,  75 => 34,  71 => 33,  67 => 32,  63 => 31,  58 => 28,  54 => 27,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  103 => 44,  92 => 39,  88 => 38,  84 => 37,  80 => 36,  75 => 34,  71 => 33,  67 => 32,  63 => 31,  58 => 28,  54 => 27,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

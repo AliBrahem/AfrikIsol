@@ -1,0 +1,68 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            
+            <form enctype="multipart/form-data" accept-charset=" " action="{{ path('tech_updClient',{'id':id}) }}" {{ form_enctype(form) }} method="POST" >
+                <h3>&nbsp&nbsp&nbsp&nbsp Modification du Client n°{{id}} </h2>
+                <br>
+                <table id="example2" class="table table-bordered table-hover">
+                <tr>
+                    <td>  <label for="exampleInputEmail1">Société </label>  </td>
+                    <td>{{ form_widget(form.societe) }}</td>
+                    </tr>
+                    <tr> 
+                        <td><label for="exampleInputEmail1">Image : </label></td><td><input type="file" name="photo" accept="image/x-png, image/gif, image/jpeg" required/></td> 
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Matricule fiscale </label>  </td>
+                    <td>{{ form_widget(form.matricule) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Secteur d'activité </label>  </td>
+                    <td>{{ form_widget(form.secteurActivite) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Téléphone </label>  </td>
+                    <td>{{ form_widget(form.telephone) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Adresse mail</label>  </td>
+                    <td>{{ form_widget(form.mail) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Numéro télécopie </label>  </td>
+                    <td>{{ form_widget(form.telecopie) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Responsable à contacter </label>  </td>
+                    <td>{{ form_widget(form.titreContact) }}</td>
+                    </tr>
+                    <tr>
+                    <td>  <label for="exampleInputEmail1">Numéro du responsable </label>  </td>
+                    <td>{{ form_widget(form.contact) }}</td>
+                    </tr>
+                    <tr>
+                    
+                <tr>
+                         {{ form_rest(form) }}
+                </tr>
+            </table>
+                <div>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-block btn-flat" value="Mettre à jour" />
+                </div>
+            </form>
+        </div><!-- ./col -->
+    </div>
+    <!-- Main row -->
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+{% endblock user_content %}

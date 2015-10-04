@@ -85,7 +85,12 @@ tech_index:
 tech_updTole:
     pattern:  /updTole/{id}
     defaults: { _controller: AdminBundle:Tech:updateTole }    
- 
+tech_updProjet:
+    pattern:  /updProjet/{id}
+    defaults: { _controller: AdminBundle:Tech:updateProjet }   
+tech_updClient:
+    pattern:  /updClient/{id}
+    defaults: { _controller: AdminBundle:Tech:updateClient }      
 log_index:
     pattern:  /indexLog
     defaults: { _controller: AdminBundle:Log:index }     

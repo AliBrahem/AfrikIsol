@@ -141,7 +141,10 @@ class __TwigTemplate_3ee3b65c7f2b20099d024a492a664d2554371362f58f71bc7317f114f23
         // line 82
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\" class=\"dropdown-toggle\" >
-                                    <img src=\"data:image/png;base64,\" class=\"user-image\" alt=\"User Image\" />
+                                    <img src=\"data:image/png;base64,";
+        // line 83
+        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        echo "\" class=\"user-image\" alt=\"User Image\" />
                                     <span class=\"hidden-xs\">Déconnexion</span>
                                 </a>
 
@@ -162,7 +165,10 @@ class __TwigTemplate_3ee3b65c7f2b20099d024a492a664d2554371362f58f71bc7317f114f23
                     <!-- Sidebar user panel -->
                     <div class=\"user-panel\">
                         <div class=\"pull-left image\">
-                            <img src=\"data:image/png;base64,\" class=\"img-circle\" alt=\"User Image\" />                                  
+                            <img src=\"data:image/png;base64,";
+        // line 104
+        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />                                  
                       
                         </div>
                         <div class=\"pull-left info\">
@@ -466,6 +472,6 @@ class __TwigTemplate_3ee3b65c7f2b20099d024a492a664d2554371362f58f71bc7317f114f23
 
     public function getDebugInfo()
     {
-        return array (  441 => 196,  438 => 195,  431 => 279,  424 => 275,  420 => 274,  415 => 272,  409 => 269,  404 => 267,  399 => 265,  394 => 263,  389 => 261,  384 => 259,  378 => 256,  373 => 254,  369 => 253,  364 => 251,  359 => 249,  353 => 246,  349 => 245,  338 => 237,  321 => 222,  318 => 221,  312 => 220,  303 => 217,  298 => 216,  293 => 215,  288 => 214,  286 => 213,  281 => 210,  279 => 195,  247 => 166,  240 => 162,  225 => 150,  218 => 146,  204 => 135,  197 => 131,  171 => 108,  142 => 82,  99 => 42,  94 => 40,  89 => 38,  84 => 36,  79 => 34,  74 => 32,  69 => 30,  65 => 29,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
+        return array (  447 => 196,  444 => 195,  437 => 279,  430 => 275,  426 => 274,  421 => 272,  415 => 269,  410 => 267,  405 => 265,  400 => 263,  395 => 261,  390 => 259,  384 => 256,  379 => 254,  375 => 253,  370 => 251,  365 => 249,  359 => 246,  355 => 245,  344 => 237,  327 => 222,  324 => 221,  318 => 220,  309 => 217,  304 => 216,  299 => 215,  294 => 214,  292 => 213,  287 => 210,  285 => 195,  253 => 166,  246 => 162,  231 => 150,  224 => 146,  210 => 135,  203 => 131,  177 => 108,  170 => 104,  146 => 83,  142 => 82,  99 => 42,  94 => 40,  89 => 38,  84 => 36,  79 => 34,  74 => 32,  69 => 30,  65 => 29,  56 => 23,  51 => 21,  42 => 15,  38 => 14,  29 => 8,  20 => 1,);
     }
 }

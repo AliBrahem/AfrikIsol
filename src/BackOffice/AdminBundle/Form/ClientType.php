@@ -22,7 +22,6 @@ class ClientType extends AbstractType
             ->add('telecopie')
             ->add('titreContact')
             ->add('contact')
-      
             ->add('mail')
         ;
     }

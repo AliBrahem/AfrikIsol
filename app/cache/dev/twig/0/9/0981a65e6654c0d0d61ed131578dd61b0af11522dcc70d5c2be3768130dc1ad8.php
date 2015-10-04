@@ -38,6 +38,7 @@ class __TwigTemplate_0981a65e6654c0d0d61ed131578dd61b0af11522dcc70d5c2be3768130d
                   <table id=\"example1\" class=\"table table-bordered table-striped\">
             <thead>
                 <tr>
+                    <th>ID Tôle/Isolant</th>
                     <th>DN intér</th>
                     <th>DN ext</th>
                     <th>Epaisseur</th>
@@ -54,61 +55,65 @@ class __TwigTemplate_0981a65e6654c0d0d61ed131578dd61b0af11522dcc70d5c2be3768130d
             </thead>
             <tbody>
                 ";
-        // line 31
+        // line 32
         if ((isset($context["tole"]) ? $context["tole"] : $this->getContext($context, "tole"))) {
-            // line 32
+            // line 33
             echo "                ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["tole"]) ? $context["tole"] : $this->getContext($context, "tole")));
             foreach ($context['_seq'] as $context["_key"] => $context["Tole"]) {
-                // line 33
+                // line 34
                 echo "                    <tr>
                         <td> ";
-                // line 34
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "diametreinter", array()), "html", null, true);
-                echo " </td>
-                        <td> ";
                 // line 35
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dnext", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "id", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 36
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "epaisseur", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "diametreinter", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 37
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dnisole", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dnext", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 38
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "circ", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "epaisseur", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 39
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "recouv", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dnisole", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 40
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "quantite", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "circ", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 41
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dechet", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "recouv", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 42
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "qtebrute", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "quantite", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 43
-                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "tempsprefa", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "dechet", array()), "html", null, true);
                 echo " </td>
                         <td> ";
                 // line 44
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "qtebrute", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 45
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "tempsprefa", array()), "html", null, true);
+                echo " </td>
+                        <td> ";
+                // line 46
                 echo twig_escape_filter($this->env, $this->getAttribute($context["Tole"], "type", array()), "html", null, true);
                 echo " </td> 
                         <td><a href=\"";
-                // line 45
+                // line 47
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_updTole", array("id" => $this->getAttribute($context["Tole"], "id", array()))), "html", null, true);
                 echo "\"> Modifier Tole </a></td>
                         
@@ -118,10 +123,10 @@ class __TwigTemplate_0981a65e6654c0d0d61ed131578dd61b0af11522dcc70d5c2be3768130d
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Tole'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 49
+            // line 51
             echo "                ";
         }
-        // line 50
+        // line 52
         echo "                
             </tbody>            
         </table>
@@ -147,6 +152,6 @@ class __TwigTemplate_0981a65e6654c0d0d61ed131578dd61b0af11522dcc70d5c2be3768130d
 
     public function getDebugInfo()
     {
-        return array (  125 => 50,  122 => 49,  112 => 45,  108 => 44,  104 => 43,  100 => 42,  96 => 41,  92 => 40,  88 => 39,  84 => 38,  80 => 37,  76 => 36,  72 => 35,  68 => 34,  65 => 33,  60 => 32,  58 => 31,  30 => 5,  27 => 4,  18 => 3,);
+        return array (  130 => 52,  127 => 51,  117 => 47,  113 => 46,  109 => 45,  105 => 44,  101 => 43,  97 => 42,  93 => 41,  89 => 40,  85 => 39,  81 => 38,  77 => 37,  73 => 36,  69 => 35,  66 => 34,  61 => 33,  59 => 32,  30 => 5,  27 => 4,  18 => 3,);
     }
 }

@@ -20,7 +20,7 @@
                     <th>Charges</th>
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
-                 
+                     <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +36,8 @@
                         <td> {{Modele.charges}} </td>
                         <td> {{Modele.prixUnitaire}} </td>
                         <td> {{Modele.prixTotal}} </td>
-              
+                        <td><a href="{{path("tech_updProjet",{'id':Modele.id})}}"> Modifier Projet </a></td>
+                        
                                </tr>
                        
                  {% endfor %}

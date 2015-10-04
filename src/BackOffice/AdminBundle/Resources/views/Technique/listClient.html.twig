@@ -12,27 +12,32 @@
                   <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th>ID Client </th>
                     <th>Société </th>
+                    <th>Logo</th>
                     <th>Secteur d'activité </th>
                     <th>Téléphone </th>
                     <th>Numéro télécopie</th>
                     <th>Responsable à contacter</th>
                     <th>Numéro du responsable</th>
-                    <th>Logo</th>
                     
+                    <th>Modifier </th>
                     
                 </tr>
             </thead>
             <tbody>
                 {% for Modele in Modeles %}
                     <tr>
+                        <td> {{Modele.id}} </td>
                         <td> {{Modele.societe}} </td>
+                        <td>  <img src="data:image/png;base64,{{ logos[loop.index0] }}" width="90px" height="80px" alt="logo" title="logo"  class="property_img"/> </td>
+                       
                         <td> {{Modele.secteurActivite}} </td>
                         <td> {{Modele.telephone}} </td>
                         <td> {{Modele.telecopie}} </td>
                         <td> {{Modele.titreContact}} </td>
                         <td> {{Modele.contact}} </td>
-                        <td>  <img src="data:image/png;base64,{{ logos[loop.index0] }}" width="90px" height="80px" alt="logo" title="logo"  class="property_img"/> </td>
+                         <td><a href="{{path("tech_updClient",{'id':Modele.id})}}"> Modifier Client </a></td>
                            
                      
                     </tr>
