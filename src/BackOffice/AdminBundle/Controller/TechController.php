@@ -16,6 +16,7 @@ use BackOffice\AdminBundle\Entity\Projet;
 use BackOffice\AdminBundle\Entity\Avancement;
 use BackOffice\AdminBundle\Entity\Client;
 use BackOffice\AdminBundle\Entity\Gantt;
+use BackOffice\AdminBundle\Entity\Gantt2;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -66,9 +67,10 @@ class TechController extends Controller
                 $prixUnitaireIsolantML =   $Request->get('prixUnitaireIsolantML');
                 $quantite           =   $Request->get('quantite');
                 $prix           =   $Request->get('prix');
-                $prixMO           =   $Request->get('prixMO');
+                $prixMO         =   $Request->get('prixMO');
                 $accessoire           =   $Request->get('accessoire');
-                $echaff           =   $Request->get('echaffaudage');
+                $echaff         =   $Request->get('echaffaudage');
+                $designation    =   $Request->get('designation');    
                       
                         $modele = new Tole();
                         $modele->setType($tole);
@@ -96,6 +98,7 @@ class TechController extends Controller
                         $modele->setQtenet($qtenet);
                         $modele->setPrix($prix);
                         $modele->setEtat("En attente");
+                        $modele->setDesignation($designation);
                         $em = $this->container->get('doctrine')->getEntityManager();
                         $projet = $em->getRepository('AdminBundle:Projet')->find($id);
                         $modele->setIdprojet($projet);
@@ -188,6 +191,16 @@ class TechController extends Controller
        
        return $this->render('AdminBundle:Technique:listGantt.html.twig', array('Modeles' => $modeles));
     }
+    
+    public function listerGanttJAction()
+    {
+ 
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modeles = $em->getRepository('AdminBundle:Projet')->findAll();
+       
+       return $this->render('AdminBundle:Technique:listGanttJ.html.twig', array('Modeles' => $modeles));
+    }
+    
     public function listerMADAction()
     {
      
@@ -369,6 +382,125 @@ class TechController extends Controller
         }
          
         return $this->render('AdminBundle:Technique:addGantt.html.twig' , array('id'=>$id));
+    }
+    
+    public function addGanttJAction($id)
+    {   
+
+        $Request = $this->getRequest();
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+
+        if ($Request->getMethod() == 'POST') {
+         
+            if ( $Request->get('titem1')!="" && $Request->get('dated1')!="" && $Request->get('datef1')!="") {
+                $plan = new Gantt2();
+                
+                
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem1'));
+                $plan->setJourDebut($Request->get('dated1'));
+                $plan->setJourFin($Request->get('datef1'));
+                $em->persist($plan);
+                $em->flush();
+               
+            }
+            if ( $Request->get('titem2')!="" && $Request->get('dated2')!="" && $Request->get('datef2')!="") {
+                $plan = new Gantt2();
+                 $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem2'));
+                $plan->setJourDebut($Request->get('dated2'));
+                $plan->setJourFin($Request->get('datef2'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            
+            if ( $Request->get('titem3')!="" && $Request->get('dated3')!="" && $Request->get('datef3')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem3'));
+                $plan->setJourDebut($Request->get('dated3'));
+                $plan->setJourFin($Request->get('datef3'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem4')!="" && $Request->get('dated4')!="" && $Request->get('datef4')!="") {
+                $plan = new Gantt2();
+                 $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem4'));
+                $plan->setJourDebut($Request->get('dated4'));
+                $plan->setJourFin($Request->get('datef4'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem5')!="" && $Request->get('dated5')!="" && $Request->get('datef5')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem5'));
+                $plan->setJourDebut($Request->get('dated5'));
+                $plan->setJourFin($Request->get('datef5'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem6')!="" && $Request->get('dated6')!="" && $Request->get('datef6')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem6'));
+                $plan->setJourDebut($Request->get('dated6'));
+                $plan->setJourFin($Request->get('datef6'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem7')!="" && $Request->get('dated7')!="" && $Request->get('datef7')!="") {
+                $plan = new Gantt2();
+               $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem7'));
+                $plan->setJourDebut($Request->get('dated7'));
+                $plan->setJourFin($Request->get('datef7'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem8')!="" && $Request->get('dated8')!="" && $Request->get('datef8')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem8'));
+                $plan->setJourDebut($Request->get('dated8'));
+                $plan->setJourFin($Request->get('datef8'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem9')!="" && $Request->get('dated9')!="" && $Request->get('datef9')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem9'));
+                $plan->setJourDebut($Request->get('dated9'));
+                $plan->setJourFin($Request->get('datef9'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            if ( $Request->get('titem10')!="" && $Request->get('dated10')!="" && $Request->get('datef10')!="") {
+                $plan = new Gantt2();
+                $plan->setIdprojet($modele);
+                $plan->setItem($Request->get('titem10'));
+                $plan->setJourDebut($Request->get('dated10'));
+                $plan->setJourFin($Request->get('datef10'));
+                $em->persist($plan);
+                $em->flush();
+             
+            }
+            
+             return $this->redirect($this->generateUrl("admin_ganttJ",array('id'=>$id)));
+        }
+         
+        return $this->render('AdminBundle:Technique:addGanttJ.html.twig' , array('id'=>$id));
     }
     
     public function addAvancementAction($id)

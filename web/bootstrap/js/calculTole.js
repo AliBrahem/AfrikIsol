@@ -83,7 +83,7 @@ $("document").ready(function() {
                 prefa.value=pre;
                 monta.value = m;
                 prefamonta.value = (parseFloat(prefa.value)+parseFloat(monta.value)).toFixed(2);
-                nbcouche.value = 2;
+                nbcouche.value = 1;
                 if(document.getElementById("tole").value=="SURFACE")
                     {
                 prefa.value=1.6;
@@ -96,7 +96,7 @@ $("document").ready(function() {
                 prefa.value=pre;
                 monta.value = m + (parseFloat(m)*0.3);
                 prefamonta.value = (parseFloat(prefa.value)+parseFloat(monta.value)).toFixed(2);
-                nbcouche.value = 1;
+                nbcouche.value = 2;
                  if(document.getElementById("tole").value=="SURFACE")
   
                        {
@@ -589,7 +589,7 @@ $("document").ready(function() {
         }
         if(x==1000)
         {
-           document.getElementById("dnext").value=1016;
+           document.getElementById("dnext").value=1016.4;
            document.getElementById("pouce").value=40;
         }
     });

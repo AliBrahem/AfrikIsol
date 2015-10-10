@@ -51,6 +51,11 @@ class __TwigTemplate_2a848088072867b62c6274dcf4e9df18dfafe10dea1830ded4f571d5f9e
                             
                             </select>  
                     </td>
+                    
+                    <td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td>
+                    <td>Désignation</td>
+                    <td><textarea name=\"designation\"></textarea></td>
+                    
                 </tr>
                 <tr>
                     <td>    Diamètre intérieur </td>

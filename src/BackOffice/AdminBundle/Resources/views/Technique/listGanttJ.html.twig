@@ -1,0 +1,57 @@
+{% extends is_granted("ROLE_ADMIN")
+? "AdminBundle::layoutSUP.html.twig"
+: "AdminBundle::layoutTech.html.twig"%}
+{% block user_content %}
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+       <div class="box-header">
+                  <h3 class="box-title">Liste des Plannifications par Jours</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+            <thead>
+               <tr>
+                   <th>ID Projet</th>
+                    <th>Nature Projet</th>
+                    <th>Lieu</th>
+                    <th>Client</th>
+                    
+                    <th>Charges</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix total</th>
+                    <th>Ajouter Planification</th>
+                    <th>Lister Planification</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                 {% for Modele in Modeles %}
+               
+                  
+                    <tr>
+                        <td> {{Modele.id}} </td>
+                        <td> {{Modele.nature}} </td>
+                        <td> {{Modele.lieu}} </td>
+                        <td> {{Modele.idClient.societe}} </td>
+                     
+                        <td> {{Modele.charges}} </td>
+                        <td> {{Modele.prixUnitaire}} </td>
+                        <td> {{Modele.prixTotal}} </td>
+                        <td><a href="{{path("tech_addGanttJ",{'id':Modele.id})}}"> Ajouter </a></td>
+                        <td><a href="{{path("admin_ganttJ",{'id':Modele.id})}}"> Afficher </a></td>
+                       
+                        
+                        </tr>
+                       
+                 {% endfor %}
+            </tbody>            
+        </table>
+                </div>
+    </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row (main row) -->
+
+{% endblock user_content %}

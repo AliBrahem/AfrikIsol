@@ -22,14 +22,15 @@
                 
            $.ajax({
              type:'get',
-             url: 'http://localhost/AfriqueIsol/web/app_dev.php/updDmd/' +$(this).attr('class')+"/"+quantite,
+             url: 'http://localhost/web/app_dev.php/updDmd/' +$(this).attr('class')+"/"+quantite,
               success : function(data)
              {
-                 console.log("OK OK OK ! "+data.quantite);
+               
              }
              
          });
          });
+         location.href = "http://localhost/web/app_dev.php/listDmd"
          }
        
 });

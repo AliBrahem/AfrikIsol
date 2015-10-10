@@ -206,6 +206,13 @@ class Tole
      */
     protected $etat;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Designation", type="string", length=255, nullable=false)
+     */
+    private $designation;
+    
     function getId() {
         return $this->id;
     }
@@ -442,6 +449,14 @@ class Tole
 
     function setEtat($etat) {
         $this->etat = $etat;
+    }
+
+    function getDesignation() {
+        return $this->designation;
+    }
+
+    function setDesignation($designation) {
+        $this->designation = $designation;
     }
 
 

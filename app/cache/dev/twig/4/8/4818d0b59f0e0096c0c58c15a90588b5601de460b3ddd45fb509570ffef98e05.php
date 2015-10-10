@@ -38,7 +38,7 @@ class __TwigTemplate_4818d0b59f0e0096c0c58c15a90588b5601de460b3ddd45fb509570ffef
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tech_updProjet", array("id" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))), "html", null, true);
         echo "\"  method=\"POST\" >
-                <h3>&nbsp&nbsp&nbsp&nbsp Modification du Projet n°";
+                <h3>Modification du Projet n°";
         // line 13
         echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
         echo " </h2>

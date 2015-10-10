@@ -31,7 +31,7 @@ class __TwigTemplate_fb58a3477960b14003398b8fb434774b1f9b8c29dea91e597dbd2942568
     <!-- Small boxes (Stat box) -->
     <div class=\"row\">
        <div class=\"box-header\">
-                  <h3 class=\"box-title\">Liste des Plannifications</h3>
+                  <h3 class=\"box-title\">Liste des Plannifications par Dates</h3>
                 </div><!-- /.box-header -->
                 <div class=\"box-body\">
                   <table id=\"example1\" class=\"table table-bordered table-striped\">

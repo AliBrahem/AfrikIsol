@@ -46,6 +46,9 @@ tech_listPlan:
 tech_listGantt:
     pattern:  /listGantt
     defaults: { _controller: AdminBundle:Tech:listerGantt }  
+tech_listGanttJ:
+    pattern:  /listGanttJ
+    defaults: { _controller: AdminBundle:Tech:listerGanttJ }      
 tech_findTole:
     pattern:  /findTole/{id}
     defaults: { _controller: AdminBundle:Tech:findTole }     
@@ -70,6 +73,9 @@ tech_addAvancement:
 tech_addGantt:
     pattern:  /addGantt/{id}
     defaults: { _controller: AdminBundle:Tech:addGantt}    
+tech_addGanttJ:
+    pattern:  /addGanttJ/{id}
+    defaults: { _controller: AdminBundle:Tech:addGanttJ}     
 tech_addPlanification:
     pattern:  /addPlanification/{id}
     defaults: { _controller: AdminBundle:Tech:addPlan }     

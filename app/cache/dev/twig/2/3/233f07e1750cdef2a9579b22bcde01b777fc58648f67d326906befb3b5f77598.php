@@ -117,7 +117,10 @@ type=\"text/javascript\"></script>
             
         },
         title: {
-            text: 'Planning des travaux pour la STEG '
+            text: 'Planning des travaux pour le projet ";
+        // line 102
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["projet"]) ? $context["projet"] : $this->getContext($context, "projet")), "id", array()), "html", null, true);
+        echo "'
         },
         xAxis: {
             type: 'integer',
@@ -218,27 +221,80 @@ type=\"text/javascript\"></script>
              
             data: [
               
-                
-                   {
-                     x : 0 ,
-                     x2 : 10,     
-                      y: 0 
-                    } ,
+                   ";
+        // line 158
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["plan"]) ? $context["plan"] : $this->getContext($context, "plan")));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["Plan"]) {
+            // line 159
+            echo "                               ";
+            if ( !$this->getAttribute($context["loop"], "last", array())) {
+                // line 160
+                echo "                   {
+                    x :";
+                // line 161
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Plan"], "jourDebut", array()), "html", null, true);
+                echo ",
+                     x2 : ";
+                // line 162
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Plan"], "jourFin", array()), "html", null, true);
+                echo ",     
+                      y: ";
+                // line 163
+                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index0", array()), "html", null, true);
+                echo "  
+                    },  
+                      ";
+            } else {
+                // line 165
+                echo " 
                     {
-                     x : 11,
-                     x2 : 17,     
-                      y: 1 
-                    } ,
-                    {
-                     x : 18,
-                     x2 : 43,     
-                      y: 2 
-                    } ,
-                    {
-                     x : 44,
-                     x2 : 48,     
-                      y: 3 
-                    } 
+                    x : ";
+                // line 167
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Plan"], "jourDebut", array()), "html", null, true);
+                echo ",
+                     x2 : ";
+                // line 168
+                echo twig_escape_filter($this->env, $this->getAttribute($context["Plan"], "jourFin", array()), "html", null, true);
+                echo ",     
+                      y: ";
+                // line 169
+                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index0", array()), "html", null, true);
+                echo "
+                    }       
+                       ";
+            }
+            // line 171
+            echo "    
+                     
+                   ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Plan'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 173
+        echo " 
                    ]
                 
             }]
@@ -263,6 +319,6 @@ type=\"text/javascript\"></script>
 
     public function getDebugInfo()
     {
-        return array (  184 => 121,  169 => 120,  164 => 119,  161 => 118,  155 => 117,  152 => 116,  135 => 115,  19 => 1,);
+        return array (  297 => 173,  281 => 171,  275 => 169,  271 => 168,  267 => 167,  263 => 165,  257 => 163,  253 => 162,  249 => 161,  246 => 160,  243 => 159,  226 => 158,  187 => 121,  172 => 120,  167 => 119,  164 => 118,  158 => 117,  155 => 116,  138 => 115,  122 => 102,  19 => 1,);
     }
 }

@@ -99,7 +99,7 @@ $(function () {
             
         },
         title: {
-            text: 'Planning des travaux pour la STEG '
+            text: 'Planning des travaux pour le projet {{projet.id}}'
         },
         xAxis: {
             type: 'integer',
@@ -155,27 +155,22 @@ $(function () {
              
             data: [
               
-                
+                   {% for Plan in plan %}
+                               {% if not loop.last%}
                    {
-                     x : 0 ,
-                     x2 : 10,     
-                      y: 0 
-                    } ,
+                    x :{{Plan.jourDebut}},
+                     x2 : {{Plan.jourFin}},     
+                      y: {{ loop.index0 }}  
+                    },  
+                      {% else %} 
                     {
-                     x : 11,
-                     x2 : 17,     
-                      y: 1 
-                    } ,
-                    {
-                     x : 18,
-                     x2 : 43,     
-                      y: 2 
-                    } ,
-                    {
-                     x : 44,
-                     x2 : 48,     
-                      y: 3 
-                    } 
+                    x : {{Plan.jourDebut}},
+                     x2 : {{Plan.jourFin}},     
+                      y: {{ loop.index0 }}
+                    }       
+                       {% endif %}    
+                     
+                   {% endfor %} 
                    ]
                 
             }]

@@ -40,14 +40,14 @@ class Gantt {
     /**
      * @var date
      *
-     * @ORM\Column(name="DateDebut", type="date", nullable=true)
+     * @ORM\Column(name="DateDebut", type="date", nullable=false)
      */
     private $dateDebut;
     
     /**
      * @var date
      *
-     * @ORM\Column(name="DateFin", type="date", nullable=true)
+     * @ORM\Column(name="DateFin", type="date", nullable=false)
      */
     private $dateFin;
     

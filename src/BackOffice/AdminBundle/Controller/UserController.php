@@ -181,7 +181,16 @@ class UserController extends Controller
         'plan'=>$plan,'projet'=>$modele
         ));
         }
-        
+        public function chartGanttJAction($id){
+      
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $modele = $em->getRepository('AdminBundle:Projet')->find($id);
+        $plan = $em->getRepository('AdminBundle:Gantt2')->findBy(array('idprojet' => $id));
+     
+        return $this->render('AdminBundle:User:ganttJ.html.twig', array(
+        'plan'=>$plan,'projet'=>$modele
+        ));
+        }
         public function suivieChartAction($id){
    
         $em = $this->container->get('doctrine')->getEntityManager();

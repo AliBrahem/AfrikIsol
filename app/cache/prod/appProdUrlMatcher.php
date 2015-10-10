@@ -113,9 +113,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerPlanificationAction',  '_route' => 'tech_listPlan',);
             }
 
-            // tech_listGantt
-            if ($pathinfo === '/listGantt') {
-                return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerGanttAction',  '_route' => 'tech_listGantt',);
+            if (0 === strpos($pathinfo, '/listGantt')) {
+                // tech_listGantt
+                if ($pathinfo === '/listGantt') {
+                    return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerGanttAction',  '_route' => 'tech_listGantt',);
+                }
+
+                // tech_listGanttJ
+                if ($pathinfo === '/listGanttJ') {
+                    return array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::listerGanttJAction',  '_route' => 'tech_listGanttJ',);
+                }
+
             }
 
         }
@@ -162,9 +170,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addAvancement')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addAvancementAction',));
             }
 
-            // tech_addGantt
-            if (0 === strpos($pathinfo, '/addGantt') && preg_match('#^/addGantt/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addGantt')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addGanttAction',));
+            if (0 === strpos($pathinfo, '/addGantt')) {
+                // tech_addGantt
+                if (preg_match('#^/addGantt/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addGantt')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addGanttAction',));
+                }
+
+                // tech_addGanttJ
+                if (0 === strpos($pathinfo, '/addGanttJ') && preg_match('#^/addGanttJ/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tech_addGanttJ')), array (  '_controller' => 'BackOffice\\AdminBundle\\Controller\\TechController::addGanttJAction',));
+                }
+
             }
 
             // tech_addPlanification
