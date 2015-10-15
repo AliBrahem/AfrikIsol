@@ -37,7 +37,8 @@ class LogController extends Controller
                 $em = $this->container->get('doctrine')->getEntityManager();
                 $em->persist($stock);
                 $em->flush();
-                return $this->redirect($this->generateUrl("log_listStock"));
+               
+               return $this->redirect($this->generateUrl("log_listStock"));
             }
         }
          
@@ -51,7 +52,7 @@ class LogController extends Controller
         $form = $this->container->get('form.factory')->create(new MouvementType(), $mvt);
 
         $Request = $this->getRequest();
-
+        
 
         if ($Request->getMethod() == 'POST') {
             $form->bind($Request);
@@ -112,7 +113,7 @@ class LogController extends Controller
         $em = $this->container->get('doctrine')->getEntityManager();
         $modele = $em->getRepository('AdminBundle:Tole')->find($id);
         $stock = $em->getRepository('AdminBundle:Stock')->findBy(array("designation"=>"isolant"));
-        $response = new JsonResponse();
+        //$response = new JsonResponse();
        
         $modele->setEtat(1);
          $em->persist($modele);
@@ -120,7 +121,7 @@ class LogController extends Controller
         $stock[0]->setQteStock($q);
         $em->persist($stock[0]);
         $em->flush();        
-         $html = $this->renderView('AdminBundle:Log:AfficheTole.html.twig', array('Modele' => $modele)
+        $html = $this->renderView('AdminBundle:Log:AfficheTole.html.twig', array('Modele' => $modele)
           
         );
         return new Response(
@@ -129,7 +130,7 @@ class LogController extends Controller
             'Content-Disposition' => 'attachment; filename="MatierePremiere.pdf"'
                 )
         );
-        return $response->setData(array('quantite'=>$q));
+        //return $response->setData(array('quantite'=>$q));
         //echo ''.$modele->getPreavis();
      }
     
